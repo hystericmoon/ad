@@ -27,7 +27,7 @@
   --bezel: oklch(11% 0.004 262); --glass-hi: oklch(100% 0 0 / 0.16); --glass-lo: oklch(100% 0 0 / 0);
   --shadow-drop: oklch(4% 0.004 262 / 0.75);
 
-  --font-display: "Michroma", ui-sans-serif, sans-serif; --font-body: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; --font-outlier: var(--font-display);
+  --font-display: "Sora", ui-sans-serif, sans-serif; --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif; --font-outlier: var(--font-display);
   --radius-card: 6px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
-  --tracking-display: -0.01em;
+  --tracking-display: -0.025em; --weight-display: 600;
 }

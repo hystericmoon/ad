@@ -1,5 +1,5 @@
 /* Hallmark · shape: flight deck, a pinned instrument run from the live watch to the ring of every face · genre: atmospheric · theme: custom · job: buy · idea: "the site wears the face: its one neon channel is lent by whichever face is on screen, and tapping the watch re-tints the whole page, as tapping the logo does on the faces" · vibe: "deep space instrument panel, monochrome, neon telemetry"
- * paper: oklch(13.5% 0.008 262) · accent: oklch(86% 0.19 var(--hue)), hue sampled from each face render · display: Michroma · body: Hanken Grotesk · hero: Samsung's Galaxy Watch Ultra render wearing Rush, tilting to the pointer, its colourway swatches beside it · nav: a floating capsule, wordmark, two links and the Google Play button, the job · footer: one ruled band, wordmark, two links, the prices note · imagery: the product, the real face renders from Google Play inside Samsung's Galaxy Watch Ultra and Watch9 press renders · signature: tap the watch and the face and the whole site change colourway together
+ * paper: oklch(13.5% 0.008 262) · accent: oklch(86% 0.19 var(--hue)), hue sampled from each face render · display: Sora · body: Manrope · hero: Samsung's Galaxy Watch Ultra render wearing Rush, tilting to the pointer, its colourway swatches beside it · nav: a floating capsule, wordmark, two links and the Google Play button, the job · footer: one ruled band, wordmark, two links, the prices note · imagery: the product, the real face renders from Google Play inside Samsung's Galaxy Watch Ultra and Watch9 press renders · signature: tap the watch and the face and the whole site change colourway together
  * axes: dark/geometric-sans/chromatic-cyan · posture: dark paper, one neon channel that changes hue with the face · contrast: pass · fold: pass · copy: owner nouns · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R3 V5 · weakest: R, the brief asks for many animations; each one is tied to a face or a control and none runs without the visitor's scroll, pointer or tap */
 /* Hallmark · hero-review: skipped, hero and page built in one pass · finish-review: subagent · 8 findings + carried gap · 9 resolved · gap: per-section hue hand-off now wired */
@@ -26,7 +26,7 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 .nav { position: fixed; inset-inline: 0; top: var(--space-md); z-index: var(--z-sticky-nav); pointer-events: none; }
 .nav__bar { pointer-events: auto; display: flex; align-items: center; gap: var(--space-lg); width: fit-content; max-width: calc(100% - 2 * var(--space-md)); margin-inline: auto; padding: var(--space-xs) var(--space-xs) var(--space-xs) var(--space-lg); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-pill); background: var(--color-veil); backdrop-filter: blur(14px) saturate(1.2); transition: transform var(--dur-long) var(--ease-out), border-color var(--dur-short) var(--ease-out); }
 .nav.is-hidden .nav__bar { transform: translateY(-140%); }
-.wordmark { display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-outlier); font-size: var(--text-sm); color: var(--color-ink); text-decoration: none; white-space: nowrap; }
+.wordmark { font-weight: var(--weight-display); display: inline-flex; align-items: center; gap: var(--space-xs); font-family: var(--font-outlier); font-size: var(--text-sm); color: var(--color-ink); text-decoration: none; white-space: nowrap; }
 .wordmark__mark { width: 30px; height: auto; aspect-ratio: 856 / 494; color: var(--color-brand); }
 .nav__links { display: flex; gap: var(--space-2xs); list-style: none; margin: 0; padding: 0; }
 .nav__links a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: var(--space-sm); border-radius: var(--radius-pill); color: var(--color-ink-2); text-decoration: none; font-size: var(--text-sm); white-space: nowrap; transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out); }
@@ -88,7 +88,7 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 .hero { position: relative; min-height: 100svh; display: grid; align-items: center; padding-block: var(--space-3xl) var(--space-xl); }
 .hero__grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: var(--gap-columns); align-items: center; }
 .hero__copy { display: grid; gap: var(--space-lg); justify-items: start; }
-.hero__title { font-size: var(--text-display); line-height: 1.08; letter-spacing: var(--tracking-display); font-weight: 400; max-width: 11ch; }
+.hero__title { font-size: var(--text-display); line-height: 1.08; letter-spacing: var(--tracking-display); font-weight: var(--weight-display); max-width: 11ch; }
 .hero__lede { font-size: var(--text-lead); color: var(--color-ink-2); max-width: 34ch; }
 .hero__stage { position: relative; display: grid; justify-items: center; gap: var(--space-md); }
 .hero__stage .watch { --size: min(380px, 30vw); }
@@ -105,7 +105,7 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 .section { position: relative; padding-block: var(--section-gap) 0; }
 .section--last { padding-bottom: var(--space-2xl); }
 .section__head { display: grid; gap: var(--space-md); margin-bottom: var(--space-2xl); }
-.section__title { font-size: var(--text-section); line-height: 1.12; font-weight: 400; letter-spacing: var(--tracking-display); }
+.section__title { font-size: var(--text-section); line-height: 1.12; font-weight: var(--weight-display); letter-spacing: var(--tracking-display); }
 .section__text { color: var(--color-ink-2); font-size: var(--text-lead); max-width: 46ch; }
 
 /* Models */
@@ -119,7 +119,7 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 .kinds { list-style: none; margin: 0; padding: 0; border-top: var(--rule-hair) solid var(--color-rule); }
 .kind { border-bottom: var(--rule-hair) solid var(--color-rule); }
 .kind__link { position: relative; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); align-items: center; gap: var(--gap-columns); padding-block: var(--space-xl); color: inherit; text-decoration: none; }
-.kind__name { font-family: var(--font-display); font-size: var(--text-row); line-height: 1.05; letter-spacing: -0.02em; transition: color var(--dur-short) var(--ease-out), transform var(--dur-long) var(--ease-out); overflow-wrap: break-word; min-width: 0; }
+.kind__name { font-family: var(--font-display); font-weight: var(--weight-display); font-size: var(--text-row); line-height: 1.05; letter-spacing: -0.02em; transition: color var(--dur-short) var(--ease-out), transform var(--dur-long) var(--ease-out); overflow-wrap: break-word; min-width: 0; }
 .kind__line { color: var(--color-ink-2); max-width: 30ch; }
 .kind__count { display: block; font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-ink); font-variant-numeric: tabular-nums; }
 .kind__faces { display: flex; justify-content: flex-end; }
@@ -183,7 +183,7 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 /* ---------- Catalog ---------- */
 .cat-head { padding-top: calc(var(--space-3xl) + var(--space-xl)); display: grid; gap: var(--space-xl); }
 .cat-head__top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: var(--space-lg); }
-.cat-head__title { font-size: var(--text-display-s); line-height: 1.08; font-weight: 400; letter-spacing: var(--tracking-display); }
+.cat-head__title { font-size: var(--text-display-s); line-height: 1.08; font-weight: var(--weight-display); letter-spacing: var(--tracking-display); }
 .cat-head__lede { color: var(--color-ink-2); max-width: 44ch; margin-top: var(--space-sm); }
 .toolbar { position: sticky; top: calc(var(--space-md) + 64px); z-index: var(--z-sticky); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm); padding: var(--space-sm); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); background: var(--color-veil); backdrop-filter: blur(14px); }
 .field { position: relative; flex: 1 1 240px; }
@@ -214,7 +214,7 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 .card__face:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 10px; }
 .card__face:active { transform: scale(0.98); }
 .card__meta { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; column-gap: var(--space-sm); }
-.card__name { font-family: var(--font-display); font-size: var(--text-md); font-weight: 400; line-height: 1.3; transition: color var(--dur-short) var(--ease-out); }
+.card__name { font-family: var(--font-display); font-size: var(--text-md); font-weight: var(--weight-display); line-height: 1.3; transition: color var(--dur-short) var(--ease-out); }
 .card__price { font-variant-numeric: tabular-nums; color: var(--color-ink); }
 .card__type { grid-column: 1 / -1; font-size: var(--text-sm); color: var(--color-muted); }
 .card .btn { width: 100%; }
@@ -228,7 +228,7 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 .detail__stage { display: grid; justify-items: center; gap: var(--space-md); }
 .detail__stage .watch { --size: min(320px, 64vw); }
 .detail__copy { display: grid; gap: var(--space-lg); justify-items: start; }
-.detail__name { font-size: var(--text-section); line-height: 1.1; font-weight: 400; }
+.detail__name { font-size: var(--text-section); line-height: 1.1; font-weight: var(--weight-display); }
 .detail__facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-xs) var(--space-lg); margin: 0; }
 .detail__facts dt { color: var(--color-muted); font-size: var(--text-sm); }
 .detail__facts dd { margin: 0; }
