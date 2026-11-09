@@ -15,18 +15,12 @@ const playIcon = '<svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
 export const watch = (face, { model = 'ultra', tapLabel = 'Next colourway', lazy = false } = {}) => `
 <div class="watch" data-model="${model}" data-watch data-face="${face.slug}">
   <div class="watch__body">
-    <span class="watch__strap watch__strap--top" aria-hidden="true"></span>
-    <span class="watch__strap watch__strap--bottom" aria-hidden="true"></span>
-    <div class="watch__case">
-      <span class="watch__btn watch__btn--1" aria-hidden="true"></span>
-      <span class="watch__btn watch__btn--2" aria-hidden="true"></span>
-      <span class="watch__btn watch__btn--3" aria-hidden="true"></span>
-      <div class="watch__bezel" aria-hidden="true"><span class="watch__notch"></span></div>
-      <div class="watch__screen" role="img" aria-label="${esc(face.name)} watch face">
-        ${face.shots.map((s, i) => `<img src="${s.src}" alt="" width="450" height="450" data-hue="${s.hue ?? ''}"${i === 0 ? ' class="is-on"' : ''}${lazy || i > 0 ? ' loading="lazy"' : ' fetchpriority="high"'} decoding="async">`).join('\n        ')}
-      </div>
-      ${face.shots.length > 1 ? `<button class="watch__tap" type="button" aria-label="${esc(tapLabel)}"></button>` : ''}
+    <div class="watch__screen" role="img" aria-label="${esc(face.name)} watch face on ${model === 'ultra' ? 'Galaxy Watch Ultra' : 'Galaxy Watch9'}">
+      ${face.shots.map((s, i) => `<img src="${s.src}" alt="" width="450" height="450" data-hue="${s.hue ?? ''}"${i === 0 ? ' class="is-on"' : ''}${lazy || i > 0 ? ' loading="lazy"' : ' fetchpriority="high"'} decoding="async">`).join('\n      ')}
     </div>
+    <img class="watch__frame watch__frame--ultra" src="assets/watches/galaxy-watch-ultra.webp" alt="" width="960" height="1509" aria-hidden="true"${model === 'ultra' ? '' : ' loading="lazy"'} draggable="false">
+    <img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" aria-hidden="true"${model === 'watch9' ? '' : ' loading="lazy"'} draggable="false">
+    ${face.shots.length > 1 ? `<button class="watch__tap" type="button" aria-label="${esc(tapLabel)}"></button>` : ''}
   </div>
 </div>`;
 
@@ -39,7 +33,7 @@ export const swatches = (face) => face.shots.length < 2 ? '' : `
 const blocks = {
   'hero-watch': () => watch(bySlug.rush, { tapLabel: 'Show the next Rush colourway' }),
   'hero-swatches': () => swatches(bySlug.rush),
-  'models-watch': () => watch(bySlug.omni, { lazy: true, tapLabel: 'Show the next Omni colourway' }),
+  'models-watch': () => watch(bySlug.omni, { model: 'watch9', lazy: true, tapLabel: 'Show the next Omni colourway' }),
   'anatomy-watch': () => watch(bySlug.forte, { lazy: true, tapLabel: 'Show the next Forte colourway' }),
   kinds: () => kinds.map((t) => {
     const set = faces.filter((f) => f.type === t).slice(0, 5);

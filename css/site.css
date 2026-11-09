@@ -1,16 +1,14 @@
 /* Hallmark · shape: flight deck, a pinned instrument run from the live watch to the ring of every face · genre: atmospheric · theme: custom · job: buy · idea: "the site wears the face: its one neon channel is lent by whichever face is on screen, and tapping the watch re-tints the whole page, as tapping the logo does on the faces" · vibe: "deep space instrument panel, monochrome, neon telemetry"
- * paper: oklch(13.5% 0.008 262) · accent: oklch(86% 0.19 var(--hue)), hue sampled from each face render · display: Michroma · body: Hanken Grotesk · hero: the Galaxy Watch Ultra wearing Rush, tilting to the pointer, its colourway swatches beside it · nav: a floating capsule, wordmark, two links and the Google Play button, the job · footer: one ruled band, wordmark, two links, the prices note · imagery: the product, the 46 real face renders from Google Play in built watch cases · signature: tap the watch and the face and the whole site change colourway together
+ * paper: oklch(13.5% 0.008 262) · accent: oklch(86% 0.19 var(--hue)), hue sampled from each face render · display: Michroma · body: Hanken Grotesk · hero: Samsung's Galaxy Watch Ultra render wearing Rush, tilting to the pointer, its colourway swatches beside it · nav: a floating capsule, wordmark, two links and the Google Play button, the job · footer: one ruled band, wordmark, two links, the prices note · imagery: the product, the real face renders from Google Play inside Samsung's Galaxy Watch Ultra and Watch9 press renders · signature: tap the watch and the face and the whole site change colourway together
  * axes: dark/geometric-sans/chromatic-cyan · posture: dark paper, one neon channel that changes hue with the face · contrast: pass · fold: pass · copy: owner nouns · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R3 V5 · weakest: R, the brief asks for many animations; each one is tied to a face or a control and none runs without the visitor's scroll, pointer or tap */
 /* Hallmark · hero-review: skipped, hero and page built in one pass · finish-review: subagent · 8 findings + carried gap · 9 resolved · gap: per-section hue hand-off now wired */
-/* Hallmark · waive 80 · watch cases built in CSS around the real face renders · the owner asked for the faces shown on Galaxy Watch Ultra and Galaxy Watch8 hardware */
-/* Hallmark · waive 47c · CSS titanium case and strap around each real face render · the faces only make sense on a watch, and the owner has no current-model photography yet */
 /* Hallmark · dismissed 29 · the capsule nav, the sticky filter bar and the dialog scrim float over a moving starfield and face renders; the blur holds their text above 4.5:1 on any of them */
-/* Hallmark · answered F4 · the second filled shape is the Galaxy Watch Ultra quick button, hardware lit in the face's colour, and the pressed model in a segmented switch; the page has one primary button recipe */
+/* Hallmark · answered F4 · the second filled shape is the pressed model in a segmented switch; the page has one primary button recipe */
 /* Hallmark · dismissed 58 · catalog.html is the listing of all 46 faces; its words are names, styles and prices, one card each */
 /* Hallmark · dismissed 77 · catalog.html is a working listing, a head and the grid of 46 faces, not a landing strip */
 /* Hallmark · waive 83 · catalog.html shows 46 face renders, one per listing · the catalog is the owner's own product range, each picture is a face for sale */
-/* Hallmark · waive 47b · one watch frame per view, a real face render inside · the watch is the device every face is sold for */
+/* Hallmark · waive 47b · one Samsung watch render per view, a real face render on its display · the watch is the device every face is sold for */
 @import url("./tokens.css");
 @import url("./base.css");
 
@@ -52,33 +50,19 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 .btn__icon { width: 18px; height: 18px; flex: none; }
 .actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
 
-/* ---------- The watch (shared) ---------- */
-.watch { --size: 420px; --case-radius: 31%; --screen-scale: 1; --bezel-scale: 1; position: relative; width: var(--size); max-width: 100%; aspect-ratio: 1 / 1.34; display: grid; place-items: center; perspective: 1200px; }
-.watch__body { position: relative; width: 100%; aspect-ratio: 1; transform-style: preserve-3d; will-change: transform; }
-.watch__strap { position: absolute; left: 22%; right: 22%; height: 30%; background: linear-gradient(90deg, var(--strap) 0%, var(--strap-hi) 30%, var(--strap) 52%, var(--strap-hi) 74%, var(--strap) 100%); border-radius: 18% / 10%; }
-.watch__strap--top { bottom: 80%; mask-image: linear-gradient(to top, black 30%, transparent 96%); }
-.watch__strap--bottom { top: 80%; mask-image: linear-gradient(to bottom, black 30%, transparent 96%); }
-.watch__case { position: absolute; inset: 0; border-radius: var(--case-radius); background:
-  radial-gradient(120% 90% at 28% 18%, var(--metal-hi) 0%, var(--metal-mid) 34%, var(--metal-lo) 66%, var(--metal-edge) 100%);
-  box-shadow: inset 0 0 0 1px var(--metal-hi), inset 0 -10px 24px var(--metal-edge), 0 40px 80px -24px var(--shadow-drop); transition: border-radius var(--dur-long) var(--ease-out); }
-.watch__btn { position: absolute; right: -2.6%; width: 4.4%; height: 11%; border-radius: 3px 8px 8px 3px; background: linear-gradient(90deg, var(--metal-lo), var(--metal-hi) 60%, var(--metal-mid)); transition: opacity var(--dur-short) var(--ease-out), transform var(--dur-long) var(--ease-out); }
-.watch__btn--1 { top: 26%; }
-.watch__btn--2 { top: 44.5%; background: var(--color-accent); }
-.watch__btn--3 { top: 63%; }
-.watch__bezel { position: absolute; inset: 9%; border-radius: 50%; background: var(--bezel); box-shadow: 0 0 0 2px var(--metal-lo), 0 0 0 5px var(--metal-edge), inset 0 0 0 1px var(--color-rule); transform: scale(var(--bezel-scale)); transition: transform var(--dur-long) var(--ease-out); }
-.watch__notch { position: absolute; left: 50%; top: 2.5%; width: 1.4%; height: 3.2%; translate: -50% 0; border-radius: 2px; background: var(--color-rule-strong); }
-.watch__screen { position: absolute; inset: 14%; border-radius: 50%; overflow: hidden; background: var(--bezel); transform: scale(var(--screen-scale)); transition: transform var(--dur-long) var(--ease-out); isolation: isolate; }
+/* ---------- The watch (shared): Samsung's product render with the display cut out, the face underneath ---------- */
+.watch { --size: 400px; --frame-ratio: 960 / 1509; --sx: 47.177%; --sy: 49.678%; --sd: 84.74%; position: relative; width: var(--size); max-width: 100%; perspective: 1400px; }
+.watch[data-model="watch9"] { --frame-ratio: 960 / 1587; --sx: 49.649%; --sy: 49.674%; --sd: 84.4%; }
+.watch__body { position: relative; width: 100%; aspect-ratio: var(--frame-ratio); transform-style: preserve-3d; will-change: transform; mask-image: linear-gradient(to bottom, transparent 0%, black 16%, black 84%, transparent 100%); filter: drop-shadow(0 40px 50px var(--shadow-drop)); }
+.watch__frame { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; user-select: none; }
+.watch__frame--watch9 { display: none; }
+.watch[data-model="watch9"] .watch__frame--ultra { display: none; }
+.watch[data-model="watch9"] .watch__frame--watch9 { display: block; }
+.watch__screen { position: absolute; left: var(--sx); top: var(--sy); width: var(--sd); aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; overflow: hidden; background: var(--bezel); z-index: 1; isolation: isolate; }
 .watch__screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
 .watch__screen img.is-on { opacity: 1; }
 .watch__screen::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(60% 50% at var(--gx, 30%) var(--gy, 22%), var(--glass-hi), var(--glass-lo) 70%); pointer-events: none; z-index: 2; }
-.watch[data-model="watch8"] { --case-radius: 42%; --screen-scale: 1.06; --bezel-scale: 1.04; }
-.watch[data-model="watch8"] .watch__btn--2 { transform: translateX(-60%) scale(0); }
-.watch[data-model="watch8"] .watch__btn--1 { transform: translateY(40%); }
-.watch[data-model="watch8"] .watch__btn--3 { transform: translateY(-40%); }
-.watch[data-model="pixel"] { --case-radius: 50%; --screen-scale: 1.12; --bezel-scale: 1.08; }
-.watch[data-model="pixel"] .watch__btn--1, .watch[data-model="pixel"] .watch__btn--3 { transform: translateX(-60%) scale(0); }
-.watch[data-model="pixel"] .watch__btn--2 { height: 13%; width: 5.4%; right: -3.6%; top: 43.5%; border-radius: 40%; background: linear-gradient(90deg, var(--metal-lo), var(--metal-hi) 60%, var(--metal-mid)); }
-.watch__tap { position: absolute; inset: 14%; border-radius: 50%; border: 0; padding: 0; background: transparent; cursor: pointer; z-index: 3; }
+.watch__tap { position: absolute; left: var(--sx); top: var(--sy); width: var(--sd); aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; border: 0; padding: 0; background: transparent; cursor: pointer; z-index: 3; }
 .watch__tap:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 6px; }
 
 /* Colourway swatches */
@@ -106,14 +90,14 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 .hero__title { font-size: var(--text-display); line-height: 1.08; letter-spacing: var(--tracking-display); font-weight: 400; max-width: 11ch; }
 .hero__lede { font-size: var(--text-lead); color: var(--color-ink-2); max-width: 34ch; }
 .hero__stage { position: relative; display: grid; justify-items: center; gap: var(--space-md); }
-.hero__stage .watch { --size: min(400px, 36vw); }
+.hero__stage .watch { --size: min(380px, 30vw); }
 .hero__caption { font-size: var(--text-sm); color: var(--color-muted); }
 .orbit { position: absolute; inset: 50% auto auto 50%; width: 150%; aspect-ratio: 1; translate: -50% -56%; pointer-events: none; color: var(--color-rule-strong); }
 .orbit__sat { fill: var(--color-accent); }
 @media (max-width: 60rem) {
   .hero__grid { grid-template-columns: minmax(0, 1fr); }
   .hero { padding-top: calc(var(--space-3xl) + var(--space-md)); }
-  .hero__stage .watch { --size: min(340px, 78vw); }
+  .hero__stage .watch { --size: min(300px, 70vw); }
 }
 
 /* ---------- Sections ---------- */
@@ -127,7 +111,7 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 .models { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); align-items: center; }
 .models__copy { display: grid; gap: var(--space-lg); align-content: center; justify-items: start; }
 .models__stage { display: grid; justify-items: center; gap: var(--space-md); }
-.models__stage .watch { --size: min(360px, 70vw); }
+.models__stage .watch { --size: min(340px, 64vw); }
 @media (max-width: 60rem) { .models { grid-template-columns: minmax(0, 1fr); } }
 
 /* Kinds: a ruled list of the four ways to read time */
@@ -147,10 +131,10 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 
 /* Anatomy: pinned read of one face */
 .anatomy { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gap-columns); align-items: center; min-height: 100svh; padding-block: var(--space-2xl); }
-.anatomy__stage { position: relative; display: grid; place-items: center; }
-.anatomy__stage .watch { --size: min(520px, 44vw); }
+.anatomy__stage { position: relative; display: grid; place-items: center start; }
+.anatomy__stage .watch { --size: min(500px, 42vw); }
 .anatomy__marker { position: absolute; width: 22%; aspect-ratio: 1; border: 2px solid var(--color-accent); border-radius: 50%; translate: -50% -50%; left: 50%; top: 50%; opacity: 0; pointer-events: none; z-index: 4; }
-.anatomy__list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2xs); counter-reset: part; }
+.anatomy__list { list-style: none; margin: 0; padding: 0; justify-self: stretch; display: grid; gap: var(--space-2xs); counter-reset: part; }
 .anatomy__item { display: grid; grid-template-columns: var(--space-xl) minmax(0, 1fr); align-items: baseline; padding-block: var(--space-sm); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-muted); font-size: var(--text-lg); transition: color var(--dur-short) var(--ease-out); }
 .anatomy__item::before { counter-increment: part; content: counter(part, decimal-leading-zero); font-family: var(--font-display); font-size: var(--text-xs); color: var(--color-muted); }
 .anatomy__item.is-on { color: var(--color-ink); }
@@ -241,7 +225,7 @@ main, .site-footer, .nav { position: relative; z-index: var(--z-base); }
 .detail::backdrop { background: var(--color-scrim); backdrop-filter: blur(6px); }
 .detail__inner { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--space-xl); padding: var(--space-xl); align-items: center; }
 .detail__stage { display: grid; justify-items: center; gap: var(--space-md); }
-.detail__stage .watch { --size: min(360px, 70vw); }
+.detail__stage .watch { --size: min(320px, 64vw); }
 .detail__copy { display: grid; gap: var(--space-lg); justify-items: start; }
 .detail__name { font-size: var(--text-section); line-height: 1.1; font-weight: 400; }
 .detail__facts { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-xs) var(--space-lg); margin: 0; }

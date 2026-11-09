@@ -46,18 +46,12 @@
   AD.watchHTML = (face, model = 'ultra') => `
     <div class="watch" data-model="${model}" data-watch data-face="${face.slug}">
       <div class="watch__body">
-        <span class="watch__strap watch__strap--top" aria-hidden="true"></span>
-        <span class="watch__strap watch__strap--bottom" aria-hidden="true"></span>
-        <div class="watch__case">
-          <span class="watch__btn watch__btn--1" aria-hidden="true"></span>
-          <span class="watch__btn watch__btn--2" aria-hidden="true"></span>
-          <span class="watch__btn watch__btn--3" aria-hidden="true"></span>
-          <div class="watch__bezel" aria-hidden="true"><span class="watch__notch"></span></div>
-          <div class="watch__screen" role="img" aria-label="${esc(face.name)} watch face">
-            ${face.shots.map((s, i) => `<img src="${s.src}" alt="" width="450" height="450" data-hue="${s.hue ?? ''}"${i === 0 ? ' class="is-on"' : ''}>`).join('')}
-          </div>
-          ${face.shots.length > 1 ? `<button class="watch__tap" type="button" aria-label="Show the next ${esc(face.name)} colourway"></button>` : ''}
+        <div class="watch__screen" role="img" aria-label="${esc(face.name)} watch face">
+          ${face.shots.map((s, i) => `<img src="${s.src}" alt="" width="450" height="450" data-hue="${s.hue ?? ''}"${i === 0 ? ' class="is-on"' : ''}>`).join('')}
         </div>
+        <img class="watch__frame watch__frame--ultra" src="assets/watches/galaxy-watch-ultra.webp" alt="" width="960" height="1509" aria-hidden="true" draggable="false">
+        <img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" aria-hidden="true" draggable="false">
+        ${face.shots.length > 1 ? `<button class="watch__tap" type="button" aria-label="Show the next ${esc(face.name)} colourway"></button>` : ''}
       </div>
     </div>`;
   AD.swatchesHTML = (face) => face.shots.length < 2 ? '' : `

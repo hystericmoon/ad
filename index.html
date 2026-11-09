@@ -37,7 +37,7 @@
       <div class="wrap hero__grid">
         <div class="hero__copy">
           <h1 class="hero__title" id="hero-title" data-split>Tap the watch to recolour space.</h1>
-          <p class="hero__lede" data-rise>46 hybrid, digital and analog faces for Galaxy Watch and Pixel Watch.</p>
+          <p class="hero__lede" data-rise><!-- build:total -->46<!-- /build --> hybrid, digital and analog faces for Galaxy Watch and Pixel Watch.</p>
           <div class="actions" data-rise>
             <a class="btn btn--primary" href="catalog.html" data-magnetic>Browse the catalog</a>
             <a class="btn btn--ghost" href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">See us on Google Play</a>
@@ -52,22 +52,16 @@
           <!-- build:hero-watch -->
 <div class="watch" data-model="ultra" data-watch data-face="rush">
   <div class="watch__body">
-    <span class="watch__strap watch__strap--top" aria-hidden="true"></span>
-    <span class="watch__strap watch__strap--bottom" aria-hidden="true"></span>
-    <div class="watch__case">
-      <span class="watch__btn watch__btn--1" aria-hidden="true"></span>
-      <span class="watch__btn watch__btn--2" aria-hidden="true"></span>
-      <span class="watch__btn watch__btn--3" aria-hidden="true"></span>
-      <div class="watch__bezel" aria-hidden="true"><span class="watch__notch"></span></div>
-      <div class="watch__screen" role="img" aria-label="Rush watch face">
-        <img src="assets/faces/rush-1.webp" alt="" width="450" height="450" data-hue="182" class="is-on" fetchpriority="high" decoding="async">
-        <img src="assets/faces/rush-2.webp" alt="" width="450" height="450" data-hue="33" loading="lazy" decoding="async">
-        <img src="assets/faces/rush-3.webp" alt="" width="450" height="450" data-hue="4" loading="lazy" decoding="async">
-        <img src="assets/faces/rush-4.webp" alt="" width="450" height="450" data-hue="301" loading="lazy" decoding="async">
-        <img src="assets/faces/rush-5.webp" alt="" width="450" height="450" data-hue="269" loading="lazy" decoding="async">
-      </div>
-      <button class="watch__tap" type="button" aria-label="Show the next Rush colourway"></button>
+    <div class="watch__screen" role="img" aria-label="Rush watch face on Galaxy Watch Ultra">
+      <img src="assets/faces/rush-1.webp" alt="" width="450" height="450" data-hue="182" class="is-on" fetchpriority="high" decoding="async">
+      <img src="assets/faces/rush-2.webp" alt="" width="450" height="450" data-hue="33" loading="lazy" decoding="async">
+      <img src="assets/faces/rush-3.webp" alt="" width="450" height="450" data-hue="4" loading="lazy" decoding="async">
+      <img src="assets/faces/rush-4.webp" alt="" width="450" height="450" data-hue="301" loading="lazy" decoding="async">
+      <img src="assets/faces/rush-5.webp" alt="" width="450" height="450" data-hue="269" loading="lazy" decoding="async">
     </div>
+    <img class="watch__frame watch__frame--ultra" src="assets/watches/galaxy-watch-ultra.webp" alt="" width="960" height="1509" aria-hidden="true" draggable="false">
+    <img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" aria-hidden="true" loading="lazy" draggable="false">
+    <button class="watch__tap" type="button" aria-label="Show the next Rush colourway"></button>
   </div>
 </div><!-- /build -->
           <figcaption class="hero__caption">Rush on Galaxy Watch Ultra</figcaption>
@@ -91,34 +85,27 @@
           <h2 class="section__title" id="models-title" data-reveal>One face, every round screen.</h2>
           <p class="section__text" data-reveal>Every face runs on Wear OS 5 and later. Switch the watch to see it on yours.</p>
           <div class="segmented" role="group" aria-label="Watch model" data-models>
-            <button type="button" aria-pressed="true" data-model="ultra">Galaxy Watch Ultra</button>
-            <button type="button" aria-pressed="false" data-model="watch8">Galaxy Watch8</button>
-            <button type="button" aria-pressed="false" data-model="pixel">Pixel Watch</button>
+            <button type="button" aria-pressed="true" data-model="watch9">Galaxy Watch9</button>
+            <button type="button" aria-pressed="false" data-model="ultra">Galaxy Watch Ultra</button>
           </div>
         </div>
         <figure class="models__stage">
           <!-- build:models-watch -->
-<div class="watch" data-model="ultra" data-watch data-face="omni">
+<div class="watch" data-model="watch9" data-watch data-face="omni">
   <div class="watch__body">
-    <span class="watch__strap watch__strap--top" aria-hidden="true"></span>
-    <span class="watch__strap watch__strap--bottom" aria-hidden="true"></span>
-    <div class="watch__case">
-      <span class="watch__btn watch__btn--1" aria-hidden="true"></span>
-      <span class="watch__btn watch__btn--2" aria-hidden="true"></span>
-      <span class="watch__btn watch__btn--3" aria-hidden="true"></span>
-      <div class="watch__bezel" aria-hidden="true"><span class="watch__notch"></span></div>
-      <div class="watch__screen" role="img" aria-label="Omni watch face">
-        <img src="assets/faces/omni-1.webp" alt="" width="450" height="450" data-hue="123" class="is-on" loading="lazy" decoding="async">
-        <img src="assets/faces/omni-2.webp" alt="" width="450" height="450" data-hue="353" loading="lazy" decoding="async">
-        <img src="assets/faces/omni-3.webp" alt="" width="450" height="450" data-hue="269" loading="lazy" decoding="async">
-        <img src="assets/faces/omni-4.webp" alt="" width="450" height="450" data-hue="191" loading="lazy" decoding="async">
-        <img src="assets/faces/omni-5.webp" alt="" width="450" height="450" data-hue="182" loading="lazy" decoding="async">
-      </div>
-      <button class="watch__tap" type="button" aria-label="Show the next Omni colourway"></button>
+    <div class="watch__screen" role="img" aria-label="Omni watch face on Galaxy Watch9">
+      <img src="assets/faces/omni-1.webp" alt="" width="450" height="450" data-hue="123" class="is-on" loading="lazy" decoding="async">
+      <img src="assets/faces/omni-2.webp" alt="" width="450" height="450" data-hue="353" loading="lazy" decoding="async">
+      <img src="assets/faces/omni-3.webp" alt="" width="450" height="450" data-hue="269" loading="lazy" decoding="async">
+      <img src="assets/faces/omni-4.webp" alt="" width="450" height="450" data-hue="191" loading="lazy" decoding="async">
+      <img src="assets/faces/omni-5.webp" alt="" width="450" height="450" data-hue="182" loading="lazy" decoding="async">
     </div>
+    <img class="watch__frame watch__frame--ultra" src="assets/watches/galaxy-watch-ultra.webp" alt="" width="960" height="1509" aria-hidden="true" loading="lazy" draggable="false">
+    <img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" aria-hidden="true" draggable="false">
+    <button class="watch__tap" type="button" aria-label="Show the next Omni colourway"></button>
   </div>
 </div><!-- /build -->
-          <figcaption class="hero__caption" data-model-caption aria-live="polite">Omni on Galaxy Watch Ultra</figcaption>
+          <figcaption class="hero__caption" data-model-caption aria-live="polite">Omni on Galaxy Watch9</figcaption>
         </figure>
       </div>
     </section>
@@ -168,22 +155,16 @@
           <!-- build:anatomy-watch -->
 <div class="watch" data-model="ultra" data-watch data-face="forte">
   <div class="watch__body">
-    <span class="watch__strap watch__strap--top" aria-hidden="true"></span>
-    <span class="watch__strap watch__strap--bottom" aria-hidden="true"></span>
-    <div class="watch__case">
-      <span class="watch__btn watch__btn--1" aria-hidden="true"></span>
-      <span class="watch__btn watch__btn--2" aria-hidden="true"></span>
-      <span class="watch__btn watch__btn--3" aria-hidden="true"></span>
-      <div class="watch__bezel" aria-hidden="true"><span class="watch__notch"></span></div>
-      <div class="watch__screen" role="img" aria-label="Forte watch face">
-        <img src="assets/faces/forte-1.webp" alt="" width="450" height="450" data-hue="" class="is-on" loading="lazy" decoding="async">
-        <img src="assets/faces/forte-2.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async">
-        <img src="assets/faces/forte-3.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async">
-        <img src="assets/faces/forte-4.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async">
-        <img src="assets/faces/forte-5.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async">
-      </div>
-      <button class="watch__tap" type="button" aria-label="Show the next Forte colourway"></button>
+    <div class="watch__screen" role="img" aria-label="Forte watch face on Galaxy Watch Ultra">
+      <img src="assets/faces/forte-1.webp" alt="" width="450" height="450" data-hue="" class="is-on" loading="lazy" decoding="async">
+      <img src="assets/faces/forte-2.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async">
+      <img src="assets/faces/forte-3.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async">
+      <img src="assets/faces/forte-4.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async">
+      <img src="assets/faces/forte-5.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async">
     </div>
+    <img class="watch__frame watch__frame--ultra" src="assets/watches/galaxy-watch-ultra.webp" alt="" width="960" height="1509" aria-hidden="true" draggable="false">
+    <img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" aria-hidden="true" loading="lazy" draggable="false">
+    <button class="watch__tap" type="button" aria-label="Show the next Forte colourway"></button>
   </div>
 </div><!-- /build -->
           <span class="anatomy__marker" aria-hidden="true" data-marker></span>
@@ -308,7 +289,7 @@
           <li><a href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">Google Play developer page</a></li>
         </ul>
       </div>
-      <p class="site-footer__note">Watch faces for Wear OS 5 and later. Prices are Google Play US list prices and may differ in your region. Galaxy Watch is a trademark of Samsung; Pixel Watch is a trademark of Google.</p>
+      <p class="site-footer__note">Watch faces for Wear OS 5 and later. Prices are Google Play US list prices and may differ in your region. Galaxy Watch is a trademark of Samsung; Pixel Watch is a trademark of Google. Galaxy Watch Ultra and Galaxy Watch9 product images: Samsung Mobile Press.</p>
     </div>
   </footer>
 
