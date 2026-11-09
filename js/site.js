@@ -1,4 +1,5 @@
-/* Active Design, one page: halftone textures, hero colourways, face-card colourway cycling, questions.
+/* Active Design, one page: halftone textures, hero colourways, face cards (colour cycle, always-on preview,
+   details dialog), style tabs and filters, questions.
    Everything works by click, tap or keyboard; the page reads fully without this script. */
 (() => {
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -53,24 +54,96 @@
     group?.addEventListener('click', (e) => { const b = e.target.closest('.swatch'); if (b) set(+b.dataset.shot); });
   });
 
-  /* Face cards: hover or keyboard focus cycles the colourways; leaving returns to the first */
-  if (!still) {
-    document.querySelectorAll('[data-cycle]').forEach((card) => {
-      const imgs = card.querySelectorAll('.face__dial img');
-      let timer = null, i = 0;
-      const step = () => { imgs[i].classList.remove('is-on'); i = (i + 1) % imgs.length; imgs[i].classList.add('is-on'); };
-      const start = () => { if (timer) return; imgs.forEach((im) => { im.loading = 'eager'; }); step(); timer = setInterval(step, 900); };
-      const stop = () => { clearInterval(timer); timer = null; imgs[i].classList.remove('is-on'); i = 0; imgs[0].classList.add('is-on'); };
-      card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') start(); });
-      card.addEventListener('pointerleave', stop);
-      card.addEventListener('focus', start);
-      card.addEventListener('blur', stop);
+  /* Face cards: every visible card cycles its colourways on its own, in four staggered groups so the grid
+     never changes all at once. Hover or focus pauses it (the card shows the always-on preview instead).
+     Off-screen cards, a hidden tab and reduced motion stop the cycle. */
+  const cards = [...document.querySelectorAll('.face__card')];
+  if (!still && cards.length) {
+    const visible = new Set();
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+      if (en.isIntersecting) { visible.add(en.target); en.target.querySelectorAll('img[loading="lazy"]').forEach((im) => { im.loading = 'eager'; }); }
+      else visible.delete(en.target);
+    }), { rootMargin: '120px 0px' });
+    cards.forEach((card, k) => {
+      card._imgs = card.querySelectorAll('.watch__screen img');
+      card._i = 0; card._phase = k % 4;
+      if (card._imgs.length > 1) io.observe(card);
+      card.addEventListener('pointerenter', () => { card._hold = true; });
+      card.addEventListener('pointerleave', () => { card._hold = false; });
+      card.addEventListener('focus', () => { card._hold = true; });
+      card.addEventListener('blur', () => { card._hold = false; });
     });
+    let tick = 0;
+    setInterval(() => {
+      if (document.hidden) return;
+      tick++;
+      visible.forEach((card) => {
+        if (card._hold || card.closest('[hidden]') || (tick + card._phase) % 4) return;
+        card._imgs[card._i].classList.remove('is-on');
+        card._i = (card._i + 1) % card._imgs.length;
+        card._imgs[card._i].classList.add('is-on');
+      });
+    }, 650);
+  }
+
+  const grid = document.querySelector('[data-grid]');
+  /* Details dialog: the face on a watch, with colourway, display and watch switches and the store link */
+  const dlg = document.querySelector('[data-dialog]');
+  const bySlug = Object.fromEntries((window.FACES || []).map((f) => [f.slug, f]));
+  if (dlg && window.HTMLDialogElement) {
+    const stage = dlg.querySelector('[data-dlg-stage]');
+    const sw = dlg.querySelector('[data-dlg-swatches]');
+    const label = { ultra: 'Galaxy Watch Ultra', watch9: 'Galaxy Watch9' };
+    const frames = { ultra: ['galaxy-watch-ultra', 960, 1509], watch9: ['galaxy-watch9', 960, 1587] };
+    let face = null, model = 'watch9', mode = 'colour', shot = 0, opener = null;
+    const press = (sel, val, key) => dlg.querySelectorAll(sel).forEach((b) => b.setAttribute('aria-pressed', String(b.dataset[key] === val)));
+    const render = () => {
+      const [file, w, h] = frames[model];
+      stage.innerHTML = `<div class="watch${mode === 'aod' ? ' is-aod' : ''}" data-model="${model}"><div class="watch__body"><div class="watch__screen" role="img" aria-label="${face.name} on ${label[model]}${mode === 'aod' ? ', always-on preview' : ''}">${face.shots.map((s, i) => `<img src="${s.src}" alt="" width="450" height="450"${i === shot ? ' class="is-on"' : ''}>`).join('')}</div><img class="watch__frame watch__frame--${model}" src="assets/watches/${file}.webp" alt="" width="${w}" height="${h}" aria-hidden="true"></div></div>`;
+    };
+    const setShot = (i) => {
+      shot = i;
+      stage.querySelectorAll('.watch__screen img').forEach((im, k) => im.classList.toggle('is-on', k === i));
+      sw.querySelectorAll('.swatch').forEach((b, k) => b.setAttribute('aria-pressed', String(k === i)));
+    };
+    const open = (slug, from) => {
+      face = bySlug[slug]; if (!face) return false;
+      opener = from; mode = 'colour';
+      // start on the colourway the card is showing
+      shot = Math.max(0, [...from.querySelectorAll('.watch__screen img')].findIndex((im) => im.classList.contains('is-on')));
+      const free = face.price === 'Free';
+      dlg.querySelector('[data-dlg-type]').textContent = face.type + (free ? ' · Free' : '');
+      dlg.querySelector('[data-dlg-name]').textContent = face.name;
+      dlg.querySelector('[data-dlg-meta]').textContent = `${face.shots.length} colourway${face.shots.length === 1 ? '' : 's'} · ${free ? 'free on Google Play' : 'a one-time purchase, priced for your country by Google Play'}`;
+      sw.innerHTML = face.shots.length < 2 ? '<span class="dlg__meta">One colourway</span>' : face.shots.map((s, i) => `<button class="swatch" type="button" aria-pressed="${i === shot}" aria-label="Colourway ${i + 1}" data-shot="${i}"><img src="${s.src}" alt="" width="40" height="40"></button>`).join('');
+      const buy = dlg.querySelector('[data-dlg-buy]');
+      buy.href = face.url;
+      buy.textContent = free ? `Get ${face.name} free` : `Get ${face.name} on Google Play`;
+      press('[data-mode]', mode, 'mode'); press('[data-model]', model, 'model');
+      render();
+      dlg.showModal();
+      dlg.querySelectorAll('canvas.ht').forEach(drawHalftone);
+      return true;
+    };
+    grid?.addEventListener('click', (e) => {
+      const a = e.target.closest('[data-open]');
+      if (a && open(a.dataset.open, a)) e.preventDefault();
+    });
+    document.querySelectorAll('.face__card').forEach((a) => a.setAttribute('aria-haspopup', 'dialog'));
+    sw.addEventListener('click', (e) => { const b = e.target.closest('.swatch'); if (b) setShot(+b.dataset.shot); });
+    dlg.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => {
+      mode = b.dataset.mode; press('[data-mode]', mode, 'mode');
+      const w = stage.querySelector('.watch'); w.classList.toggle('is-aod', mode === 'aod');
+      w.querySelector('.watch__screen').setAttribute('aria-label', `${face.name} on ${label[model]}${mode === 'aod' ? ', always-on preview' : ''}`);
+    }));
+    dlg.querySelectorAll('[data-model]').forEach((b) => b.addEventListener('click', () => { model = b.dataset.model; press('[data-model]', model, 'model'); render(); }));
+    dlg.querySelector('[data-close]').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', () => opener?.focus());
   }
 
   /* Faces: style tabs plus filters (search by name, free only) over one grid.
      Without this script the bar stays hidden and every face shows. */
-  const grid = document.querySelector('[data-grid]');
   if (grid) {
     const bar = document.querySelector('[data-browse-bar]');
     const tabs = [...document.querySelectorAll('[data-tab]')];

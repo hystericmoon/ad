@@ -28,12 +28,25 @@ export const swatches = (face) => face.shots.length < 2 ? '' : `
   ${face.shots.map((s, i) => `<button class="swatch" type="button" aria-pressed="${i === 0}" aria-label="${esc(face.name)} colourway ${i + 1}" data-shot="${i}"><img src="${s.src}" alt="" width="40" height="40" loading="lazy"></button>`).join('\n  ')}
 </div>`;
 
-// One catalog card: the whole card opens the face on Google Play; hover or focus cycles its colourways.
+// One catalog card: the face on a Galaxy Watch9 body. The colourways cycle on their own, hover shows the
+// always-on look, and selecting the card opens the details dialog (js/site.js). Without the script it is a
+// plain link to the face on Google Play.
 const card = (f, i) => `
 <li class="face" data-type="${f.type.toLowerCase()}" data-name="${esc(f.name.toLowerCase())}"${isFree(f) ? ' data-free' : ''}>
-  <a class="face__link" href="${f.url}" ${ext} aria-label="${esc(f.name)}, ${f.type.toLowerCase()}${isFree(f) ? ', free' : ''}, on Google Play"${f.shots.length > 1 ? ' data-cycle' : ''}>
-    <span class="face__dial">${f.shots.map((s, k) => `<img src="${s.src}" alt="" width="450" height="450"${k === 0 ? ' class="is-on"' : ''}${i < 6 && k === 0 ? '' : ' loading="lazy"'} decoding="async">`).join('')}</span>
-    <span class="face__meta"><span class="face__name">${esc(f.name)}</span>${isFree(f) ? '<span class="tag">Free</span>' : `<span class="face__cw">${f.shots.length > 1 ? `${f.shots.length} colourways` : '1 colourway'}</span>`}</span>
+  <a class="face__card" href="${f.url}" ${ext} data-open="${f.slug}" aria-label="${esc(f.name)}, ${f.type.toLowerCase()}${isFree(f) ? ', free' : ''}">
+    <span class="face__stage">
+      <span class="watch face__watch" data-model="watch9">
+        <span class="watch__body">
+          <span class="watch__screen">${f.shots.map((s, k) => `<img src="${s.src}" alt="" width="450" height="450"${k === 0 ? ' class="is-on"' : ''}${i < 10 && k === 0 ? '' : ' loading="lazy"'} decoding="async">`).join('')}</span>
+          <img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" loading="lazy" decoding="async" draggable="false">
+        </span>
+      </span>
+    </span>
+    <span class="face__meta">
+      <span class="face__name">${esc(f.name)}</span>
+      ${isFree(f) ? '<span class="tag">Free</span>' : `<span class="face__cw">${f.shots.length} colourway${f.shots.length === 1 ? '' : 's'}</span>`}
+    </span>
+    <span class="face__aod" aria-hidden="true">Always-on</span>
   </a>
 </li>`;
 
