@@ -1,22 +1,23 @@
-// Renders data/faces.json into the marked blocks of index.html and catalog.html,
-// and writes data/faces.js for the scripts. Run after editing data/faces.json:
+// Renders data/faces.json into the marked blocks of index.html and writes data/faces.js
+// for the page script. Run after editing data/faces.json:
 //   node tools/build.mjs
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const faces = JSON.parse(readFileSync('data/faces.json', 'utf8'));
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const bySlug = Object.fromEntries(faces.map((f) => [f.slug, f]));
-const kinds = ['Hybrid', 'Digital', 'Analog'];
-const count = (t) => faces.filter((f) => f.type === t).length;
-const free = faces.filter((f) => f.price === 'Free');
-
-const playIcon = '<svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>';
+const ofType = (t) => faces.filter((f) => f.type === t);
+const isFree = (f) => f.price === 'Free';
+const free = faces.filter(isFree);
+const newest = [...faces].filter((f) => f.released).sort((a, b) => b.released.localeCompare(a.released)).slice(0, 4);
+const fmtDate = (iso) => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+const ext = 'target="_blank" rel="noopener"';
 
 export const watch = (face, { model = 'ultra', tapLabel = 'Next colourway', lazy = false } = {}) => `
 <div class="watch" data-model="${model}" data-watch data-face="${face.slug}">
   <div class="watch__body">
     <div class="watch__screen" role="img" aria-label="${esc(face.name)} watch face on ${model === 'ultra' ? 'Galaxy Watch Ultra' : 'Galaxy Watch9'}">
-      ${face.shots.map((s, i) => `<img src="${s.src}" alt="" width="450" height="450" data-hue="${s.hue ?? ''}"${i === 0 ? ' class="is-on"' : ''}${lazy || i > 0 ? ' loading="lazy"' : ' fetchpriority="high"'} decoding="async">`).join('\n      ')}
+      ${face.shots.map((s, i) => `<img src="${s.src}" alt="" width="450" height="450"${i === 0 ? ' class="is-on"' : ''}${lazy || i > 0 ? ' loading="lazy"' : ' fetchpriority="high"'} decoding="async">`).join('\n      ')}
     </div>
     <img class="watch__frame watch__frame--ultra" src="assets/watches/galaxy-watch-ultra.webp" alt="" width="960" height="1509" aria-hidden="true"${model === 'ultra' ? '' : ' loading="lazy"'} draggable="false">
     <img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" aria-hidden="true"${model === 'watch9' ? '' : ' loading="lazy"'} draggable="false">
@@ -26,53 +27,52 @@ export const watch = (face, { model = 'ultra', tapLabel = 'Next colourway', lazy
 
 export const swatches = (face) => face.shots.length < 2 ? '' : `
 <div class="swatches" role="group" aria-label="${esc(face.name)} colourways" data-swatches="${face.slug}">
-  <span class="swatches__label">Colourway</span>
-  ${face.shots.map((s, i) => `<button class="swatch" type="button" aria-pressed="${i === 0}" aria-label="Colourway ${i + 1}" data-shot="${i}"><img src="${s.src}" alt="" width="44" height="44" loading="lazy"></button>`).join('\n  ')}
+  ${face.shots.map((s, i) => `<button class="swatch" type="button" aria-pressed="${i === 0}" aria-label="${esc(face.name)} colourway ${i + 1}" data-shot="${i}"><img src="${s.src}" alt="" width="40" height="40" loading="lazy"></button>`).join('\n  ')}
 </div>`;
 
-const blocks = {
-  'hero-watch': () => watch(bySlug.rush, { tapLabel: 'Show the next Rush colourway' }),
-  'hero-swatches': () => swatches(bySlug.rush),
-  'models-watch': () => watch(bySlug.omni, { model: 'watch9', lazy: true, tapLabel: 'Show the next Omni colourway' }),
-  'anatomy-watch': () => watch(bySlug.forte, { lazy: true, tapLabel: 'Show the next Forte colourway' }),
-  kinds: () => kinds.map((t) => {
-    const set = faces.filter((f) => f.type === t).slice(0, 5);
-    const line = { Hybrid: 'Hands over a digital readout.', Digital: 'Numerals first, data around them.', Analog: 'Hands, a dial and quiet complications.', Diver: 'A bezel and markers built for depth.' }[t];
-    return `
-<li class="kind">
-  <a class="kind__link" href="catalog.html?type=${t.toLowerCase()}" data-kind>
-    <span class="kind__name">${t}</span>
-    <span class="kind__line">${line}<span class="kind__count" data-count="${count(t)}">${count(t)}</span></span>
-    <span class="kind__faces" aria-hidden="true">${set.map((f) => `<img src="${f.shots[0].src}" alt="" width="64" height="64" loading="lazy">`).join('')}</span>
+// One catalog card: the whole card opens the face on Google Play; hover or focus cycles its colourways.
+const card = (f, i) => `
+<li class="face">
+  <a class="face__link" href="${f.url}" ${ext} aria-label="${esc(f.name)}, ${f.type.toLowerCase()}${isFree(f) ? ', free' : ''}, on Google Play"${f.shots.length > 1 ? ' data-cycle' : ''}>
+    <span class="face__dial">${f.shots.map((s, k) => `<img src="${s.src}" alt="" width="450" height="450"${k === 0 ? ' class="is-on"' : ''}${i < 6 && k === 0 ? '' : ' loading="lazy"'} decoding="async">`).join('')}</span>
+    <span class="face__meta"><span class="face__name">${esc(f.name)}</span>${isFree(f) ? '<span class="tag">Free</span>' : `<span class="face__cw">${f.shots.length > 1 ? `${f.shots.length} colourways` : '1 colourway'}</span>`}</span>
   </a>
 </li>`;
-  }).join(''),
-  ring: () => faces.map((f) => `
-<li class="ring__item"><a href="${f.url}" target="_blank" rel="noopener" data-hue="${f.shots[0].hue ?? ''}" data-label="${esc(f.name)}, ${f.type.toLowerCase()}, ${f.price === 'Free' ? 'free' : f.price}" aria-label="${esc(f.name)}, ${f.type.toLowerCase()}, ${f.price === 'Free' ? 'free' : f.price}, on Google Play"><img src="${f.shots[0].src}" alt="" width="168" height="168" loading="lazy" decoding="async" draggable="false"></a></li>`).join(''),
-  free: () => free.map((f) => `
-<div class="free__face" data-hue="${f.shots.find((x) => x.hue != null)?.hue ?? ''}">
-  <div class="free__dial"><img src="${f.shots[0].src}" alt="${esc(f.name)} watch face" width="450" height="450" loading="lazy"></div>
-  <span class="free__name">${esc(f.name)}</span>
-  <a class="btn btn--ghost btn--sm" href="${f.url}" target="_blank" rel="noopener" aria-label="Install ${esc(f.name)} free on Google Play">Install free</a>
-</div>`).join(''),
-  total: () => String(faces.length),
-  chips: () => [['all', 'All', faces.length], ...kinds.map((t) => [t.toLowerCase(), t, count(t)]), ['free', 'Free', free.length]]
-    .map(([k, l, n]) => `<button class="chip-btn" type="button" data-filter="${k}" aria-pressed="${k === 'all'}">${l} <span class="cat__n">${n}</span></button>`).join(''),
-  grid: () => faces.map((f, i) => `
-<li class="cat__item" data-slug="${f.slug}" data-type="${f.type.toLowerCase()}" data-price="${f.price === 'Free' ? 0 : f.price.replace('$', '')}" data-name="${esc(f.name.toLowerCase())}" data-order="${i}">
-  <button class="cat__dial" type="button" data-open="${f.slug}" aria-label="Try ${esc(f.name)} on a watch"><img src="${f.shots[0].src}" alt="" width="450" height="450"${i < 8 ? '' : ' loading="lazy"'} decoding="async"></button>
-  <div class="cat__meta"><h2 class="cat__name">${esc(f.name)}</h2>${f.price === 'Free' ? '<span class="cat__price">Free</span>' : ''}<span class="cat__type">${f.type}</span></div>
-  <a class="link" href="${f.url}" target="_blank" rel="noopener" aria-label="Get ${esc(f.name)} on Google Play">Google Play</a>
+
+const dials = (list) => list.map((f) => `<img src="${f.shots[0].src}" alt="" width="450" height="450" loading="lazy">`).join('');
+
+const blocks = {
+  'hero-watch': () => watch(bySlug.celestrix, { tapLabel: 'Show the next Celestrix colourway' }),
+  'hero-watch-2': () => watch(bySlug['rush-3'], { model: 'watch9', lazy: true, tapLabel: 'Show the next Rush 3 colourway' }),
+  'hero-swatches': () => swatches(bySlug.celestrix),
+  'hero-new': () => `<a class="hero__new" href="#new"><b>New</b> ${esc(newest[0].name)} <span aria-hidden="true">→</span></a>`,
+  'n-total': () => String(faces.length),
+  'n-digital': () => String(ofType('Digital').length),
+  'n-hybrid': () => String(ofType('Hybrid').length),
+  'n-analog': () => String(ofType('Analog').length),
+  'n-free': () => String(free.length),
+  'n-paid': () => String(faces.length - free.length),
+  'grid-digital': () => ofType('Digital').map(card).join(''),
+  'grid-hybrid': () => ofType('Hybrid').map(card).join(''),
+  'grid-analog': () => ofType('Analog').map(card).join(''),
+  'new': () => newest.map((f, i) => `
+<li class="log__item${i === 0 ? ' is-latest' : ''}">
+  <a class="log__link" href="${f.url}" ${ext} aria-label="${esc(f.name)}, ${f.type.toLowerCase()}, released ${fmtDate(f.released)}, on Google Play">
+    <img class="log__dial" src="${f.shots[0].src}" alt="" width="450" height="450" loading="lazy">
+    <span class="log__name">${esc(f.name)}</span>
+    <span class="log__type">${f.type}</span>
+    <time class="log__date" datetime="${f.released}">${fmtDate(f.released)}</time>
+  </a>
 </li>`).join(''),
+  'paid-dials': () => dials(['forte', 'omni', 'eclipse', 'odyssey-3'].map((s) => bySlug[s]).filter(Boolean)),
+  'free-dials': () => dials(free),
 };
 
-for (const file of ['index.html', 'catalog.html']) {
-  let html = readFileSync(file, 'utf8');
-  html = html.replace(/<!-- build:([a-z-]+) -->[\s\S]*?<!-- \/build -->/g, (m, key) => {
-    if (!blocks[key]) throw new Error(`unknown block ${key} in ${file}`);
-    return `<!-- build:${key} -->${blocks[key]()}<!-- /build -->`;
-  });
-  writeFileSync(file, html);
-}
+let html = readFileSync('index.html', 'utf8');
+html = html.replace(/<!-- build:([a-z0-9-]+) -->[\s\S]*?<!-- \/build -->/g, (m, key) => {
+  if (!blocks[key]) throw new Error(`unknown block ${key} in index.html`);
+  return `<!-- build:${key} -->${blocks[key]()}<!-- /build -->`;
+});
+writeFileSync('index.html', html);
 writeFileSync('data/faces.js', `// Generated by tools/build.mjs from data/faces.json\nwindow.FACES = ${JSON.stringify(faces)};\n`);
-console.log(`built ${faces.length} faces into index.html, catalog.html and data/faces.js`);
+console.log(`built ${faces.length} faces into index.html and data/faces.js`);

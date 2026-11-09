@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-type="software" data-radius="soft" data-buttons="pill" data-motion>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -11,195 +11,676 @@
 <meta property="og:image" content="share.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-<meta name="theme-color" content="#0b0c10">
-<!-- <link rel="canonical" href="https://[the client's domain]/"> -->
-<meta name="site-kind" content="software">
-<meta name="page-type" content="software">
+<meta name="theme-color" content="#08090a">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400..600&family=Manrope:wght@400..600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/system.css">
-<link rel="stylesheet" href="assets/ui/cards.css">
-<link rel="stylesheet" href="assets/motion/motion.css">
-<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
-<link rel="stylesheet" href="assets/layout/layout.css">
-<link rel="stylesheet" href="assets/icons/icon.css">
-<style>
-:root {
-  --p-bg: #0b0c10; --p-surface: #141519; --p-ink: #f3f4f7; --p-muted: #a3a4a9;
-  --p-accent: #f3f4f7; --p-accent-ink: #0b0c10; --p-action: #f3f4f7; --p-action-ink: #0b0c10;
-  --p-inv-bg: #f3f4f7; --p-inv-surface: #e0e1e4; --p-inv-ink: #0b0c10; --p-inv-muted: #46474b;
-  --p-inv-accent: #0b0c10; --p-inv-accent-ink: #f3f4f7; --p-inv-action: #0b0c10; --p-inv-action-ink: #f3f4f7;
-  --font-display: "Sora", system-ui, sans-serif;
-  --font-text: "Manrope", system-ui, sans-serif;
-  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-  --display-weight: 500;
-  --display-tracking: -0.035em;
-  --display-tracking-xl: -0.045em;
-  --ly-scale: 0.9;
-}
-</style>
-<link rel="stylesheet" href="assets/ui/base.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400..600&family=Manrope:wght@400..600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/watch.css">
-<link rel="stylesheet" href="css/landing.css">
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script src="assets/backgrounds/backgrounds.js"></script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
-<link rel="modulepreload" href="assets/moments/moments.js">
-<link rel="modulepreload" href="assets/moments/lib.js">
-<link rel="modulepreload" href="assets/moments/counter-rolls/moment.js">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-<!-- type: software (watch faces sold as Wear OS apps on Google Play)
-     deal: hero split (re-dealt from product: the product is the face, the watch is Samsung's hardware), nav nav-cards, close close-type,
-     footer footer-dark (re-dealt from footer-statement: its lit sand, sky or sage ground breaks the owner's monochrome rule),
-     rhythm dark-band (on this dark page the contrasting band is the light inverse ground), buttons pill, mark: the client's own logo
-     palette: the owner's own (near-black, white ink, white buttons; neon only inside the faces); type: Sora + Manrope by the owner's choice
-     moments: counter-rolls in #styles (iris-opens left with the removed #collection) -->
+<!-- Structure follows Linear's homepage (chapters, type rhythm); surfaces follow Cosmos (halftone, black tiles,
+     chevron pills, layer stack, one lit tile). Monochrome by the owner's rule: colour lives only in the face renders. -->
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="nav">
   <div class="wrap nav__bar">
-    <a class="skip-link" href="#top">Skip to content</a>
-    <a class="nav__logo" href="#top" aria-label="Active Design, home"><svg class="logo-mark" viewBox="72 64 856 494" aria-hidden="true"><path fill="currentColor" d="m533.9,83.8l-33.9-19.49-33.9,19.49L72.26,311.29l393.83,227.33,33.9,19.49,33.9-19.49,393.84-227.33-393.84-227.49Zm-67.8,376.41l-258.07-148.92,258.07-149.07v297.99Zm67.8-297.99l258.07,149.07-258.07,148.92V162.22Z"/></svg><span class="nav__name">Active Design</span></a>
-    <nav class="nav__links" aria-label="Main">
-      <div class="nav__item">
-        <a class="nav__link" href="#styles">Watchfaces <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="nav__menu"><div class="wrap grid"><a class="menu-card span-4" href="catalog.html?type=digital"><div class="panel"><img class="frame__img menu-card__dial" src="assets/faces/rush-3-1.webp" alt="" loading="lazy"></div><span class="t-card">Digital faces</span><span class="t-small muted">Numerals first, with steps, heart rate and weather around them.</span></a><a class="menu-card span-4" href="catalog.html?type=hybrid"><div class="panel"><img class="frame__img menu-card__dial" src="assets/faces/omni-1.webp" alt="" loading="lazy"></div><span class="t-card">Hybrid faces</span><span class="t-small muted">Analog hands over a digital readout, for both habits.</span></a><a class="menu-card span-4" href="catalog.html?type=analog"><div class="panel"><img class="frame__img menu-card__dial" src="assets/faces/stratosfera-1.webp" alt="" loading="lazy"></div><span class="t-card">Analog faces</span><span class="t-small muted">Hands and a dial, with complications kept small.</span></a></div></div>
-      </div>
+    <a class="logo" href="#top" aria-label="Active Design, back to top"><svg class="logo__mark" viewBox="72 64 856 494" aria-hidden="true"><path fill="currentColor" d="m533.9,83.8l-33.9-19.49-33.9,19.49L72.26,311.29l393.83,227.33,33.9,19.49,33.9-19.49,393.84-227.33-393.84-227.49Zm-67.8,376.41l-258.07-148.92,258.07-149.07v297.99Zm67.8-297.99l258.07,149.07-258.07,148.92V162.22Z"/></svg>Active Design</a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#faces">Faces</a><a href="#styles">Styles</a><a href="#prices">Prices</a><a href="#faq">Questions</a>
     </nav>
-    <div class="nav__actions">
-      <a class="btn btn--primary" href="catalog.html">Browse the faces</a>
-    </div>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu">
-      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
+    <a class="btn btn--primary btn--sm" href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">Open Google Play</a>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
-    <div class="wrap"><div class="hero-text grid hero__grid">
-      <div class="hero__text span-5">
-        <h1 id="hero-h">Watch faces for Galaxy Watch and Pixel Watch</h1>
-        <p class="hero__lead">63 hybrid, digital and analog faces for Wear OS 5, each a one-time purchase on Google Play. Three of them are free.</p>
-        <div class="btn-row"><a class="btn btn--primary" href="catalog.html">Browse the faces<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#styles">See the styles</a></div>
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="hero__head">
+        <div class="hero__text">
+          <h1 id="hero-h">Watch faces for Galaxy Watch and Pixel Watch</h1>
+          <p class="hero__lead"><!-- build:n-total -->63<!-- /build --> hybrid, digital and analog faces for Wear OS 5, each a one-time purchase on Google Play. <!-- build:n-free -->3<!-- /build --> of them are free.</p>
+        </div>
+        <!-- build:hero-new --><a class="hero__new" href="#new"><b>New</b> Crimson <span aria-hidden="true">→</span></a><!-- /build -->
       </div>
-      <div class="hero__media hero-watch span-6 start-7">
-        <div class="watch" data-model="ultra" data-watch data-face="celestrix">
+      <div class="stage">
+        <canvas class="ht" data-ht="planet" aria-hidden="true"></canvas>
+        <div class="stage__watches">
+          <div class="stage__side"><!-- build:hero-watch-2 -->
+<div class="watch" data-model="watch9" data-watch data-face="rush-3">
   <div class="watch__body">
-    <div class="watch__screen" role="img" aria-label="Celestrix watch face on Galaxy Watch Ultra"><img src="assets/faces/celestrix-1.webp" alt="" width="450" height="450" data-hue="" class="is-on" fetchpriority="high" decoding="async"><img src="assets/faces/celestrix-2.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async"><img src="assets/faces/celestrix-3.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async"><img src="assets/faces/celestrix-4.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async"><img src="assets/faces/celestrix-5.webp" alt="" width="450" height="450" data-hue="" loading="lazy" decoding="async"></div>
-    <img class="watch__frame watch__frame--ultra" src="assets/watches/galaxy-watch-ultra.webp" alt="" width="960" height="1509" aria-hidden="true" draggable="false">
-    <img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" aria-hidden="true" draggable="false" loading="lazy">
+    <div class="watch__screen" role="img" aria-label="Rush 3 watch face on Galaxy Watch9">
+      <img src="assets/faces/rush-3-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async">
+      <img src="assets/faces/rush-3-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async">
+      <img src="assets/faces/rush-3-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async">
+      <img src="assets/faces/rush-3-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async">
+      <img src="assets/faces/rush-3-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async">
+    </div>
+    <img class="watch__frame watch__frame--ultra" src="assets/watches/galaxy-watch-ultra.webp" alt="" width="960" height="1509" aria-hidden="true" loading="lazy" draggable="false">
+    <img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" aria-hidden="true" draggable="false">
+    <button class="watch__tap" type="button" aria-label="Show the next Rush 3 colourway"></button>
   </div>
-</div>
-        <div class="ly-float">
-          <div class="ly-float__row"><span class="ly-live">Celestrix on Galaxy Watch Ultra</span><span>Digital</span></div>
-          <div class="swatches" role="group" aria-label="Celestrix colourways" data-swatches="celestrix"><button class="swatch" type="button" aria-pressed="true" aria-label="Celestrix colourway 1" data-shot="0"><img src="assets/faces/celestrix-1.webp" alt="" width="40" height="40" loading="lazy"></button><button class="swatch" type="button" aria-pressed="false" aria-label="Celestrix colourway 2" data-shot="1"><img src="assets/faces/celestrix-2.webp" alt="" width="40" height="40" loading="lazy"></button><button class="swatch" type="button" aria-pressed="false" aria-label="Celestrix colourway 3" data-shot="2"><img src="assets/faces/celestrix-3.webp" alt="" width="40" height="40" loading="lazy"></button><button class="swatch" type="button" aria-pressed="false" aria-label="Celestrix colourway 4" data-shot="3"><img src="assets/faces/celestrix-4.webp" alt="" width="40" height="40" loading="lazy"></button><button class="swatch" type="button" aria-pressed="false" aria-label="Celestrix colourway 5" data-shot="4"><img src="assets/faces/celestrix-5.webp" alt="" width="40" height="40" loading="lazy"></button></div>
+</div><!-- /build --></div>
+          <div class="stage__main"><!-- build:hero-watch -->
+<div class="watch" data-model="ultra" data-watch data-face="celestrix">
+  <div class="watch__body">
+    <div class="watch__screen" role="img" aria-label="Celestrix watch face on Galaxy Watch Ultra">
+      <img src="assets/faces/celestrix-1.webp" alt="" width="450" height="450" class="is-on" fetchpriority="high" decoding="async">
+      <img src="assets/faces/celestrix-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async">
+      <img src="assets/faces/celestrix-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async">
+      <img src="assets/faces/celestrix-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async">
+      <img src="assets/faces/celestrix-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async">
+    </div>
+    <img class="watch__frame watch__frame--ultra" src="assets/watches/galaxy-watch-ultra.webp" alt="" width="960" height="1509" aria-hidden="true" draggable="false">
+    <img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" aria-hidden="true" loading="lazy" draggable="false">
+    <button class="watch__tap" type="button" aria-label="Show the next Celestrix colourway"></button>
+  </div>
+</div><!-- /build --></div>
+        </div>
+        <div class="stage__bar">
+          <p class="stage__label"><span class="dot" aria-hidden="true"></span>Celestrix on Galaxy Watch Ultra · Rush 3 on Galaxy Watch9</p>
+          <!-- build:hero-swatches -->
+<div class="swatches" role="group" aria-label="Celestrix colourways" data-swatches="celestrix">
+  <button class="swatch" type="button" aria-pressed="true" aria-label="Celestrix colourway 1" data-shot="0"><img src="assets/faces/celestrix-1.webp" alt="" width="40" height="40" loading="lazy"></button>
+  <button class="swatch" type="button" aria-pressed="false" aria-label="Celestrix colourway 2" data-shot="1"><img src="assets/faces/celestrix-2.webp" alt="" width="40" height="40" loading="lazy"></button>
+  <button class="swatch" type="button" aria-pressed="false" aria-label="Celestrix colourway 3" data-shot="2"><img src="assets/faces/celestrix-3.webp" alt="" width="40" height="40" loading="lazy"></button>
+  <button class="swatch" type="button" aria-pressed="false" aria-label="Celestrix colourway 4" data-shot="3"><img src="assets/faces/celestrix-4.webp" alt="" width="40" height="40" loading="lazy"></button>
+  <button class="swatch" type="button" aria-pressed="false" aria-label="Celestrix colourway 5" data-shot="4"><img src="assets/faces/celestrix-5.webp" alt="" width="40" height="40" loading="lazy"></button>
+</div><!-- /build -->
         </div>
       </div>
-    </div></div>
+    </div>
+  </section>
+
+  <section class="works" aria-labelledby="works-h">
+    <div class="wrap">
+      <h2 class="visually-hidden" id="works-h">Works with</h2>
+      <ul class="works__list">
+        <li>Galaxy Watch</li><li>Pixel Watch</li><li>Wear OS</li><li>Google Play</li>
+      </ul>
+      <p class="caption">Runs on Wear OS 5 and later</p>
+      <p class="statement">Faces made like instruments. <span>Hybrid, digital and analog, with heart rate, steps and weather on the dial, an always-on display and five colourways or more on most faces.</span></p>
+    </div>
   </section>
 
   <section class="section" id="styles" aria-labelledby="styles-h">
     <div class="wrap">
-      <div class="section-head"><h2 id="styles-h">Three styles of face. <span class="muted">Each one reads the time its own way.</span></h2></div>
-      <div class="stats styles__stats" data-moment="counter-rolls">
-        <div class="stat"><p class="t-stat">63</p><p class="t-small muted">faces in the range</p></div>
-        <div class="stat"><p class="t-stat">28</p><p class="t-small muted">digital faces</p></div>
-        <div class="stat"><p class="t-stat">22</p><p class="t-small muted">hybrid faces</p></div>
-        <div class="stat"><p class="t-stat">13</p><p class="t-small muted">analog faces</p></div>
+      <h2 class="visually-hidden" id="styles-h">Three styles</h2>
+      <ul class="tiles">
+        <li class="tile">
+          <span class="caption">Fig 1</span>
+          <svg class="tile__fig" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><circle cx="60" cy="60" r="54"/><circle cx="60" cy="60" r="48" stroke-dasharray="2 3"/><rect x="30" y="46" width="60" height="24" rx="3"/><path d="M36 52h8M44 52v6M36 58h8M36 58v6M36 64h8M50 52h8M58 52v12M50 64h8M66 52h8v12h-8zM80 52v12"/><path d="M38 82a24 24 0 0 1 44 0" stroke-dasharray="3 2"/><circle cx="60" cy="34" r="5"/></svg>
+          <h3>Digital</h3>
+          <p>Numerals first, with steps, heart rate and weather around them.</p>
+          <a class="chip" href="#digital"><!-- build:n-digital -->28<!-- /build --> faces</a>
+        </li>
+        <li class="tile">
+          <span class="caption">Fig 2</span>
+          <svg class="tile__fig" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><circle cx="60" cy="60" r="54"/><circle cx="60" cy="60" r="48" stroke-dasharray="2 3"/><path d="M60 16v-4M82 21.9l2-3.5M98.1 38l3.5-2M104 60h4M98.1 82l3.5 2M82 98.1l2 3.5M60 104v4M38 98.1l-2 3.5M21.9 82l-3.5 2M16 60h-4M21.9 38l-3.5-2M38 21.9l-2-3.5"/><rect x="42" y="72" width="36" height="12" rx="2"/><path d="M48 76h4M56 76h4M64 76h8"/><path d="M60 60V24M60 60l24-12" stroke-width="1.6"/><circle cx="60" cy="60" r="2.5"/></svg>
+          <h3>Hybrid</h3>
+          <p>Analog hands over a digital readout, for both habits.</p>
+          <a class="chip" href="#hybrid"><!-- build:n-hybrid -->22<!-- /build --> faces</a>
+        </li>
+        <li class="tile">
+          <span class="caption">Fig 3</span>
+          <svg class="tile__fig" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><circle cx="60" cy="60" r="54"/><circle cx="60" cy="60" r="48" stroke-dasharray="1 4.02"/><path d="M60 20v-8M80 25.4l4-6.9M94.6 40l6.9-4M100 60h8M94.6 80l6.9 4M80 94.6l4 6.9M60 100v8M40 94.6l-4 6.9M25.4 80l-6.9 4M20 60h-8M25.4 40l-6.9-4M40 25.4l-4-6.9"/><circle cx="60" cy="82" r="9"/><path d="M60 82v-7"/><path d="M60 60L40 30M60 60l28 2" stroke-width="1.6"/><circle cx="60" cy="60" r="2.5"/></svg>
+          <h3>Analog</h3>
+          <p>Hands and a dial, divers included, with complications kept small.</p>
+          <a class="chip" href="#analog"><!-- build:n-analog -->13<!-- /build --> faces</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="inside" aria-labelledby="inside-h">
+    <div class="wrap">
+      <div class="chapter__head">
+        <h2 id="inside-h">Inside<br>a face</h2>
+        <p>Every face is built in three layers: the dial you see, the live data on it, and the watch platform underneath.</p>
       </div>
-      <div class="grid grid--top styles__peek" data-peek><ul class="rows span-6"><li data-peek-to="digital" tabindex="0"><a class="rows__name" href="catalog.html?type=digital">Digital faces</a><p>Numerals first, with steps, heart rate and weather around them.</p><span class="rows__value">28</span></li><li data-peek-to="hybrid" tabindex="0"><a class="rows__name" href="catalog.html?type=hybrid">Hybrid faces</a><p>Analog hands over a digital readout, for both habits.</p><span class="rows__value">22</span></li><li data-peek-to="analog" tabindex="0"><a class="rows__name" href="catalog.html?type=analog">Analog faces</a><p>Hands and a dial, divers included, with complications kept small.</p><span class="rows__value">13</span></li></ul><div class="frame frame--photo frame--fill styles__frame span-6 start-7"><img class="frame__img" data-peek-for="digital" src="assets/faces/rush-3-1.webp" alt="Rush 3, a digital face" width="450" height="450" loading="lazy"><img class="frame__img" data-peek-for="hybrid" src="assets/faces/omni-1.webp" alt="Omni, a hybrid face" width="450" height="450" loading="lazy" hidden><img class="frame__img" data-peek-for="analog" src="assets/faces/stratosfera-1.webp" alt="Stratosfera, an analog face" width="450" height="450" loading="lazy" hidden></div></div>
+      <div class="band">
+        <canvas class="ht" data-ht="field" aria-hidden="true"></canvas>
+        <ol class="stack">
+          <li class="layer">
+            <div class="layer__head"><h3>Dial<small>The face you see</small></h3><span class="tag">Display</span></div>
+            <ul class="layer__parts"><li>5+ colourways on most faces</li><li>Always-on display</li><li>Hybrid, digital or analog</li></ul>
+          </li>
+          <li class="layer">
+            <div class="layer__head"><h3>Complications<small>Live data on the dial</small></h3><span class="tag">Data</span></div>
+            <ul class="layer__parts"><li>Heart rate</li><li>Steps</li><li>Weather</li></ul>
+          </li>
+          <li class="layer">
+            <div class="layer__head"><h3>Wear OS 5<small>Galaxy Watch, Pixel Watch and other recent watches</small></h3><span class="tag">Platform</span></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div id="faces">
+    <section class="chapter" id="digital" aria-labelledby="digital-h">
+      <div class="wrap">
+        <div class="chapter__head">
+          <h2 id="digital-h">Digital<br>faces</h2>
+          <div class="chapter__copy">
+            <p>Numerals first, with steps, heart rate and weather around them. <!-- build:n-digital -->28<!-- /build --> faces, each bought once on Google Play. Hover a face to see its colourways.</p>
+            <a class="skip-chapter" href="#hybrid">Skip to hybrid faces</a>
+          </div>
+        </div>
+        <ul class="faces"><!-- build:grid-digital -->
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.rush.activedesign" target="_blank" rel="noopener" aria-label="Rush, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/rush-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/rush-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rush-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rush-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rush-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Rush</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.eclipse.activedesign" target="_blank" rel="noopener" aria-label="Eclipse, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/eclipse-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/eclipse-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/eclipse-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/eclipse-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/eclipse-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Eclipse</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.discovery.activedesign" target="_blank" rel="noopener" aria-label="Discovery, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/discovery-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/discovery-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/discovery-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/discovery-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/discovery-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Discovery</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.celestrix.activedesign" target="_blank" rel="noopener" aria-label="Celestrix, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/celestrix-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/celestrix-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/celestrix-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/celestrix-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/celestrix-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Celestrix</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.spectreii" target="_blank" rel="noopener" aria-label="Spectre 2, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/spectre-2-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/spectre-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/spectre-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/spectre-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/spectre-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Spectre 2</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.essentials4" target="_blank" rel="noopener" aria-label="Essentials Digital, digital, free, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/essentials-digital-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/essentials-digital-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/essentials-digital-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/essentials-digital-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/essentials-digital-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Essentials Digital</span><span class="tag">Free</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.rogue" target="_blank" rel="noopener" aria-label="Rogue, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/rogue-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/rogue-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rogue-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rogue-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rogue-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Rogue</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.rogueinblack" target="_blank" rel="noopener" aria-label="Rogue Black, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/rogue-black-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/rogue-black-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rogue-black-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rogue-black-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rogue-black-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Rogue Black</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.rush3.activedesign" target="_blank" rel="noopener" aria-label="Rush 3, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/rush-3-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/rush-3-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rush-3-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rush-3-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rush-3-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Rush 3</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.rush2digital.activedesign" target="_blank" rel="noopener" aria-label="Rush 2, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/rush-2-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/rush-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rush-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rush-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rush-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Rush 2</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.astro.activedesign" target="_blank" rel="noopener" aria-label="Astro, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/astro-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/astro-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/astro-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/astro-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/astro-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Astro</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.solaris.activedesign" target="_blank" rel="noopener" aria-label="Solaris, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/solaris-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/solaris-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/solaris-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/solaris-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/solaris-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Solaris</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.destiny.activedesign" target="_blank" rel="noopener" aria-label="Destiny, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/destiny-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/destiny-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/destiny-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/destiny-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/destiny-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Destiny</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.springtime.activedesign" target="_blank" rel="noopener" aria-label="Spring Time, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/spring-time-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/spring-time-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/spring-time-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/spring-time-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/spring-time-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Spring Time</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.rediscovery.activedesign" target="_blank" rel="noopener" aria-label="Rediscovery, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/rediscovery-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/rediscovery-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rediscovery-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rediscovery-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/rediscovery-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Rediscovery</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.ghostrunner.activedesign" target="_blank" rel="noopener" aria-label="Shadow Runner, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/shadow-runner-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/shadow-runner-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/shadow-runner-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/shadow-runner-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/shadow-runner-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Shadow Runner</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.polaris.activedesign" target="_blank" rel="noopener" aria-label="Polaris, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/polaris-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/polaris-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/polaris-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/polaris-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/polaris-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Polaris</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.vision3.activedesign" target="_blank" rel="noopener" aria-label="Vision 3, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/vision-3-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/vision-3-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vision-3-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vision-3-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vision-3-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Vision 3</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.destiny2.activedesign" target="_blank" rel="noopener" aria-label="Destiny 2, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/destiny-2-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/destiny-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/destiny-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/destiny-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/destiny-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Destiny 2</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.lucid.activedesign" target="_blank" rel="noopener" aria-label="Lucid, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/lucid-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/lucid-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/lucid-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/lucid-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/lucid-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Lucid</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.omnia.activedesign" target="_blank" rel="noopener" aria-label="Omnia, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/omnia-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/omnia-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/omnia-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/omnia-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/omnia-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Omnia</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.elysium.activedesign" target="_blank" rel="noopener" aria-label="Elysium, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/elysium-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/elysium-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/elysium-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/elysium-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/elysium-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Elysium</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.stratos.activedesign" target="_blank" rel="noopener" aria-label="Stratos, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/stratos-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/stratos-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/stratos-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/stratos-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/stratos-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Stratos</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.paramount.activedesign" target="_blank" rel="noopener" aria-label="Paramount, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/paramount-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/paramount-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/paramount-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/paramount-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/paramount-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Paramount</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.halcyon.activedesign" target="_blank" rel="noopener" aria-label="Halcyon, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/halcyon-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/halcyon-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/halcyon-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/halcyon-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/halcyon-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Halcyon</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.vision2.activedesign" target="_blank" rel="noopener" aria-label="Vision 2, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/vision-2-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/vision-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vision-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vision-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vision-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Vision 2</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.equinox.activedesign" target="_blank" rel="noopener" aria-label="Equinox, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/equinox-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/equinox-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/equinox-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/equinox-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/equinox-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Equinox</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.vagabond" target="_blank" rel="noopener" aria-label="Vagabond, digital, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/vagabond-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/vagabond-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vagabond-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vagabond-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vagabond-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Vagabond</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li><!-- /build --></ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="hybrid" aria-labelledby="hybrid-h">
+      <div class="wrap">
+        <div class="chapter__head">
+          <h2 id="hybrid-h">Hybrid<br>faces</h2>
+          <div class="chapter__copy">
+            <p>Analog hands over a digital readout, for both habits. <!-- build:n-hybrid -->22<!-- /build --> faces, each bought once on Google Play.</p>
+            <a class="skip-chapter" href="#analog">Skip to analog faces</a>
+          </div>
+        </div>
+        <ul class="faces"><!-- build:grid-hybrid -->
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.forte.activedesign" target="_blank" rel="noopener" aria-label="Forte, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/forte-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/forte-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/forte-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/forte-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/forte-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Forte</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.odyssey3.activedesign" target="_blank" rel="noopener" aria-label="Odyssey 3, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/odyssey-3-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/odyssey-3-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/odyssey-3-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/odyssey-3-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/odyssey-3-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Odyssey 3</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.odyssey2hybrid.activedesign" target="_blank" rel="noopener" aria-label="Odyssey 2, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/odyssey-2-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/odyssey-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/odyssey-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/odyssey-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/odyssey-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Odyssey 2</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.voyage.activedesign" target="_blank" rel="noopener" aria-label="Voyage, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/voyage-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/voyage-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/voyage-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/voyage-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/voyage-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Voyage</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.perpetual.activedesign" target="_blank" rel="noopener" aria-label="Perpetual, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/perpetual-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/perpetual-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/perpetual-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/perpetual-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/perpetual-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Perpetual</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.vega" target="_blank" rel="noopener" aria-label="Vega, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/vega-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/vega-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vega-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vega-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vega-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Vega</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.exo.activedesign" target="_blank" rel="noopener" aria-label="Exo, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/exo-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/exo-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/exo-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/exo-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/exo-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Exo</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.omni.activedesign" target="_blank" rel="noopener" aria-label="Omni, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/omni-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/omni-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/omni-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/omni-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/omni-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Omni</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.perpetual2hybrid.activedesign" target="_blank" rel="noopener" aria-label="Perpetual 2, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/perpetual-2-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/perpetual-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/perpetual-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/perpetual-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/perpetual-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Perpetual 2</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.hyperionhybrid.activedesign" target="_blank" rel="noopener" aria-label="Hyperion, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/hyperion-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/hyperion-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/hyperion-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/hyperion-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/hyperion-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Hyperion</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.vulkan" target="_blank" rel="noopener" aria-label="Vulkan, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/vulkan-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/vulkan-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vulkan-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vulkan-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/vulkan-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Vulkan</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.omni2hybrid.activedesign" target="_blank" rel="noopener" aria-label="Omni 2, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/omni-2-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/omni-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/omni-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/omni-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/omni-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Omni 2</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.titan.activedesign" target="_blank" rel="noopener" aria-label="Titanium, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/titanium-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/titanium-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/titanium-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/titanium-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/titanium-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Titanium</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.abyss.activedesign" target="_blank" rel="noopener" aria-label="Abyss, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/abyss-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/abyss-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/abyss-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/abyss-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/abyss-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Abyss</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.halo.activedesign" target="_blank" rel="noopener" aria-label="Halo, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/halo-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/halo-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/halo-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/halo-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/halo-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Halo</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.illusivedark.activedesign" target="_blank" rel="noopener" aria-label="Illusive Dark, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/illusive-dark-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/illusive-dark-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/illusive-dark-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/illusive-dark-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/illusive-dark-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Illusive Dark</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.luminous" target="_blank" rel="noopener" aria-label="Luminous, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/luminous-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/luminous-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/luminous-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/luminous-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/luminous-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Luminous</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.spectre" target="_blank" rel="noopener" aria-label="Spectre, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/spectre-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/spectre-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/spectre-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/spectre-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/spectre-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Spectre</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.oblivion" target="_blank" rel="noopener" aria-label="Oblivion, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/oblivion-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/oblivion-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/oblivion-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/oblivion-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/oblivion-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Oblivion</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.nomad" target="_blank" rel="noopener" aria-label="Nomad, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/nomad-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/nomad-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/nomad-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/nomad-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/nomad-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Nomad</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.nocturnallights" target="_blank" rel="noopener" aria-label="Nocturnal, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/nocturnal-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/nocturnal-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/nocturnal-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/nocturnal-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/nocturnal-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Nocturnal</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.magnumopus" target="_blank" rel="noopener" aria-label="Magnum, hybrid, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/magnum-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/magnum-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/magnum-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/magnum-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/magnum-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Magnum</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li><!-- /build --></ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="analog" aria-labelledby="analog-h">
+      <div class="wrap">
+        <div class="chapter__head">
+          <h2 id="analog-h">Analog<br>faces</h2>
+          <div class="chapter__copy">
+            <p>Hands and a dial, divers included, with complications kept small. <!-- build:n-analog -->13<!-- /build --> faces, two of them free.</p>
+            <a class="skip-chapter" href="#new">Skip to new faces</a>
+          </div>
+        </div>
+        <ul class="faces"><!-- build:grid-analog -->
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.aquastellar.activedesign" target="_blank" rel="noopener" aria-label="Aquastellar, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/aquastellar-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/aquastellar-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/aquastellar-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/aquastellar-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/aquastellar-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Aquastellar</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.terraventura.activedesign" target="_blank" rel="noopener" aria-label="Terraventura, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/terraventura-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/terraventura-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/terraventura-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/terraventura-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/terraventura-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Terraventura</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.exo2.activedesign" target="_blank" rel="noopener" aria-label="Exo 2, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/exo-2-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/exo-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/exo-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/exo-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/exo-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Exo 2</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.essentialsvi" target="_blank" rel="noopener" aria-label="Essentials Analog, analog, free, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/essentials-analog-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/essentials-analog-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/essentials-analog-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/essentials-analog-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/essentials-analog-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Essentials Analog</span><span class="tag">Free</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.essentialsvii" target="_blank" rel="noopener" aria-label="Essentials Classic, analog, free, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/essentials-classic-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/essentials-classic-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/essentials-classic-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/essentials-classic-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/essentials-classic-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Essentials Classic</span><span class="tag">Free</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.apex2" target="_blank" rel="noopener" aria-label="Apex 2, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/apex-2-1.webp" alt="" width="450" height="450" class="is-on" decoding="async"><img src="assets/faces/apex-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/apex-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/apex-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/apex-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Apex 2</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.crimson.activedesign" target="_blank" rel="noopener" aria-label="Crimson, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/crimson-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/crimson-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/crimson-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/crimson-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/crimson-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Crimson</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.warp" target="_blank" rel="noopener" aria-label="Warp, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/warp-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/warp-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/warp-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/warp-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/warp-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Warp</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.solace.activedesign" target="_blank" rel="noopener" aria-label="Solace, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/solace-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/solace-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/solace-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/solace-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/solace-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Solace</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.stratosfera.activedesign" target="_blank" rel="noopener" aria-label="Stratosfera, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/stratosfera-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/stratosfera-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/stratosfera-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/stratosfera-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/stratosfera-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Stratosfera</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.lumos.activedesign" target="_blank" rel="noopener" aria-label="Lumos, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/lumos-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/lumos-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/lumos-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/lumos-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/lumos-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Lumos</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.apex" target="_blank" rel="noopener" aria-label="Apex, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/apex-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/apex-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/apex-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/apex-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/apex-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Apex</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li>
+<li class="face">
+  <a class="face__link" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.obsidian" target="_blank" rel="noopener" aria-label="Obsidian, analog, on Google Play" data-cycle>
+    <span class="face__dial"><img src="assets/faces/obsidian-1.webp" alt="" width="450" height="450" class="is-on" loading="lazy" decoding="async"><img src="assets/faces/obsidian-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/obsidian-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/obsidian-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async"><img src="assets/faces/obsidian-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async"></span>
+    <span class="face__meta"><span class="face__name">Obsidian</span><span class="face__cw">5 colourways</span></span>
+  </a>
+</li><!-- /build --></ul>
+      </div>
+    </section>
+  </div>
+
+  <section class="section" id="new" aria-labelledby="new-h">
+    <div class="wrap">
+      <h2 class="h-section" id="new-h">New faces</h2>
+      <ol class="log"><!-- build:new -->
+<li class="log__item is-latest">
+  <a class="log__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.crimson.activedesign" target="_blank" rel="noopener" aria-label="Crimson, analog, released 5 Feb 2026, on Google Play">
+    <img class="log__dial" src="assets/faces/crimson-1.webp" alt="" width="450" height="450" loading="lazy">
+    <span class="log__name">Crimson</span>
+    <span class="log__type">Analog</span>
+    <time class="log__date" datetime="2026-02-05">5 Feb 2026</time>
+  </a>
+</li>
+<li class="log__item">
+  <a class="log__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.rediscovery.activedesign" target="_blank" rel="noopener" aria-label="Rediscovery, digital, released 26 Jan 2026, on Google Play">
+    <img class="log__dial" src="assets/faces/rediscovery-1.webp" alt="" width="450" height="450" loading="lazy">
+    <span class="log__name">Rediscovery</span>
+    <span class="log__type">Digital</span>
+    <time class="log__date" datetime="2026-01-26">26 Jan 2026</time>
+  </a>
+</li>
+<li class="log__item">
+  <a class="log__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.rush3.activedesign" target="_blank" rel="noopener" aria-label="Rush 3, digital, released 6 Dec 2025, on Google Play">
+    <img class="log__dial" src="assets/faces/rush-3-1.webp" alt="" width="450" height="450" loading="lazy">
+    <span class="log__name">Rush 3</span>
+    <span class="log__type">Digital</span>
+    <time class="log__date" datetime="2025-12-06">6 Dec 2025</time>
+  </a>
+</li>
+<li class="log__item">
+  <a class="log__link" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.solace.activedesign" target="_blank" rel="noopener" aria-label="Solace, analog, released 6 Dec 2025, on Google Play">
+    <img class="log__dial" src="assets/faces/solace-1.webp" alt="" width="450" height="450" loading="lazy">
+    <span class="log__name">Solace</span>
+    <span class="log__type">Analog</span>
+    <time class="log__date" datetime="2025-12-06">6 Dec 2025</time>
+  </a>
+</li><!-- /build --></ol>
+      <a class="link" href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">All faces on Google Play <span aria-hidden="true">→</span></a>
     </div>
   </section>
 
   <section class="section" id="prices" aria-labelledby="prices-h">
     <div class="wrap">
-      <div class="grid">
-        <div class="span-4 stack-4">
-          <h2 id="prices-h">Prices</h2>
-          <p>Google Play sets each face's price for your country and shows it in your currency. You pay once and the face stays on your account.</p>
-          <a class="link" href="#faq">Read the questions</a>
-        </div>
-        <article class="card card--plan span-4 start-5">
-          <h3>Essentials</h3>
-          <p class="muted">Three faces to start with</p>
-          <div class="price"><p class="t-stat">Free</p></div>
-          <div class="plan__dials"><img class="plan__dial" src="assets/faces/essentials-analog-1.webp" alt="Essentials Analog" width="450" height="450" loading="lazy"><img class="plan__dial" src="assets/faces/essentials-classic-1.webp" alt="Essentials Classic" width="450" height="450" loading="lazy"><img class="plan__dial" src="assets/faces/essentials-digital-1.webp" alt="Essentials Digital" width="450" height="450" loading="lazy"></div>
-          <a class="btn btn--secondary" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.essentialsvi" target="_blank" rel="noopener">Get Essentials free</a>
+      <h2 class="h-section" id="prices-h">Prices</h2>
+      <div class="cards">
+        <article class="card card--glow">
+          <h3 class="card__title">Every other face,<br>bought once.</h3>
+          <div class="card__dials"><!-- build:paid-dials --><img src="assets/faces/forte-1.webp" alt="" width="450" height="450" loading="lazy"><img src="assets/faces/omni-1.webp" alt="" width="450" height="450" loading="lazy"><img src="assets/faces/eclipse-1.webp" alt="" width="450" height="450" loading="lazy"><img src="assets/faces/odyssey-3-1.webp" alt="" width="450" height="450" loading="lazy"><!-- /build --></div>
+          <p class="card__note"><!-- build:n-paid -->60<!-- /build --> faces, each a one-time purchase. The face stays on your Google account.</p>
         </article>
-        <article class="card card--plan is-featured span-4 start-9">
-          <h3>Every other face</h3>
-          <p class="muted">60 faces, each bought once</p>
-          <div class="price"><p class="t-stat">One-time</p></div>
-          <div class="plan__dials"><img class="plan__dial" src="assets/faces/forte-1.webp" alt="Forte" width="450" height="450" loading="lazy"><img class="plan__dial" src="assets/faces/omni-1.webp" alt="Omni" width="450" height="450" loading="lazy"><img class="plan__dial" src="assets/faces/eclipse-1.webp" alt="Eclipse" width="450" height="450" loading="lazy"></div>
-          <ul class="plan__list">
-            <li>Five colourways or more on most faces</li>
-            <li>Heart rate, steps, battery and weather</li>
-            <li>Always-on display</li>
-          </ul>
-          <a class="btn btn--secondary" href="catalog.html">See the paid faces</a>
+        <article class="card card--lit">
+          <h3 class="card__title">Essentials<br>Free</h3>
+          <div class="card__dials"><!-- build:free-dials --><img src="assets/faces/essentials-analog-1.webp" alt="" width="450" height="450" loading="lazy"><img src="assets/faces/essentials-classic-1.webp" alt="" width="450" height="450" loading="lazy"><img src="assets/faces/essentials-digital-1.webp" alt="" width="450" height="450" loading="lazy"><!-- /build --></div>
+          <p class="card__note">Three faces to start with.</p>
+          <a class="btn btn--dark btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.essentialsvi" target="_blank" rel="noopener">Get Essentials free</a>
         </article>
+      </div>
+      <div class="proof">
+        <p>Google Play sets each face’s price for your country and shows it in your currency.</p>
+        <a class="link" href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">Google Play page <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
   <section class="section" id="faq" aria-labelledby="faq-h">
+    <div class="wrap faq">
+      <h2 class="h-section" id="faq-h">Questions</h2>
+      <div class="faq__list" data-faq>
+        <div class="faq__item"><h3><button type="button" aria-expanded="true" aria-controls="faq-1" id="faq-1-b">Which watches can run these faces?<span class="faq__icon" aria-hidden="true"></span></button></h3><div class="faq__a" id="faq-1" role="region" aria-labelledby="faq-1-b"><p>Watches on Wear OS 5 or later, which includes recent Galaxy Watch and Pixel Watch models.</p></div></div>
+        <div class="faq__item"><h3><button type="button" aria-expanded="true" aria-controls="faq-2" id="faq-2-b">How do I put a face on my watch?<span class="faq__icon" aria-hidden="true"></span></button></h3><div class="faq__a" id="faq-2" role="region" aria-labelledby="faq-2-b"><p>Buy it on Google Play from your phone and choose your watch as the device. It then shows in the watch's face list.</p></div></div>
+        <div class="faq__item"><h3><button type="button" aria-expanded="true" aria-controls="faq-3" id="faq-3-b">Is the price one payment or monthly?<span class="faq__icon" aria-hidden="true"></span></button></h3><div class="faq__a" id="faq-3" role="region" aria-labelledby="faq-3-b"><p>One payment. Each face is a one-time purchase on Google Play.</p></div></div>
+        <div class="faq__item"><h3><button type="button" aria-expanded="true" aria-controls="faq-4" id="faq-4-b">Can I change a face's colours?<span class="faq__icon" aria-hidden="true"></span></button></h3><div class="faq__a" id="faq-4" role="region" aria-labelledby="faq-4-b"><p>Yes. Most faces come in five colourways or more, picked in the watch's face settings.</p></div></div>
+        <div class="faq__item"><h3><button type="button" aria-expanded="true" aria-controls="faq-5" id="faq-5-b">What does a face cost in my country?<span class="faq__icon" aria-hidden="true"></span></button></h3><div class="faq__a" id="faq-5" role="region" aria-labelledby="faq-5-b"><p>Google Play sets the price per country. Open a face on Google Play to see it in your currency.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="close-h">
     <div class="wrap">
-      <div class="grid">
-        <div class="span-5 stack-4">
-          <h2 id="faq-h">Questions</h2>
-          <p>About watches, buying and colours.</p>
-          <a class="link" href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">See the Google Play page</a>
-          <div class="faq__icons">
-            <img class="ic ic-40" src="assets/icons/google-play.svg" alt="Google Play" width="36" height="40">
-            <img class="ic ic-40 ic-land" src="assets/icons/wearos.svg" alt="Wear OS" width="40" height="31">
-            <img class="ic ic-40 ic-land" src="assets/icons/android.svg" alt="Android" width="40" height="23">
-          </div>
-          <p>Bought on Google Play from your Android phone. Runs on Wear OS 5 and later.</p>
-        </div>
-        <div class="faq span-6 start-7">
-          <div class="faq__item"><h3>Which watches can run these faces?</h3><p>Watches on Wear OS 5 or later, which includes recent Galaxy Watch and Pixel Watch models.</p></div>
-          <div class="faq__item"><h3>How do I put a face on my watch?</h3><p>Buy it on Google Play from your phone and choose your watch as the device. It then shows in the watch's face list.</p></div>
-          <div class="faq__item"><h3>Is the price one payment or monthly?</h3><p>One payment. Each face is a one-time purchase on Google Play.</p></div>
-          <div class="faq__item"><h3>Can I change a face's colours?</h3><p>Yes. Most faces come in five colourways or more, picked in the watch's face settings.</p></div>
-          <div class="faq__item"><h3>What does a face cost in my country?</h3><p>Google Play sets the price per country. Open a face on Google Play to see it in your currency.</p></div>
-        </div>
+      <h2 id="close-h">Find your next<br>watch face.</h2>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">Open Google Play</a>
+        <a class="btn btn--ghost" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.essentialsvi" target="_blank" rel="noopener">Get Essentials free</a>
       </div>
     </div>
   </section>
 </main>
 
-<footer class="footer closing footer--dark" id="contact" aria-labelledby="close-h">
+<footer class="footer">
   <div class="wrap">
-    <div class="closing__cta close--type">
-      <div class="section-head">
-        <h2 id="close-h">Find your next watch face</h2>
-        <p class="t-small muted">63 faces, each a one-time purchase on Google Play.</p>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="#top" aria-label="Active Design, back to top"><svg class="logo__mark" viewBox="72 64 856 494" aria-hidden="true"><path fill="currentColor" d="m533.9,83.8l-33.9-19.49-33.9,19.49L72.26,311.29l393.83,227.33,33.9,19.49,33.9-19.49,393.84-227.33-393.84-227.49Zm-67.8,376.41l-258.07-148.92,258.07-149.07v297.99Zm67.8-297.99l258.07,149.07-258.07,148.92V162.22Z"/></svg>Active Design</a>
+        <p>Watch faces for Wear OS, sold on Google Play.</p>
       </div>
-      <a class="btn btn--primary btn--xl btn--wide" href="catalog.html">Browse the faces<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      <nav class="footer__col" aria-labelledby="f-faces"><h3 id="f-faces">Faces</h3><ul><li><a href="#digital">Digital</a></li><li><a href="#hybrid">Hybrid</a></li><li><a href="#analog">Analog</a></li><li><a href="#new">New</a></li></ul></nav>
+      <nav class="footer__col" aria-labelledby="f-buy"><h3 id="f-buy">Buying</h3><ul><li><a href="#prices">Prices</a></li><li><a href="#faq">Questions</a></li></ul></nav>
+      <nav class="footer__col" aria-labelledby="f-store"><h3 id="f-store">Store</h3><ul><li><a href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">Google Play</a></li></ul></nav>
     </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-4 stack-4">
-          <a class="nav__logo" href="#top" aria-label="Active Design, back to top"><svg class="logo-mark" viewBox="72 64 856 494" aria-hidden="true"><path fill="currentColor" d="m533.9,83.8l-33.9-19.49-33.9,19.49L72.26,311.29l393.83,227.33,33.9,19.49,33.9-19.49,393.84-227.33-393.84-227.49Zm-67.8,376.41l-258.07-148.92,258.07-149.07v297.99Zm67.8-297.99l258.07,149.07-258.07,148.92V162.22Z"/></svg>Active Design</a>
-          <p class="footer__lede">Watch faces for Wear OS, sold on Google Play.</p>
-        </div>
-        <div class="span-2 start-7 footer__col"><h3>Faces</h3><ul><li><a href="#styles">Watchfaces</a></li><li><a href="catalog.html">Catalog</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Buying</h3><ul><li><a href="#prices">Prices</a></li><li><a href="#faq">Questions</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>Store</h3><ul><li><a href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">Google Play</a></li></ul></div>
-      </div>
-      <div class="footer__legal">
-        <span>&copy; 2026 Active Design Studio</span>
-        <span class="t-small muted">Galaxy Watch Ultra and Galaxy Watch9 images: Samsung Mobile Press. Galaxy Watch is a trademark of Samsung; Pixel Watch of Google.</span>
-      </div>
+    <div class="footer__legal">
+      <span>&copy; 2026 Active Design Studio</span>
+      <span>Galaxy Watch Ultra and Galaxy Watch9 images: Samsung Mobile Press. Galaxy Watch is a trademark of Samsung; Pixel Watch and Wear OS of Google.</span>
     </div>
   </div>
 </footer>
 
-<script src="data/faces.js"></script>
-<script src="js/landing.js" defer></script>
-<script type="module" src="assets/system.js"></script>
-<script type="module" src="assets/motion/motion.js"></script>
-<script type="module" src="assets/layout/layout.js"></script>
+<script src="js/site.js" defer></script>
 </body>
 </html>

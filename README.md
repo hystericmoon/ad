@@ -1,6 +1,8 @@
 # Active Design watch faces
 
-A static site for Active Design Studio's Wear OS watch faces: a landing page (`index.html`) and a catalog of every face (`catalog.html`). Plain HTML, CSS and JavaScript, animated with GSAP 3.13 from cdnjs. No build step is needed to serve it.
+A one-page static site for Active Design Studio's Wear OS watch faces (`index.html`). Plain HTML, CSS and JavaScript, no framework and no build step to serve it.
+
+The structure follows Linear's homepage (left-aligned display type, chapters with the title left and copy right, a changelog-style timeline). The surfaces follow Cosmos (halftone textures, rounded black tiles, chevron pills, a layer stack, one lit tile). Colour lives only inside the face renders.
 
 ## Run locally
 
@@ -10,27 +12,42 @@ python3 -m http.server 8000   # then open http://localhost:8000
 
 ## Deploy
 
-Any static host works. Vercel or Netlify are the easiest: import the repo, leave the build command empty, and set the output directory to the repo root. Both create a preview link for every pull request. GitHub Pages works too (Settings, Pages, deploy from `main`, root folder).
+Any static host works. Vercel or Netlify are the easiest: import the repo, leave the build command empty, and set the output directory to the repo root.
 
-## Update the catalog
+## Page sections
 
-The face data and images come from the Google Play listings.
+| Section | id | Notes |
+| --- | --- | --- |
+| Hero | `#top` | Celestrix on Galaxy Watch Ultra, Rush 3 on Galaxy Watch9, halftone planet behind them |
+| Works with + statement | | Galaxy Watch, Pixel Watch, Wear OS, Google Play |
+| Three styles | `#styles` | Line drawings in black tiles; pills jump to each chapter |
+| Inside a face | `#inside` | Dial, complications, Wear OS 5 on a halftone band |
+| Style chapters | `#faces`: `#digital`, `#hybrid`, `#analog` | The whole catalog; each card opens Google Play, hover cycles colourways |
+| New faces | `#new` | The four newest faces by Google Play release date |
+| Prices | `#prices` | Paid faces card and the lit Essentials card |
+| Questions | `#faq` | Disclosure buttons; open without JavaScript |
+
+`catalog.html` now only redirects old links to the matching chapter (`catalog.html?type=hybrid` lands on `#hybrid`).
+
+## Update the faces
 
 | Step | Command |
 | --- | --- |
 | 1. Crawl Google Play (needs Playwright) | `node tools/crawl-play.cjs` |
-| 2. Download face renders, sample each colourway's neon hue | `python3 tools/build-data.py tools/raw.json` |
-| 3. Render faces into both pages and `data/faces.js` | `node tools/build.mjs` |
+| 2. Download face renders | `python3 tools/build-data.py tools/raw.json` |
+| 3. Add release dates for "New faces" | `python3 tools/fetch-dates.py` |
+| 4. Render faces and counts into `index.html` and `data/faces.js` | `node tools/build.mjs` |
 
-To edit by hand instead, change `data/faces.json` (name, style, price, Play link, images) and run step 3. Blocks between `<!-- build:… -->` and `<!-- /build -->` in the HTML are generated; edit everything else freely.
-
-## How the colour works
-
-The page has one neon accent, `--hue` in `css/tokens.css`. Whatever face is on screen lends it its colour: tapping the hero watch, scrolling into a section, hovering a catalog card or a ring face all call `AD.setHue()` in `js/core.js` with that face's sampled hue.
+To edit by hand, change `data/faces.json` and run step 4. Blocks between `<!-- build:… -->` and `<!-- /build -->` in `index.html` are generated; edit everything else freely.
 
 ## Files
 
-- `css/tokens.css`: colour, type, spacing tokens. `css/base.css`: resets. `css/site.css`: everything else.
-- `js/core.js`: the colour channel, watch component (colourways, tilt, model switch), nav, starfield.
-- `js/home.js`: landing choreography (intro, pinned anatomy, 3D ring). `js/catalog.js`: filters, hover colourways, try-on dialog.
-- Watch hardware (Galaxy Watch Ultra, Galaxy Watch8, Pixel Watch) is drawn in CSS around the real face renders.
+- `index.html`: the page.
+- `css/site.css`: tokens and every section. `css/watch.css`: the watch component (frame geometry from `tools/make-frame.py`).
+- `js/site.js`: halftone canvas, hero colourways, face-card colourway cycling, questions.
+- `data/faces.json`: the 63 faces (name, style, Play link, colourway renders, release date).
+- `assets/faces/`: colourway renders. `assets/watches/`: Samsung Mobile Press frames. `assets/logo.svg`, `assets/mark.svg`.
+
+## Before going live
+
+Samsung Mobile Press images are licensed mainly for editorial use; check Samsung's terms for a commercial site. The footer credits them.

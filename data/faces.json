@@ -26,7 +26,8 @@
     "src": "assets/faces/forte-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2025-03-08"
  },
  {
   "slug": "rush",
@@ -55,7 +56,8 @@
     "src": "assets/faces/rush-5.webp",
     "hue": 269
    }
-  ]
+  ],
+  "released": "2025-01-04"
  },
  {
   "slug": "odyssey-3",
@@ -84,7 +86,8 @@
     "src": "assets/faces/odyssey-3-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2025-07-15"
  },
  {
   "slug": "odyssey-2",
@@ -113,7 +116,8 @@
     "src": "assets/faces/odyssey-2-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2025-06-11"
  },
  {
   "slug": "voyage",
@@ -142,7 +146,8 @@
     "src": "assets/faces/voyage-5.webp",
     "hue": 64
    }
-  ]
+  ],
+  "released": "2025-02-05"
  },
  {
   "slug": "perpetual",
@@ -171,7 +176,8 @@
     "src": "assets/faces/perpetual-5.webp",
     "hue": 101
    }
-  ]
+  ],
+  "released": "2025-03-11"
  },
  {
   "slug": "aquastellar",
@@ -200,7 +206,8 @@
     "src": "assets/faces/aquastellar-5.webp",
     "hue": 182
    }
-  ]
+  ],
+  "released": "2024-12-10"
  },
  {
   "slug": "vega",
@@ -229,7 +236,8 @@
     "src": "assets/faces/vega-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2021-10-31"
  },
  {
   "slug": "terraventura",
@@ -258,7 +266,8 @@
     "src": "assets/faces/terraventura-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2024-12-16"
  },
  {
   "slug": "exo",
@@ -287,7 +296,8 @@
     "src": "assets/faces/exo-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2025-02-14"
  },
  {
   "slug": "omni",
@@ -316,7 +326,8 @@
     "src": "assets/faces/omni-5.webp",
     "hue": 182
    }
-  ]
+  ],
+  "released": "2025-07-13"
  },
  {
   "slug": "eclipse",
@@ -345,7 +356,8 @@
     "src": "assets/faces/eclipse-5.webp",
     "hue": 291
    }
-  ]
+  ],
+  "released": "2025-10-15"
  },
  {
   "slug": "exo-2",
@@ -374,7 +386,8 @@
     "src": "assets/faces/exo-2-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2024-08-17"
  },
  {
   "slug": "essentials-analog",
@@ -403,7 +416,8 @@
     "src": "assets/faces/essentials-analog-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2021-10-04"
  },
  {
   "slug": "essentials-classic",
@@ -432,7 +446,8 @@
     "src": "assets/faces/essentials-classic-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2021-10-08"
  },
  {
   "slug": "discovery",
@@ -461,7 +476,8 @@
     "src": "assets/faces/discovery-5.webp",
     "hue": 4
    }
-  ]
+  ],
+  "released": "2025-07-13"
  },
  {
   "slug": "celestrix",
@@ -490,7 +506,8 @@
     "src": "assets/faces/celestrix-5.webp",
     "hue": 101
    }
-  ]
+  ],
+  "released": "2025-06-03"
  },
  {
   "slug": "perpetual-2",
@@ -519,7 +536,8 @@
     "src": "assets/faces/perpetual-2-5.webp",
     "hue": 353
    }
-  ]
+  ],
+  "released": "2025-05-10"
  },
  {
   "slug": "apex-2",
@@ -548,7 +566,8 @@
     "src": "assets/faces/apex-2-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2023-11-06"
  },
  {
   "slug": "spectre-2",
@@ -577,7 +596,8 @@
     "src": "assets/faces/spectre-2-5.webp",
     "hue": 191
    }
-  ]
+  ],
+  "released": "2022-02-03"
  },
  {
   "slug": "hyperion",
@@ -606,7 +626,8 @@
     "src": "assets/faces/hyperion-5.webp",
     "hue": 269
    }
-  ]
+  ],
+  "released": "2025-06-12"
  },
  {
   "slug": "essentials-digital",
@@ -635,7 +656,8 @@
     "src": "assets/faces/essentials-digital-5.webp",
     "hue": 301
    }
-  ]
+  ],
+  "released": "2023-06-04"
  },
  {
   "slug": "rogue",
@@ -664,7 +686,8 @@
     "src": "assets/faces/rogue-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2021-12-14"
  },
  {
   "slug": "rogue-black",
@@ -693,7 +716,8 @@
     "src": "assets/faces/rogue-black-5.webp",
     "hue": 134
    }
-  ]
+  ],
+  "released": "2021-12-31"
  },
  {
   "slug": "rush-3",
@@ -722,7 +746,8 @@
     "src": "assets/faces/rush-3-5.webp",
     "hue": 191
    }
-  ]
+  ],
+  "released": "2025-12-06"
  },
  {
   "slug": "rush-2",
@@ -751,7 +776,8 @@
     "src": "assets/faces/rush-2-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2025-05-12"
  },
  {
   "slug": "vulkan",
@@ -780,7 +806,8 @@
     "src": "assets/faces/vulkan-5.webp",
     "hue": 343
    }
-  ]
+  ],
+  "released": "2021-12-08"
  },
  {
   "slug": "astro",
@@ -809,7 +836,8 @@
     "src": "assets/faces/astro-5.webp",
     "hue": 301
    }
-  ]
+  ],
+  "released": "2025-10-16"
  },
  {
   "slug": "solaris",
@@ -838,7 +866,8 @@
     "src": "assets/faces/solaris-5.webp",
     "hue": 191
    }
-  ]
+  ],
+  "released": "2024-10-03"
  },
  {
   "slug": "omni-2",
@@ -867,7 +896,8 @@
     "src": "assets/faces/omni-2-5.webp",
     "hue": 164
    }
-  ]
+  ],
+  "released": "2025-05-11"
  },
  {
   "slug": "crimson",
@@ -896,7 +926,8 @@
     "src": "assets/faces/crimson-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2026-02-05"
  },
  {
   "slug": "destiny",
@@ -925,7 +956,8 @@
     "src": "assets/faces/destiny-5.webp",
     "hue": 123
    }
-  ]
+  ],
+  "released": "2024-11-14"
  },
  {
   "slug": "titanium",
@@ -954,7 +986,8 @@
     "src": "assets/faces/titanium-5.webp",
     "hue": 353
    }
-  ]
+  ],
+  "released": "2024-09-09"
  },
  {
   "slug": "spring-time",
@@ -983,7 +1016,8 @@
     "src": "assets/faces/spring-time-5.webp",
     "hue": 82
    }
-  ]
+  ],
+  "released": "2025-03-15"
  },
  {
   "slug": "warp",
@@ -1012,7 +1046,8 @@
     "src": "assets/faces/warp-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2021-10-31"
  },
  {
   "slug": "rediscovery",
@@ -1041,7 +1076,8 @@
     "src": "assets/faces/rediscovery-5.webp",
     "hue": 14
    }
-  ]
+  ],
+  "released": "2026-01-26"
  },
  {
   "slug": "solace",
@@ -1070,7 +1106,8 @@
     "src": "assets/faces/solace-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2025-12-06"
  },
  {
   "slug": "abyss",
@@ -1099,7 +1136,8 @@
     "src": "assets/faces/abyss-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2025-12-04"
  },
  {
   "slug": "halo",
@@ -1128,7 +1166,8 @@
     "src": "assets/faces/halo-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2024-09-29"
  },
  {
   "slug": "shadow-runner",
@@ -1157,7 +1196,8 @@
     "src": "assets/faces/shadow-runner-5.webp",
     "hue": 64
    }
-  ]
+  ],
+  "released": "2025-01-31"
  },
  {
   "slug": "stratosfera",
@@ -1186,7 +1226,8 @@
     "src": "assets/faces/stratosfera-5.webp",
     "hue": 33
    }
-  ]
+  ],
+  "released": "2024-12-15"
  },
  {
   "slug": "polaris",
@@ -1215,7 +1256,8 @@
     "src": "assets/faces/polaris-5.webp",
     "hue": 14
    }
-  ]
+  ],
+  "released": "2024-09-29"
  },
  {
   "slug": "vision-3",
@@ -1244,7 +1286,8 @@
     "src": "assets/faces/vision-3-5.webp",
     "hue": 14
    }
-  ]
+  ],
+  "released": "2024-10-06"
  },
  {
   "slug": "destiny-2",
@@ -1273,7 +1316,8 @@
     "src": "assets/faces/destiny-2-5.webp",
     "hue": 353
    }
-  ]
+  ],
+  "released": "2024-09-04"
  },
  {
   "slug": "lucid",
@@ -1302,7 +1346,8 @@
     "src": "assets/faces/lucid-5.webp",
     "hue": 164
    }
-  ]
+  ],
+  "released": "2024-09-07"
  },
  {
   "slug": "omnia",
@@ -1331,7 +1376,8 @@
     "src": "assets/faces/omnia-5.webp",
     "hue": 182
    }
-  ]
+  ],
+  "released": "2025-01-14"
  },
  {
   "slug": "elysium",
@@ -1360,7 +1406,8 @@
     "src": "assets/faces/elysium-5.webp",
     "hue": 123
    }
-  ]
+  ],
+  "released": "2025-01-03"
  },
  {
   "slug": "illusive-dark",
@@ -1389,7 +1436,8 @@
     "src": "assets/faces/illusive-dark-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2025-02-17"
  },
  {
   "slug": "lumos",
@@ -1418,7 +1466,8 @@
     "src": "assets/faces/lumos-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2025-04-04"
  },
  {
   "slug": "stratos",
@@ -1447,7 +1496,8 @@
     "src": "assets/faces/stratos-5.webp",
     "hue": 113
    }
-  ]
+  ],
+  "released": "2025-10-14"
  },
  {
   "slug": "paramount",
@@ -1476,7 +1526,8 @@
     "src": "assets/faces/paramount-5.webp",
     "hue": 164
    }
-  ]
+  ],
+  "released": "2024-09-27"
  },
  {
   "slug": "halcyon",
@@ -1505,7 +1556,8 @@
     "src": "assets/faces/halcyon-5.webp",
     "hue": 191
    }
-  ]
+  ],
+  "released": "2024-09-25"
  },
  {
   "slug": "vision-2",
@@ -1534,7 +1586,8 @@
     "src": "assets/faces/vision-2-5.webp",
     "hue": 269
    }
-  ]
+  ],
+  "released": "2024-09-23"
  },
  {
   "slug": "equinox",
@@ -1563,7 +1616,8 @@
     "src": "assets/faces/equinox-5.webp",
     "hue": 113
    }
-  ]
+  ],
+  "released": "2024-09-22"
  },
  {
   "slug": "apex",
@@ -1592,7 +1646,8 @@
     "src": "assets/faces/apex-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2022-03-12"
  },
  {
   "slug": "obsidian",
@@ -1621,7 +1676,8 @@
     "src": "assets/faces/obsidian-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2022-01-20"
  },
  {
   "slug": "luminous",
@@ -1650,7 +1706,8 @@
     "src": "assets/faces/luminous-5.webp",
     "hue": 312
    }
-  ]
+  ],
+  "released": "2022-01-02"
  },
  {
   "slug": "spectre",
@@ -1679,7 +1736,8 @@
     "src": "assets/faces/spectre-5.webp",
     "hue": 269
    }
-  ]
+  ],
+  "released": "2021-12-29"
  },
  {
   "slug": "oblivion",
@@ -1708,7 +1766,8 @@
     "src": "assets/faces/oblivion-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2021-11-13"
  },
  {
   "slug": "vagabond",
@@ -1737,7 +1796,8 @@
     "src": "assets/faces/vagabond-5.webp",
     "hue": 4
    }
-  ]
+  ],
+  "released": "2021-11-05"
  },
  {
   "slug": "nomad",
@@ -1766,7 +1826,8 @@
     "src": "assets/faces/nomad-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2021-10-31"
  },
  {
   "slug": "nocturnal",
@@ -1795,7 +1856,8 @@
     "src": "assets/faces/nocturnal-5.webp",
     "hue": 280
    }
-  ]
+  ],
+  "released": "2022-02-01"
  },
  {
   "slug": "magnum",
@@ -1824,6 +1886,7 @@
     "src": "assets/faces/magnum-5.webp",
     "hue": null
    }
-  ]
+  ],
+  "released": "2022-01-07"
  }
 ]
