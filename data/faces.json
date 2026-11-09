@@ -1448,5 +1448,324 @@
     "hue": 113
    }
   ]
+ },
+ {
+  "slug": "paramount",
+  "name": "Paramount",
+  "type": "Digital",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.watchfacestudio.paramount.activedesign",
+  "shots": [
+   {
+    "src": "assets/faces/paramount-1.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/paramount-2.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/paramount-3.webp",
+    "hue": 269
+   },
+   {
+    "src": "assets/faces/paramount-4.webp",
+    "hue": 191
+   },
+   {
+    "src": "assets/faces/paramount-5.webp",
+    "hue": 164
+   }
+  ]
+ },
+ {
+  "slug": "halcyon",
+  "name": "Halcyon",
+  "type": "Digital",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.watchfacestudio.halcyon.activedesign",
+  "shots": [
+   {
+    "src": "assets/faces/halcyon-1.webp",
+    "hue": 291
+   },
+   {
+    "src": "assets/faces/halcyon-2.webp",
+    "hue": 113
+   },
+   {
+    "src": "assets/faces/halcyon-3.webp",
+    "hue": 164
+   },
+   {
+    "src": "assets/faces/halcyon-4.webp",
+    "hue": 123
+   },
+   {
+    "src": "assets/faces/halcyon-5.webp",
+    "hue": 191
+   }
+  ]
+ },
+ {
+  "slug": "vision-2",
+  "name": "Vision 2",
+  "type": "Digital",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.watchfacestudio.vision2.activedesign",
+  "shots": [
+   {
+    "src": "assets/faces/vision-2-1.webp",
+    "hue": 164
+   },
+   {
+    "src": "assets/faces/vision-2-2.webp",
+    "hue": 113
+   },
+   {
+    "src": "assets/faces/vision-2-3.webp",
+    "hue": 191
+   },
+   {
+    "src": "assets/faces/vision-2-4.webp",
+    "hue": 14
+   },
+   {
+    "src": "assets/faces/vision-2-5.webp",
+    "hue": 269
+   }
+  ]
+ },
+ {
+  "slug": "equinox",
+  "name": "Equinox",
+  "type": "Digital",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.watchfacestudio.equinox.activedesign",
+  "shots": [
+   {
+    "src": "assets/faces/equinox-1.webp",
+    "hue": 14
+   },
+   {
+    "src": "assets/faces/equinox-2.webp",
+    "hue": 14
+   },
+   {
+    "src": "assets/faces/equinox-3.webp",
+    "hue": 353
+   },
+   {
+    "src": "assets/faces/equinox-4.webp",
+    "hue": 353
+   },
+   {
+    "src": "assets/faces/equinox-5.webp",
+    "hue": 113
+   }
+  ]
+ },
+ {
+  "slug": "apex",
+  "name": "Apex",
+  "type": "Analog",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.activewatchdesign.apex",
+  "shots": [
+   {
+    "src": "assets/faces/apex-1.webp",
+    "hue": 269
+   },
+   {
+    "src": "assets/faces/apex-2.webp",
+    "hue": 14
+   },
+   {
+    "src": "assets/faces/apex-3.webp",
+    "hue": 14
+   },
+   {
+    "src": "assets/faces/apex-4.webp",
+    "hue": 64
+   },
+   {
+    "src": "assets/faces/apex-5.webp",
+    "hue": null
+   }
+  ]
+ },
+ {
+  "slug": "obsidian",
+  "name": "Obsidian",
+  "type": "Analog",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.activewatchdesign.obsidian",
+  "shots": [
+   {
+    "src": "assets/faces/obsidian-1.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/obsidian-2.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/obsidian-3.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/obsidian-4.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/obsidian-5.webp",
+    "hue": null
+   }
+  ]
+ },
+ {
+  "slug": "luminous",
+  "name": "Luminous",
+  "type": "Hybrid",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.activewatchdesign.luminous",
+  "shots": [
+   {
+    "src": "assets/faces/luminous-1.webp",
+    "hue": 182
+   },
+   {
+    "src": "assets/faces/luminous-2.webp",
+    "hue": 212
+   },
+   {
+    "src": "assets/faces/luminous-3.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/luminous-4.webp",
+    "hue": 291
+   },
+   {
+    "src": "assets/faces/luminous-5.webp",
+    "hue": 312
+   }
+  ]
+ },
+ {
+  "slug": "spectre",
+  "name": "Spectre",
+  "type": "Hybrid",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.activewatchdesign.spectre",
+  "shots": [
+   {
+    "src": "assets/faces/spectre-1.webp",
+    "hue": 24
+   },
+   {
+    "src": "assets/faces/spectre-2.webp",
+    "hue": 343
+   },
+   {
+    "src": "assets/faces/spectre-3.webp",
+    "hue": 4
+   },
+   {
+    "src": "assets/faces/spectre-4.webp",
+    "hue": 291
+   },
+   {
+    "src": "assets/faces/spectre-5.webp",
+    "hue": 269
+   }
+  ]
+ },
+ {
+  "slug": "oblivion",
+  "name": "Oblivion",
+  "type": "Hybrid",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.activewatchdesign.oblivion",
+  "shots": [
+   {
+    "src": "assets/faces/oblivion-1.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/oblivion-2.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/oblivion-3.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/oblivion-4.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/oblivion-5.webp",
+    "hue": null
+   }
+  ]
+ },
+ {
+  "slug": "vagabond",
+  "name": "Vagabond",
+  "type": "Digital",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.activewatchdesign.vagabond",
+  "shots": [
+   {
+    "src": "assets/faces/vagabond-1.webp",
+    "hue": 24
+   },
+   {
+    "src": "assets/faces/vagabond-2.webp",
+    "hue": 4
+   },
+   {
+    "src": "assets/faces/vagabond-3.webp",
+    "hue": 24
+   },
+   {
+    "src": "assets/faces/vagabond-4.webp",
+    "hue": 343
+   },
+   {
+    "src": "assets/faces/vagabond-5.webp",
+    "hue": 4
+   }
+  ]
+ },
+ {
+  "slug": "nomad",
+  "name": "Nomad",
+  "type": "Hybrid",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.activewatchdesign.nomad",
+  "shots": [
+   {
+    "src": "assets/faces/nomad-1.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/nomad-2.webp",
+    "hue": 14
+   },
+   {
+    "src": "assets/faces/nomad-3.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/nomad-4.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/nomad-5.webp",
+    "hue": null
+   }
+  ]
  }
 ]
