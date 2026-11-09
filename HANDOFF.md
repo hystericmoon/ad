@@ -6,7 +6,7 @@ Where the work stands, for the next session.
 
 - Branch `claude/hallmark-skills-install-fvu19i`, draft PR #1 into `main` (hystericmoon/ad).
 - Plan the owner approved (one page, Linear structure + Cosmos surfaces): https://claude.ai/artifact/TGEQrYPWTBdEFucEfnCMM7
-- Earlier preview of the old two-page layout: https://claude.ai/artifact/9jXcp3KUjZCaSTCpoZUSCv (out of date).
+- Live preview of the one-page site: https://claude.ai/artifact/6Aaw8c4Rtdu8tQusK5c3wx (republish from a copy of `index.html` stripped of `<html>`, `<head>` and `<body>` tags, with the referenced css, js and images; more than 255 files, so publish in two batches).
 
 ## Owner decisions (keep)
 
