@@ -9,8 +9,6 @@ const bySlug = Object.fromEntries(faces.map((f) => [f.slug, f]));
 const ofType = (t) => faces.filter((f) => f.type === t);
 const isFree = (f) => f.price === 'Free';
 const free = faces.filter(isFree);
-const newest = [...faces].filter((f) => f.released).sort((a, b) => b.released.localeCompare(a.released)).slice(0, 4);
-const fmtDate = (iso) => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 const ext = 'target="_blank" rel="noopener"';
 
 export const watch = (face, { model = 'ultra', tapLabel = 'Next colourway', lazy = false } = {}) => `
@@ -32,40 +30,25 @@ export const swatches = (face) => face.shots.length < 2 ? '' : `
 
 // One catalog card: the whole card opens the face on Google Play; hover or focus cycles its colourways.
 const card = (f, i) => `
-<li class="face">
+<li class="face" data-type="${f.type.toLowerCase()}" data-name="${esc(f.name.toLowerCase())}"${isFree(f) ? ' data-free' : ''}>
   <a class="face__link" href="${f.url}" ${ext} aria-label="${esc(f.name)}, ${f.type.toLowerCase()}${isFree(f) ? ', free' : ''}, on Google Play"${f.shots.length > 1 ? ' data-cycle' : ''}>
     <span class="face__dial">${f.shots.map((s, k) => `<img src="${s.src}" alt="" width="450" height="450"${k === 0 ? ' class="is-on"' : ''}${i < 6 && k === 0 ? '' : ' loading="lazy"'} decoding="async">`).join('')}</span>
     <span class="face__meta"><span class="face__name">${esc(f.name)}</span>${isFree(f) ? '<span class="tag">Free</span>' : `<span class="face__cw">${f.shots.length > 1 ? `${f.shots.length} colourways` : '1 colourway'}</span>`}</span>
   </a>
 </li>`;
 
-const dials = (list) => list.map((f) => `<img src="${f.shots[0].src}" alt="" width="450" height="450" loading="lazy">`).join('');
-
 const blocks = {
   'hero-watch': () => watch(bySlug.celestrix, { tapLabel: 'Show the next Celestrix colourway' }),
   'hero-watch-2': () => watch(bySlug['rush-3'], { model: 'watch9', lazy: true, tapLabel: 'Show the next Rush 3 colourway' }),
   'hero-swatches': () => swatches(bySlug.celestrix),
-  'hero-new': () => `<a class="hero__new" href="#new"><b>New</b> ${esc(newest[0].name)} <span aria-hidden="true">→</span></a>`,
   'n-total': () => String(faces.length),
   'n-digital': () => String(ofType('Digital').length),
   'n-hybrid': () => String(ofType('Hybrid').length),
   'n-analog': () => String(ofType('Analog').length),
   'n-free': () => String(free.length),
-  'n-paid': () => String(faces.length - free.length),
-  'grid-digital': () => ofType('Digital').map(card).join(''),
-  'grid-hybrid': () => ofType('Hybrid').map(card).join(''),
-  'grid-analog': () => ofType('Analog').map(card).join(''),
-  'new': () => newest.map((f, i) => `
-<li class="log__item${i === 0 ? ' is-latest' : ''}">
-  <a class="log__link" href="${f.url}" ${ext} aria-label="${esc(f.name)}, ${f.type.toLowerCase()}, released ${fmtDate(f.released)}, on Google Play">
-    <img class="log__dial" src="${f.shots[0].src}" alt="" width="450" height="450" loading="lazy">
-    <span class="log__name">${esc(f.name)}</span>
-    <span class="log__type">${f.type}</span>
-    <time class="log__date" datetime="${f.released}">${fmtDate(f.released)}</time>
-  </a>
-</li>`).join(''),
-  'paid-dials': () => dials(['forte', 'omni', 'eclipse', 'odyssey-3'].map((s) => bySlug[s]).filter(Boolean)),
-  'free-dials': () => dials(free),
+  tabs: () => [['all', 'All', faces.length], ...['Digital', 'Hybrid', 'Analog'].map((t) => [t.toLowerCase(), t, ofType(t).length])]
+    .map(([k, l, n], i) => `<button class="tab" type="button" role="tab" id="tab-${k}" aria-controls="faces-panel" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}" data-tab="${k}">${l} <span class="tab__n">${n}</span></button>`).join(''),
+  grid: () => faces.map(card).join(''),
 };
 
 let html = readFileSync('index.html', 'utf8');

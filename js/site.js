@@ -68,6 +68,80 @@
     });
   }
 
+  /* Faces: style tabs plus filters (search by name, free only) over one grid.
+     Without this script the bar stays hidden and every face shows. */
+  const grid = document.querySelector('[data-grid]');
+  if (grid) {
+    const bar = document.querySelector('[data-browse-bar]');
+    const tabs = [...document.querySelectorAll('[data-tab]')];
+    const panel = document.getElementById('faces-panel');
+    const items = [...grid.querySelectorAll('.face')];
+    const search = document.querySelector('[data-search]');
+    const freeBtn = document.querySelector('[data-free]');
+    const countEl = document.querySelector('[data-count]');
+    const empty = document.querySelector('[data-empty]');
+    const emptyQ = document.querySelector('[data-empty-q]');
+    const section = document.querySelector('.browse'); // scroll target: the tabs, with the grid right under them
+    const state = { type: 'all', free: false, q: '' };
+    bar.hidden = false;
+
+    const apply = () => {
+      tabs.forEach((t) => { const on = t.dataset.tab === state.type; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
+      panel.setAttribute('aria-labelledby', `tab-${state.type}`);
+      freeBtn.setAttribute('aria-pressed', String(state.free));
+      let shown = 0;
+      items.forEach((el) => {
+        const ok = (state.type === 'all' || el.dataset.type === state.type) && (!state.free || el.hasAttribute('data-free')) && (!state.q || el.dataset.name.includes(state.q));
+        el.hidden = !ok; if (ok) shown++;
+      });
+      const style = state.type === 'all' ? '' : `${state.type} `;
+      const kind = `${state.free ? 'free ' : ''}${style}face${shown === 1 ? '' : 's'}`;
+      countEl.textContent = state.q ? `${shown} ${kind} matching “${search.value.trim()}”` : `${shown} ${kind}`;
+      empty.hidden = shown > 0;
+      emptyQ.textContent = search.value.trim();
+    };
+    const select = (type, { focus = false } = {}) => {
+      state.type = type; apply();
+      if (focus) tabs.find((t) => t.dataset.tab === type)?.focus();
+      history.replaceState(null, '', type === 'all' ? '#faces' : `#${type}`);
+    };
+    tabs.forEach((t) => t.addEventListener('click', () => select(t.dataset.tab)));
+    // tablist keyboard: arrows move and select, Home and End jump
+    document.querySelector('[role="tablist"]').addEventListener('keydown', (e) => {
+      const i = tabs.findIndex((t) => t.dataset.tab === state.type);
+      const to = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+      if (to === undefined) return;
+      e.preventDefault();
+      select(tabs[(to + tabs.length) % tabs.length].dataset.tab, { focus: true });
+    });
+    let timer;
+    search.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(() => { state.q = search.value.trim().toLowerCase(); apply(); }, 120); });
+    freeBtn.addEventListener('click', () => { state.free = !state.free; apply(); });
+    document.querySelector('[data-reset]').addEventListener('click', () => { state.free = false; state.q = ''; search.value = ''; select('all'); search.focus(); });
+
+    // links such as #digital (style tiles, footer, old catalog URLs) pick a tab and bring the grid into view
+    const fromHash = (scroll) => {
+      const h = location.hash.slice(1);
+      if (h === 'free') { state.free = true; select('all'); }
+      else if (tabs.some((t) => t.dataset.tab === h)) select(h);
+      else return;
+      if (scroll) section.scrollIntoView({ behavior: still ? 'auto' : 'smooth' });
+    };
+    addEventListener('hashchange', () => fromHash(true));
+    // same-hash clicks fire no hashchange, so handle these links directly
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#"]'); if (!a) return;
+      const h = a.getAttribute('href').slice(1);
+      if (h !== 'free' && !tabs.some((t) => t.dataset.tab === h)) return;
+      e.preventDefault();
+      state.free = h === 'free';
+      select(h === 'free' ? 'all' : h);
+      section.scrollIntoView({ behavior: still ? 'auto' : 'smooth' });
+    });
+    apply();
+    fromHash(true);
+  }
+
   /* Questions: disclosure buttons. Answers stay open without this script; with it they start closed. */
   const faq = document.querySelector('[data-faq]');
   faq?.querySelectorAll('button[aria-expanded]').forEach((b) => {
