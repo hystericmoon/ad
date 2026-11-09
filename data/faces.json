@@ -1419,5 +1419,34 @@
     "hue": null
    }
   ]
+ },
+ {
+  "slug": "stratos",
+  "name": "Stratos",
+  "type": "Digital",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.watchfacestudio.stratos.activedesign",
+  "shots": [
+   {
+    "src": "assets/faces/stratos-1.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/stratos-2.webp",
+    "hue": 291
+   },
+   {
+    "src": "assets/faces/stratos-3.webp",
+    "hue": 14
+   },
+   {
+    "src": "assets/faces/stratos-4.webp",
+    "hue": 164
+   },
+   {
+    "src": "assets/faces/stratos-5.webp",
+    "hue": 113
+   }
+  ]
  }
 ]
