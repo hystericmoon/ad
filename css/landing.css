@@ -111,3 +111,17 @@
 @media (max-width: 639px) { .tryon__models, .tryon__meta { display: none; } .tryon__stage .watch { --size: 150px; } .wall__dial:nth-child(n+13) { display: block; } .wall__dial:nth-child(n+21) { display: none; } }
 @media (min-width: 1024px) and (max-width: 1279px) { .faq__icons, .faq__icons + p { display: none; } }
 @media (max-width: 1023px) { .styles__frame { min-height: 320px; } }
+
+/* the owner's call: the hero sized to its content, the words centred beside the watch */
+.hero.hero--split { height: auto; min-height: 0; padding-bottom: var(--s-9); }
+.hero.hero--split .hero__grid { align-items: center; }
+.hero.hero--split .hero__media { height: 600px; }
+@media (max-width: 1023px) { .hero.hero--split .hero__media { height: 520px; } }
+@media (max-width: 639px) { .hero.hero--split { padding-bottom: var(--s-8); } .hero.hero--split .hero__media { height: 380px; } }
+.faq__icons { align-items: center; gap: var(--s-5); }
+.faq__icons img { height: 32px; width: auto; }
+@media (max-width: 1023px) { .hero.hero--split .hero__media { width: 100%; justify-self: stretch; } }
+@media (max-width: 1023px) { .hero.hero--split .hero-watch.hero__media { flex: none; height: 540px; max-height: none; } }
+@media (max-width: 639px) { .hero.hero--split .hero-watch.hero__media { height: 380px; } }
+.styles__frame { min-height: 380px; }
+.styles__frame .frame__img { width: auto; height: min(320px, 84%); }

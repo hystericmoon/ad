@@ -6,7 +6,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const faces = JSON.parse(readFileSync('data/faces.json', 'utf8'));
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const bySlug = Object.fromEntries(faces.map((f) => [f.slug, f]));
-const kinds = ['Hybrid', 'Digital', 'Analog', 'Diver'];
+const kinds = ['Hybrid', 'Digital', 'Analog'];
 const count = (t) => faces.filter((f) => f.type === t).length;
 const free = faces.filter((f) => f.price === 'Free');
 
@@ -61,7 +61,7 @@ const blocks = {
   grid: () => faces.map((f, i) => `
 <li class="cat__item" data-slug="${f.slug}" data-type="${f.type.toLowerCase()}" data-price="${f.price === 'Free' ? 0 : f.price.replace('$', '')}" data-name="${esc(f.name.toLowerCase())}" data-order="${i}">
   <button class="cat__dial" type="button" data-open="${f.slug}" aria-label="Try ${esc(f.name)} on a watch"><img src="${f.shots[0].src}" alt="" width="450" height="450"${i < 8 ? '' : ' loading="lazy"'} decoding="async"></button>
-  <div class="cat__meta"><h2 class="cat__name">${esc(f.name)}</h2><span class="cat__price">${f.price}</span><span class="cat__type">${f.type}</span></div>
+  <div class="cat__meta"><h2 class="cat__name">${esc(f.name)}</h2>${f.price === 'Free' ? '<span class="cat__price">Free</span>' : ''}<span class="cat__type">${f.type}</span></div>
   <a class="link" href="${f.url}" target="_blank" rel="noopener" aria-label="Get ${esc(f.name)} on Google Play">Google Play</a>
 </li>`).join(''),
 };

@@ -50,10 +50,10 @@
     stage.innerHTML = `<div class="watch" data-model="${model}"><div class="watch__body"><div class="watch__screen" role="img" aria-label="${face.name} watch face on ${label[model]}">${face.shots.map((s, i) => `<img src="${s.src}" alt="" width="450" height="450"${i === 0 ? ' class="is-on"' : ''}>`).join('')}</div><img class="watch__frame watch__frame--ultra" src="assets/watches/galaxy-watch-ultra.webp" alt="" width="960" height="1509" aria-hidden="true"><img class="watch__frame watch__frame--watch9" src="assets/watches/galaxy-watch9.webp" alt="" width="960" height="1587" aria-hidden="true"></div></div>`;
     sw.innerHTML = face.shots.length < 2 ? '' : face.shots.map((s, i) => `<button class="swatch" type="button" aria-pressed="${i === 0}" aria-label="${face.name} colourway ${i + 1}" data-shot="${i}"><img src="${s.src}" alt="" width="40" height="40"></button>`).join('');
     dlg.querySelector('[data-dlg-name]').textContent = face.name;
-    dlg.querySelector('[data-dlg-meta]').textContent = `${face.type}, ${face.price === 'Free' ? 'free' : `${face.price}, paid once`}`;
+    dlg.querySelector('[data-dlg-meta]').textContent = face.price === 'Free' ? `${face.type}, free` : `${face.type}, a one-time purchase priced for your country`;
     const buy = dlg.querySelector('[data-dlg-buy]');
     buy.href = face.url;
-    buy.textContent = face.price === 'Free' ? `Get ${face.name} free` : `Get ${face.name} for ${face.price}`;
+    buy.textContent = face.price === 'Free' ? `Get ${face.name} free` : `Get ${face.name} on Google Play`;
   };
   grid.addEventListener('click', (e) => {
     const b = e.target.closest('[data-open]'); if (!b) return;

@@ -12,7 +12,7 @@
 
   /* hero: the float card's swatches change the face */
   const heroWatch = document.querySelector('.hero-watch [data-watch]');
-  const heroSw = document.querySelector('[data-swatches="rush"]');
+  const heroSw = document.querySelector('[data-swatches="celestrix"]');
   heroSw?.addEventListener('click', (e) => {
     const b = e.target.closest('.swatch'); if (!b) return;
     const i = +b.dataset.shot; show(heroWatch, i); press(heroSw, i);
