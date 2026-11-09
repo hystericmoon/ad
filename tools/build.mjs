@@ -57,18 +57,12 @@ const blocks = {
 </div>`).join(''),
   total: () => String(faces.length),
   chips: () => [['all', 'All', faces.length], ...kinds.map((t) => [t.toLowerCase(), t, count(t)]), ['free', 'Free', free.length]]
-    .map(([k, l, n]) => `<button class="chip" type="button" data-filter="${k}" aria-pressed="${k === 'all'}">${l}<span class="chip__n">${n}</span></button>`).join(''),
+    .map(([k, l, n]) => `<button class="chip-btn" type="button" data-filter="${k}" aria-pressed="${k === 'all'}">${l} <span class="cat__n">${n}</span></button>`).join(''),
   grid: () => faces.map((f, i) => `
-<li class="card" data-slug="${f.slug}" data-type="${f.type.toLowerCase()}" data-price="${f.price === 'Free' ? 0 : f.price.replace('$', '')}" data-name="${esc(f.name.toLowerCase())}" data-order="${i}">
-  <button class="card__face" type="button" aria-label="Preview ${esc(f.name)}" data-open="${f.slug}">
-    ${f.shots.map((s, j) => `<img src="${s.src}" alt="" width="450" height="450"${j === 0 && i < 5 ? (i === 0 ? ' fetchpriority="high"' : '') : ' loading="lazy"'} decoding="async" data-hue="${s.hue ?? ''}"${j === 0 ? ' class="is-on"' : ''}>`).join('')}
-  </button>
-  <div class="card__meta">
-    <h2 class="card__name">${esc(f.name)}</h2>
-    <span class="card__price">${f.price}</span>
-    <span class="card__type">${f.type}</span>
-  </div>
-  <a class="btn btn--ghost btn--sm" href="${f.url}" target="_blank" rel="noopener" aria-label="Get ${esc(f.name)} on Google Play">${playIcon}Google Play</a>
+<li class="cat__item" data-slug="${f.slug}" data-type="${f.type.toLowerCase()}" data-price="${f.price === 'Free' ? 0 : f.price.replace('$', '')}" data-name="${esc(f.name.toLowerCase())}" data-order="${i}">
+  <button class="cat__dial" type="button" data-open="${f.slug}" aria-label="Try ${esc(f.name)} on a watch"><img src="${f.shots[0].src}" alt="" width="450" height="450"${i < 8 ? '' : ' loading="lazy"'} decoding="async"></button>
+  <div class="cat__meta"><h2 class="cat__name">${esc(f.name)}</h2><span class="cat__price">${f.price}</span><span class="cat__type">${f.type}</span></div>
+  <a class="link" href="${f.url}" target="_blank" rel="noopener" aria-label="Get ${esc(f.name)} on Google Play">Google Play</a>
 </li>`).join(''),
 };
 

@@ -1,0 +1,113 @@
+/* Page CSS: only what sits inside a visual or the kit lacks. */
+.logo-mark { width: 30px; height: auto; aspect-ratio: 856 / 494; color: var(--ink); flex: none; }
+.nav__logo { display: inline-flex; align-items: center; gap: var(--s-3); }
+.menu-card .panel { --p-h: 200px; display: grid; place-items: center; }
+.menu-card .menu-card__dial { position: static; width: 168px; height: 168px; border-radius: 50%; object-fit: cover; }
+
+/* hero: the watch stands in the visual's box, the float card holds the colourways */
+.hero-watch { position: relative; display: grid; place-items: center; background: var(--surface); border-radius: var(--r-lg); overflow: hidden; }
+.hero-watch .watch { --size: min(400px, 74%); }
+.hero-watch .ly-float { display: grid; gap: var(--s-3); }
+@media (max-width: 639px) { .hero-watch .ly-float { display: none; } .hero-watch .watch { --size: 52%; } }
+
+/* app-frame: the try-on window (sections-library.md app-frame) */
+.app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); height: 534px; margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
+.app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+.app > .app__pane + .app__pane { border-left: 1px solid var(--u-line); }
+.tryon__bar { display: flex; justify-content: space-between; align-items: center; padding: var(--s-4) var(--s-5); border-bottom: 1px solid var(--u-line); }
+.tryon__title { font-weight: 500; }
+.tryon__count { color: var(--muted); font-size: var(--t-small); font-variant-numeric: tabular-nums; }
+.tryon__list { list-style: none; margin: 0; padding: var(--s-2); display: grid; gap: 2px; }
+.tryon__row { width: 100%; min-height: 56px; display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; align-items: center; gap: var(--s-3); padding: var(--s-2) var(--s-3); border: 0; border-radius: var(--r-sm); background: transparent; color: var(--ink); text-align: left; font: inherit; cursor: pointer; }
+.tryon__row img { width: 40px; height: 40px; border-radius: 50%; }
+.tryon__row[aria-pressed="true"] { background: color-mix(in oklab, var(--ink) 8%, transparent); }
+.tryon__row:focus-visible { outline: 2px solid var(--action); outline-offset: -2px; }
+.tryon__who { display: grid; min-width: 0; }
+.tryon__name { font-weight: 500; }
+.tryon__sub { color: var(--muted); font-size: var(--t-small); }
+.tryon__chip { font-size: var(--t-small); font-variant-numeric: tabular-nums; color: var(--muted); }
+.tryon__open { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: var(--s-6); padding: var(--s-6); }
+.tryon__stage { display: grid; place-items: center; }
+.tryon__stage .watch { --size: min(300px, 100%); }
+.tryon__info { display: grid; gap: var(--s-4); align-content: center; justify-items: start; }
+.tryon__head { display: flex; align-items: baseline; gap: var(--s-4); }
+.tryon__big { font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--t-h3); letter-spacing: -0.02em; }
+.tryon__price { font-variant-numeric: tabular-nums; }
+.tryon__models { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.chip-btn { min-height: 44px; padding: 0 var(--s-4); border: 1px solid var(--line-strong); border-radius: 999px; background: transparent; color: var(--ink); font: 500 var(--t-small) var(--font-text); cursor: pointer; }
+.chip-btn[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.chip-btn:focus-visible { outline: 2px solid var(--action); outline-offset: 2px; }
+@media (max-width: 1279px) { .tryon__open { grid-template-columns: minmax(0, 1fr); justify-items: center; } .tryon__stage .watch { --size: 220px; } }
+@media (max-width: 1023px) {
+  .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); height: auto; }
+  .app > .app__pane--list { display: none; }
+  .app > .app__pane + .app__pane { border-left: 0; border-top: 1px solid var(--u-line); }
+}
+@media (max-width: 639px) {
+  .app.ui { grid-template-rows: minmax(0, 1fr); }
+  .app > .app__pane--list { display: none; }
+  .app > .app__pane + .app__pane { border-top: 0; }
+  .tryon__open { padding: var(--s-5); gap: var(--s-4); }
+  .tryon__stage .watch { --size: 170px; }
+}
+
+/* styles: the counter row, then four linked tiles */
+.styles__stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-5); margin-bottom: var(--s-7); }
+.style-tile { display: grid; gap: var(--s-3); align-content: start; text-decoration: none; color: inherit; }
+.style-tile__panel { --p-h: 260px; position: relative; display: grid; place-items: center; background: #070809; overflow: hidden; }
+.st--stack .style-tile__dial { position: absolute; width: 46%; }
+.st--stack .style-tile__dial:nth-child(1) { left: 6%; top: 22%; }
+.st--stack .style-tile__dial:nth-child(2) { left: 27%; top: 10%; z-index: 1; width: 50%; }
+.st--stack .style-tile__dial:nth-child(3) { right: 6%; top: 26%; }
+.st--crop .style-tile__dial { width: 150%; max-width: none; translate: 0 26%; }
+.st--pair { grid-template-columns: 1fr 1fr; gap: var(--s-3); padding: 0 var(--s-4); }
+.st--pair .style-tile__dial { width: 100%; }
+.style-tile__dial { width: min(232px, 84%); aspect-ratio: 1; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 6px #070809, 0 0 0 7px var(--line-strong); }
+
+@media (max-width: 1023px) { .styles__stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gutter); } .style-tile__panel { --p-h: 330px; } }
+@media (max-width: 639px) {
+  .styles__stats { margin-bottom: var(--s-6); }
+  .styles__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .styles__grid .style-tile { grid-column: auto; }
+  .style-tile__panel { --p-h: 200px; }
+  .style-tile h3 { font-size: var(--t-body); }
+}
+
+/* forte: the marker follows the list */
+.forte__parts { list-style: none; margin: 0; padding: 0; display: grid; }
+.forte__parts button { width: 100%; min-height: 48px; padding: 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--muted); font: 400 var(--t-body) var(--font-text); text-align: left; cursor: pointer; }
+.forte__parts button[aria-pressed="true"] { color: var(--ink); font-weight: 500; }
+.forte__parts button:focus-visible { outline: 2px solid var(--action); outline-offset: 2px; }
+.forte__frame { position: relative; display: grid; place-items: center; min-height: 600px; background: var(--surface); border-radius: var(--r-lg); overflow: hidden; }
+@media (max-width: 1023px) { .forte__frame { min-height: 0; padding-block: var(--s-6); margin-top: var(--s-6); } }
+.forte__frame .watch { --size: min(360px, 62%); }
+@media (max-width: 639px) { .forte__frame .watch { --size: 200px; } }
+.forte__marker { position: absolute; left: 0; top: 0; width: 64px; height: 64px; margin: -32px 0 0 -32px; border: 2px solid var(--ink); border-radius: 50%; z-index: 3; pointer-events: none; transition: transform 420ms cubic-bezier(.2,.7,.2,1); }
+@media (prefers-reduced-motion: reduce) { .forte__marker { transition: none; } }
+
+/* collection: a wall of dials from line to line on the light band */
+.wall { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--s-5); margin-top: var(--s-7); }
+.wall__dial { display: block; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #070809; box-shadow: 0 0 0 4px #070809; }
+.wall__dial img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wall__dial:focus-visible { outline: 2px solid var(--action); outline-offset: 6px; }
+@media (max-width: 1023px) { .wall { grid-template-columns: repeat(6, minmax(0, 1fr)); } .wall__dial:nth-child(n+19) { display: none; } }
+@media (max-width: 639px) { .wall { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s-3); } .wall__dial:nth-child(n+13) { display: none; } }
+
+/* prices */
+.plan__dials { display: flex; gap: var(--s-3); }
+.plan__dial { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 4px #070809, 0 0 0 5px var(--line-strong); }
+@media (max-width: 639px) { .plan__dial { width: 64px; height: 64px; } }
+.plan__list { margin: 0; padding-left: var(--s-5); display: grid; gap: var(--s-2); }
+
+.faq__watch { margin-top: var(--s-6); }
+.faq__watch .watch { --size: 200px; }
+@media (max-width: 1023px) { .faq__watch { display: none; } }
+@media (max-width: 639px) { .nav__name { display: none; } }
+
+.styles__frame { background: #070809; }
+.styles__frame .frame__img { position: absolute; inset: auto; left: 50%; top: 50%; translate: -50% -50%; width: min(340px, 72%); height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; padding: 0; background: #070809; }
+.styles__peek .rows__name { color: var(--ink); text-decoration: none; }
+.faq__icons { display: flex; gap: var(--s-3); margin-top: var(--s-5); }
+@media (max-width: 639px) { .tryon__models, .tryon__meta { display: none; } .tryon__stage .watch { --size: 150px; } .wall__dial:nth-child(n+13) { display: block; } .wall__dial:nth-child(n+21) { display: none; } }
+@media (min-width: 1024px) and (max-width: 1279px) { .faq__icons, .faq__icons + p { display: none; } }
+@media (max-width: 1023px) { .styles__frame { min-height: 320px; } }

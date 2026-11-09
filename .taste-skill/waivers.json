@@ -1,0 +1,3 @@
+[
+  {"check": "card-family", "target": "section#prices > div.wrap > div.grid > div.span-4.stack-4", "reason": "The span-4 column is the pricing-two recipe's section head (h2 Prices, a line, a link), not a card; only the two plan cards are cards and both set their titles in one face."}
+]

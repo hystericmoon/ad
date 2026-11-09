@@ -1,0 +1,577 @@
+{
+ "start": "2026-11-09T13:53:20.935Z",
+ "round": 3,
+ "idle": 0,
+ "errors": 0,
+ "status": "open",
+ "history": [
+  {
+   "at": "2026-11-09T14:03:24.201Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 13,
+   "round": 1,
+   "reused": false,
+   "stopHookActive": false
+  },
+  {
+   "at": "2026-11-09T14:06:20.492Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 6,
+   "round": 2,
+   "reused": false,
+   "stopHookActive": false
+  },
+  {
+   "at": "2026-11-09T14:11:09.102Z",
+   "mode": "manual",
+   "status": "open",
+   "fails": 6,
+   "round": 3,
+   "reused": false,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": "index.html",
+  "url": null,
+  "root": null,
+  "kind": "software",
+  "category": "watch faces for Wear OS watches",
+  "primary": "Browse the faces",
+  "rounds": 3,
+  "start": "2026-11-09T13:53:20.935Z",
+  "by": "gate.mjs --start"
+ },
+ "manual": true,
+ "roundKey": "da078703978e89dd:8e610331",
+ "roundFree": false,
+ "idleFree": false,
+ "blockKey": null,
+ "fp": "da078703978e89dd",
+ "page": "index.html",
+ "found": {
+  "fails": [
+   {
+    "check": "flush",
+    "where": "div.wrap > div.faq.span-6 > div.faq__item:nth-of-type(5) > p \"The prices here are Google Play's US pri\"",
+    "msg": "section#faq and footer#contact run together: -71px between their content, on one ground",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "flush"
+    ],
+    "wheres": [
+     "div.wrap > div.faq.span-6 > div.faq__item:nth-of-type(5) > p \"The prices here are Google Play's US pri\""
+    ]
+   },
+   {
+    "check": "overlap-text",
+    "where": "h2#close-h \"Find your next watch face\"",
+    "msg": "lies over the text \"Are prices the same everywhere?\" (div.faq__item:nth-of-type(5) > h3)",
+    "fix": "move the box off the text (or the text off the box)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "overlap-text"
+    ],
+    "wheres": [
+     "h2#close-h \"Find your next watch face\""
+    ]
+   },
+   {
+    "check": "card-family",
+    "where": "section#prices > div.wrap > div.grid > div.span-4.stack-4 \"Prices\"",
+    "msg": "3 cards of one kind (.span-4) set their titles in 2 faces: sora (1, like \"Prices\"), manrope (2, like \"Essentials\")",
+    "fix": "draw one card part one way: one fill and one title face for every card of a kind (one featured card may differ)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "card-family"
+    ],
+    "wheres": [
+     "section#prices > div.wrap > div.grid > div.span-4.stack-4 \"Prices\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#faq \"Questions About watches, buying and colo\"",
+    "msg": "the section's content does not fit it: its content is 214px taller than the section (scrollHeight 1114, clientHeight 900); its lowest content ends 1087px below its top, past 828px (the section less 72px of bottom padding); 7 parts lie outside the section's box (SR-2)",
+    "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "section#faq \"Questions About watches, buying and colo\"",
+     "section#faq > div.wrap > div.faq.span-6 \"Which watches can run these faces?Watche\"",
+     "section#faq > div.wrap > div.faq.span-6 > div.faq__item:nth-of-type(4) \"Can I change a face's colours?Yes. Most \""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "section#faq \"Questions About watches, buying and colo\"",
+    "msg": "the screen at scroll 6300px (stride 7) shows 142px of section 7 and the content of 2 sections, over 24px each beside section 8: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "section#faq \"Questions About watches, buying and colo\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div.span-5.stack-4 > ul.faq__icons > li.ic-row:nth-of-type(1) > span:nth-of-type(2) \"Bought and installed on Google Play\"",
+    "msg": "1 text block starts on a left line at x 136, 56px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (SR-6)",
+    "fix": "start the text on the container's left, or on the one split line every split shares",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div.span-5.stack-4 > ul.faq__icons > li.ic-row:nth-of-type(1) > span:nth-of-type(2) \"Bought and installed on Google Play\""
+    ]
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#collection / section#prices",
+    "msg": "309px between these sections, +92% against the median 161px of gaps at a change of ground",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-gaps"
+    ],
+    "wheres": [
+     "section#collection / section#prices"
+    ]
+   }
+  ],
+  "warns": [
+   {
+    "check": "flush",
+    "where": "section#collection > div.mo-io__stage > div.mo-io__cover",
+    "msg": "its first line sits 17px under the top edge of section#collection, where the ground changes",
+    "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "cut-text",
+    "where": "p.t-stat.mo-cr > span.mo-cr__col:nth-of-type(1) > span.mo-cr__strip > span:nth-of-type(2) \"7\"",
+    "msg": "cut 40px at the bottom by the overflow of div.stats.styles__stats > div.stat:nth-of-type(1) > p.t-stat.mo-cr > span.mo-cr__col:nth-of-type(1) (inside a held section or scroll scene, whose motion --quick does not check) (and 7 more like it: \"4\", \"3\", \"9\", \"3\", ...)",
+    "fix": "give the text room: no overflow clipping a line, no line past its box",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "scroll-reveal",
+    "where": "section#styles > div.wrap > div.stats.styles__stats \"6 7 8 9 0 1 2 3 4 5 6 3 4 5 6 7 8 9 0 1 \"",
+    "msg": "starts an animation (1.4 s) the moment it is scrolled into view (an IntersectionObserver) on span.mo-cr__strip (inside a dealt moment's section, [data-moment]: an enter moment is expected on every kind; its still is judged under reduced motion)",
+    "fix": "show it at rest: no fade, rise or unmask when it is scrolled into view",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "contrast",
+    "where": "p.t-stat.mo-cr > span.mo-cr__col:nth-of-type(1) > span.mo-cr__strip > span:nth-of-type(6) \"6\"",
+    "msg": "large text over a picture reads at 1.1:1 at its worst tenth (needs 3:1), on a busy ground (inside a held section or scroll scene, whose motion --quick does not check) (and 7 more like it: \"7\", \"8\", \"5\", \"7\", ...)",
+    "fix": "put the text on a calm part of the picture, or on a solid panel",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "busy-ground",
+    "where": "p.t-stat.mo-cr > span.mo-cr__col:nth-of-type(1) > span.mo-cr__strip > span:nth-of-type(4) \"4\"",
+    "msg": "text over a busy part of a picture (its luminance varies by 0.20 under the words) (inside a held section or scroll scene, whose motion --quick does not check) (and 3 more like it: \"5\", \"0\", \"1\")",
+    "fix": "move the text to a calm part of the picture, or put it on a panel",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#prices / section#faq",
+    "msg": "380px between these sections, +51% against the median 251px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#faq / footer#contact",
+    "msg": "the sections overlap by 71px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#forte / section#collection",
+    "msg": "uneven space at the edge of a band: 197px outside its edge, 17px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "photo-set",
+    "where": "div.wrap > div.wall > a.wall__dial:nth-of-type(9) > img \"terraventura-1.webp\"",
+    "msg": "25 photographs in more than one look: lightness from 0.17 to 0.61; saturation from 0.07 to 0.50; warm and cool photographs mixed (b* -16 to +12); the odd one out is terraventura-1.webp",
+    "fix": "grade the photographs to one look (light, colour, warmth), or replace the odd one out",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav-labels",
+    "where": "header.nav > div.wrap.nav__bar > a.nav__logo \"Active Design\"",
+    "msg": "\"Active Design\" opens a section headed \"Watch faces for Galaxy Watch and Pixel Watch\"",
+    "fix": "name each nav link after the heading of the section it opens",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav-labels",
+    "where": "div.wrap.nav__bar > nav.nav__links > div.nav__item:nth-of-type(2) > a.nav__link \"Try-on\"",
+    "msg": "\"Try-on\" opens a section headed \"Every face, tried on before you buy\"",
+    "fix": "name each nav link after the heading of the section it opens",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "label-centre",
+    "where": "header.nav > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary \"Browse the faces\"",
+    "msg": "its label sits 18px off-centre (25px of room at the left, 43px at the right)",
+    "fix": "centre the label in its button, or fill the empty side with an icon",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-length",
+    "where": "section#faq \"Questions\"",
+    "msg": "2 sections over 90 words a screen outside the UI mocks (\"Questions\" 144, \"Every face, tried on bef\" 98); 68 words a screen across the page (478 words in 7 screens): a tech page says it in about 80 or fewer",
+    "fix": "cut every section to its heading, one line and the product UI: the UI says the rest; no second paragraph, no list of feature sentences",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav-current",
+    "where": "header.nav",
+    "msg": "the nav stays on screen with 4 links to the page's sections, but never marks the one you are in (no link changes as the page scrolls)",
+    "fix": "mark the link of the section on screen (a colour, a weight or a line under it) as the visitor scrolls",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "button-contrast",
+    "where": "div.hero-text.grid > div.hero__text.span-5 > div.btn-row > a.btn.btn--secondary \"Try one on\"",
+    "msg": "the button \"Try one on\" (#191a1f) stands only 1.13:1 off the ground around it: it reads as part of the ground, or as switched off",
+    "fix": "give the button a fill that stands at least 1.5:1 off what is around it, or an outline in the ink",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "button-contrast",
+    "where": "div.wrap > div.grid > article.card.card--plan:nth-of-type(1) > a.btn.btn--secondary \"Get Essentials free\"",
+    "msg": "the button \"Get Essentials free\" (#191a1f) stands only 1.05:1 off the ground around it: it reads as part of the ground, or as switched off",
+    "fix": "give the button a fill that stands at least 1.5:1 off what is around it, or an outline in the ink",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "button-contrast",
+    "where": "div.wrap > div.grid > article.card.card--plan:nth-of-type(2) > a.btn.btn--secondary \"See the paid faces\"",
+    "msg": "the button \"See the paid faces\" (#191a1f) stands only 1.05:1 off the ground around it: it reads as part of the ground, or as switched off",
+    "fix": "give the button a fill that stands at least 1.5:1 off what is around it, or an outline in the ink",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "split-align",
+    "where": "section#faces > div.wrap > div.ui.app > div.app__pane.app__pane--open \"Rush $1.99 Digital, shown on Galaxy Watc\"",
+    "msg": "the splits sit two ways: 1 to the middle of the taller side (\"Rush $1.99 Digital, sh\"); 1 to the top of the taller side (\"Forte shows your day o\")",
+    "fix": "set every split one way: the text to the top of its visual, or every one centred on it",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "empty-area",
+    "where": "section#faq \"Questions\"",
+    "msg": "37% of the section is empty: 37% beside content that covers under half the container, in its 720px of rows (WARN over 35%, FAIL over 50%)",
+    "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "action-repeat",
+    "where": "header.nav > div.wrap.nav__bar > div.nav__actions > a.btn.btn--primary \"browse the faces\"",
+    "msg": "\"browse the faces\" shows 2 times on the first screen at 1440px (nav, hero): the nav's button and the hero's; nothing else on the screen may repeat it",
+    "fix": "show the action once a screen besides the nav's button: the hero's, the close's or the phone bar's, never all at once",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav",
+    "where": "header.nav > div.wrap.nav__bar > button.nav__toggle",
+    "msg": "the nav is lopsided: its last item ends 13px inside the content's edge (366px), while its first starts on the other edge",
+    "fix": "start the nav's first item and end its last on the content's two edges",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "tap-size",
+    "where": "div.grid.grid--top > ul.rows.span-6 > li:nth-of-type(1) > a.rows__name \"Digital faces\"",
+    "msg": "a 298x25px tap target (and 1 more like it on this screen): under the 44px a phone needs",
+    "fix": "make every link and control outside running text 44px tall on a phone: display: inline-flex; align-items: center; min-height: 44px (a footer list then needs no gap), a 44px small button, or a transparent ::before laid past the box",
+    "widths": [
+     390,
+     320
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "no-visual",
+    "where": "main#top > section.hero.hero--split \"Watch faces for Galaxy Watch and Pixel W\"",
+    "msg": "pictures, effects and mocks cover 19% of this section; a feature section needs a visual (about 25% or more)",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "no-visual",
+    "where": "section#forte \"Forte shows your day on one face\"",
+    "msg": "pictures, effects and mocks cover 19% of this section; a feature section needs a visual (about 25% or more)",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#collection / section#prices",
+    "msg": "uneven space at the edge of a band: 93px outside its edge, 216px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-stat-strip",
+    "msg": "stat strip x2",
+    "fix": "a strip only of figures the brief gives (a price, hours, a count); otherwise put each number in the sentence it proves, or leave it out (references/copy-tells.md)",
+    "widths": [],
+    "from": "copy",
+    "where": "copy x2: \"63 / 28 / 22 / 12\", \"28 / 22 / 12 / 1\"",
+    "exact": false
+   },
+   {
+    "check": "copy-cast-company",
+    "msg": "default fictional company names: Halcyon",
+    "fix": "coin another name (copy.md, names.json) (references/copy-tells.md)",
+    "widths": [],
+    "from": "copy",
+    "where": "copy x1: \"Halcyon\"",
+    "exact": false
+   }
+  ],
+  "crashed": [],
+  "seconds": {
+   "consistency": 113,
+   "layout": 4
+  }
+ },
+ "open": [
+  {
+   "check": "flush",
+   "where": "div.wrap > div.faq.span-6 > div.faq__item:nth-of-type(5) > p \"The prices here are Google Play's US pri\"",
+   "msg": "section#faq and footer#contact run together: -71px between their content, on one ground",
+   "fix": "give the section its padding at the edge where the ground changes (the closing call keeps a clear gap above the footer)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "flush"
+   ],
+   "wheres": [
+    "div.wrap > div.faq.span-6 > div.faq__item:nth-of-type(5) > p \"The prices here are Google Play's US pri\""
+   ]
+  },
+  {
+   "check": "overlap-text",
+   "where": "h2#close-h \"Find your next watch face\"",
+   "msg": "lies over the text \"Are prices the same everywhere?\" (div.faq__item:nth-of-type(5) > h3)",
+   "fix": "move the box off the text (or the text off the box)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "overlap-text"
+   ],
+   "wheres": [
+    "h2#close-h \"Find your next watch face\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#faq \"Questions About watches, buying and colo\"",
+   "msg": "the section's content does not fit it: its content is 214px taller than the section (scrollHeight 1114, clientHeight 900); its lowest content ends 1087px below its top, past 828px (the section less 72px of bottom padding); 7 parts lie outside the section's box (SR-2)",
+   "fix": "fit the content above the section's bottom padding (--padb), or make it two screens (.g2) in two groups",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "section#faq \"Questions About watches, buying and colo\"",
+    "section#faq > div.wrap > div.faq.span-6 \"Which watches can run these faces?Watche\"",
+    "section#faq > div.wrap > div.faq.span-6 > div.faq__item:nth-of-type(4) \"Can I change a face's colours?Yes. Most \""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "section#faq \"Questions About watches, buying and colo\"",
+   "msg": "the screen at scroll 6300px (stride 7) shows 142px of section 7 and the content of 2 sections, over 24px each beside section 8: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "section#faq \"Questions About watches, buying and colo\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div.span-5.stack-4 > ul.faq__icons > li.ic-row:nth-of-type(1) > span:nth-of-type(2) \"Bought and installed on Google Play\"",
+   "msg": "1 text block starts on a left line at x 136, 56px from the container's left: text starts on the container's left, or on one split line (x 623, 732, 841) (SR-6)",
+   "fix": "start the text on the container's left, or on the one split line every split shares",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div.span-5.stack-4 > ul.faq__icons > li.ic-row:nth-of-type(1) > span:nth-of-type(2) \"Bought and installed on Google Play\""
+   ]
+  },
+  {
+   "check": "section-gaps",
+   "where": "section#collection / section#prices",
+   "msg": "309px between these sections, +92% against the median 161px of gaps at a change of ground",
+   "fix": "use one gap between sections (all within 25% of each other)",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-gaps"
+   ],
+   "wheres": [
+    "section#collection / section#prices"
+   ]
+  }
+ ],
+ "waived": [
+  {
+   "check": "card-family",
+   "where": "section#prices > div.wrap > div.grid > div.span-4.stack-4 \"Prices\"",
+   "msg": "3 cards of one kind (.span-4) set their titles in 2 faces: sora (1, like \"Prices\"), manrope (2, like \"Essentials\")",
+   "fix": "draw one card part one way: one fill and one title face for every card of a kind (one featured card may differ)",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "card-family"
+   ],
+   "wheres": [
+    "section#prices > div.wrap > div.grid > div.span-4.stack-4 \"Prices\""
+   ],
+   "reason": "The span-4 column is the pricing-two recipe's section head (h2 Prices, a line, a link), not a card; only the two plan cards are cards and both set their titles in one face."
+  }
+ ],
+ "warnCount": 27,
+ "at": "2026-11-09T14:11:09.103Z",
+ "openTold": true
+}

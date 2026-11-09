@@ -1,0 +1,26 @@
+/* The watch: Samsung's front render with its display cut out, the face render underneath.
+   Shared by index.html and catalog.html. Geometry from tools/make-frame.py. */
+.watch {
+  --w-bezel: #070809; --w-glass-hi: rgb(255 255 255 / 0.14); --w-glass-lo: rgb(255 255 255 / 0); --w-shadow: rgb(0 0 0 / 0.55);
+  --frame-ratio: 960 / 1509; --sx: 47.177%; --sy: 49.678%; --sd: 84.74%;
+  position: relative; width: var(--size, 360px); max-width: 100%;
+}
+.watch[data-model="watch9"] { --frame-ratio: 960 / 1587; --sx: 49.649%; --sy: 49.674%; --sd: 84.4%; }
+.watch__body { position: relative; width: 100%; aspect-ratio: var(--frame-ratio); filter: drop-shadow(0 32px 40px var(--w-shadow)); }
+.watch__frame { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; user-select: none; }
+.watch__frame--watch9 { display: none; }
+.watch[data-model="watch9"] .watch__frame--ultra { display: none; }
+.watch[data-model="watch9"] .watch__frame--watch9 { display: block; }
+.watch__screen { position: absolute; left: var(--sx); top: var(--sy); width: var(--sd); aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; overflow: hidden; background: var(--w-bezel); z-index: 1; isolation: isolate; }
+.watch__screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 260ms ease; }
+.watch__screen img.is-on { opacity: 1; }
+.watch__screen::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(60% 50% at 30% 22%, var(--w-glass-hi), var(--w-glass-lo) 70%); pointer-events: none; z-index: 2; }
+
+/* colourway swatches: 40px discs inside a 44px target */
+.swatches { display: flex; flex-wrap: wrap; gap: 4px; }
+.swatch { position: relative; width: 44px; height: 44px; padding: 2px; border: 0; border-radius: 50%; background: transparent; cursor: pointer; }
+.swatch img { width: 40px; height: 40px; border-radius: 50%; display: block; box-shadow: 0 0 0 1px var(--line-strong); }
+.swatch[aria-pressed="true"] img { box-shadow: 0 0 0 2px var(--ink); }
+.swatch:focus-visible { outline: 2px solid var(--action); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) { .watch__screen img { transition: none; } }
