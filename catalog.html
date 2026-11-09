@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Watch Face Catalog</title>
+  <meta name="description" content="Every Active Design watch face for Galaxy Watch, Pixel Watch and Wear OS 5, with prices and Google Play links.">
+  <meta name="theme-color" content="#0b0c10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the faces</a>
+  <canvas class="stars" aria-hidden="true"></canvas>
+
+  <header class="nav" data-nav>
+    <nav class="nav__bar" aria-label="Main">
+      <a class="wordmark" href="index.html" aria-label="Active Design, home">
+        <svg class="wordmark__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 8.5 7 12l3.5 3.5ZM13.5 8.5 17 12l-3.5 3.5Z" fill="currentColor"/></svg>
+        <span class="wordmark__text">Active Design</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="catalog.html" aria-current="page">Catalog</a></li>
+        <li class="nav__hide-s"><a href="index.html#free">Free faces</a></li>
+      </ul>
+      <a class="btn btn--primary btn--nav" href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">Google Play</a>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="cat-head">
+      <div class="cat-head__top">
+        <div>
+          <h1 class="cat-head__title">All <!-- build:total -->46<!-- /build --> faces.</h1>
+          <p class="cat-head__lede">Tap a face to try its colourways on a watch. Every one installs from Google Play.</p>
+        </div>
+      </div>
+
+      <form class="toolbar" role="search" aria-label="Filter faces" data-toolbar onsubmit="return false">
+        <label class="field">
+          <span class="visually-hidden">Search by name</span>
+          <svg class="field__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <input class="input" type="search" name="q" placeholder="Search by name" autocomplete="off" data-search>
+        </label>
+        <div class="chips" role="group" aria-label="Style"><!-- build:chips --><button class="chip" type="button" data-filter="all" aria-pressed="true">All<span class="chip__n">46</span></button><button class="chip" type="button" data-filter="hybrid" aria-pressed="false">Hybrid<span class="chip__n">15</span></button><button class="chip" type="button" data-filter="digital" aria-pressed="false">Digital<span class="chip__n">21</span></button><button class="chip" type="button" data-filter="analog" aria-pressed="false">Analog<span class="chip__n">9</span></button><button class="chip" type="button" data-filter="diver" aria-pressed="false">Diver<span class="chip__n">1</span></button><button class="chip" type="button" data-filter="free" aria-pressed="false">Free<span class="chip__n">3</span></button><!-- /build --></div>
+        <label>
+          <span class="visually-hidden">Sort</span>
+          <select class="select" name="sort" data-sort>
+            <option value="order">Store order</option>
+            <option value="name">Name, A to Z</option>
+            <option value="price">Price, low to high</option>
+          </select>
+        </label>
+        <p class="result-count" role="status" aria-live="polite" data-count>Showing all faces</p>
+      </form>
+    </div>
+
+    <ul class="grid" data-grid><!-- build:grid -->
+<li class="card" data-slug="forte" data-type="hybrid" data-price="1.99" data-name="forte" data-order="0">
+  <button class="card__face" type="button" aria-label="Preview Forte" data-open="forte">
+    <img src="assets/faces/forte-1.webp" alt="" width="450" height="450" fetchpriority="high" decoding="async" data-hue="" class="is-on"><img src="assets/faces/forte-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/forte-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/forte-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/forte-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Forte</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.forte.activedesign" target="_blank" rel="noopener" aria-label="Get Forte on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="rush" data-type="digital" data-price="1.99" data-name="rush" data-order="1">
+  <button class="card__face" type="button" aria-label="Preview Rush" data-open="rush">
+    <img src="assets/faces/rush-1.webp" alt="" width="450" height="450" decoding="async" data-hue="182" class="is-on"><img src="assets/faces/rush-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="33"><img src="assets/faces/rush-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="4"><img src="assets/faces/rush-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="301"><img src="assets/faces/rush-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="269">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Rush</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.rush.activedesign" target="_blank" rel="noopener" aria-label="Get Rush on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="odyssey-3" data-type="hybrid" data-price="1.99" data-name="odyssey 3" data-order="2">
+  <button class="card__face" type="button" aria-label="Preview Odyssey 3" data-open="odyssey-3">
+    <img src="assets/faces/odyssey-3-1.webp" alt="" width="450" height="450" decoding="async" data-hue="" class="is-on"><img src="assets/faces/odyssey-3-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/odyssey-3-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/odyssey-3-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/odyssey-3-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Odyssey 3</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.odyssey3.activedesign" target="_blank" rel="noopener" aria-label="Get Odyssey 3 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="odyssey-2" data-type="hybrid" data-price="1.99" data-name="odyssey 2" data-order="3">
+  <button class="card__face" type="button" aria-label="Preview Odyssey 2" data-open="odyssey-2">
+    <img src="assets/faces/odyssey-2-1.webp" alt="" width="450" height="450" decoding="async" data-hue="" class="is-on"><img src="assets/faces/odyssey-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/odyssey-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/odyssey-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/odyssey-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Odyssey 2</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.odyssey2hybrid.activedesign" target="_blank" rel="noopener" aria-label="Get Odyssey 2 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="voyage" data-type="hybrid" data-price="1.99" data-name="voyage" data-order="4">
+  <button class="card__face" type="button" aria-label="Preview Voyage" data-open="voyage">
+    <img src="assets/faces/voyage-1.webp" alt="" width="450" height="450" decoding="async" data-hue="101" class="is-on"><img src="assets/faces/voyage-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="24"><img src="assets/faces/voyage-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="4"><img src="assets/faces/voyage-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="82"><img src="assets/faces/voyage-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="64">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Voyage</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.voyage.activedesign" target="_blank" rel="noopener" aria-label="Get Voyage on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="perpetual" data-type="hybrid" data-price="1.99" data-name="perpetual" data-order="5">
+  <button class="card__face" type="button" aria-label="Preview Perpetual" data-open="perpetual">
+    <img src="assets/faces/perpetual-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/perpetual-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191"><img src="assets/faces/perpetual-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="118"><img src="assets/faces/perpetual-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/perpetual-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="101">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Perpetual</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.perpetual.activedesign" target="_blank" rel="noopener" aria-label="Get Perpetual on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="aquastellar" data-type="diver" data-price="1.99" data-name="aquastellar" data-order="6">
+  <button class="card__face" type="button" aria-label="Preview Aquastellar" data-open="aquastellar">
+    <img src="assets/faces/aquastellar-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/aquastellar-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="280"><img src="assets/faces/aquastellar-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/aquastellar-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="182"><img src="assets/faces/aquastellar-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="182">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Aquastellar</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Diver</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.aquastellar.activedesign" target="_blank" rel="noopener" aria-label="Get Aquastellar on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="vega" data-type="hybrid" data-price="1.99" data-name="vega" data-order="7">
+  <button class="card__face" type="button" aria-label="Preview Vega" data-open="vega">
+    <img src="assets/faces/vega-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/vega-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="101"><img src="assets/faces/vega-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/vega-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/vega-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Vega</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.vega" target="_blank" rel="noopener" aria-label="Get Vega on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="terraventura" data-type="analog" data-price="1.99" data-name="terraventura" data-order="8">
+  <button class="card__face" type="button" aria-label="Preview Terraventura" data-open="terraventura">
+    <img src="assets/faces/terraventura-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/terraventura-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/terraventura-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191"><img src="assets/faces/terraventura-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/terraventura-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Terraventura</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Analog</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.terraventura.activedesign" target="_blank" rel="noopener" aria-label="Get Terraventura on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="exo" data-type="hybrid" data-price="1.99" data-name="exo" data-order="9">
+  <button class="card__face" type="button" aria-label="Preview Exo" data-open="exo">
+    <img src="assets/faces/exo-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14" class="is-on"><img src="assets/faces/exo-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="269"><img src="assets/faces/exo-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/exo-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/exo-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Exo</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.exo.activedesign" target="_blank" rel="noopener" aria-label="Get Exo on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="omni" data-type="hybrid" data-price="1.99" data-name="omni" data-order="10">
+  <button class="card__face" type="button" aria-label="Preview Omni" data-open="omni">
+    <img src="assets/faces/omni-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="123" class="is-on"><img src="assets/faces/omni-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353"><img src="assets/faces/omni-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="269"><img src="assets/faces/omni-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191"><img src="assets/faces/omni-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="182">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Omni</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.omni.activedesign" target="_blank" rel="noopener" aria-label="Get Omni on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="eclipse" data-type="digital" data-price="1.99" data-name="eclipse" data-order="11">
+  <button class="card__face" type="button" aria-label="Preview Eclipse" data-open="eclipse">
+    <img src="assets/faces/eclipse-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/eclipse-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14"><img src="assets/faces/eclipse-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14"><img src="assets/faces/eclipse-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="291"><img src="assets/faces/eclipse-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="291">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Eclipse</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.eclipse.activedesign" target="_blank" rel="noopener" aria-label="Get Eclipse on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="exo-2" data-type="analog" data-price="1.99" data-name="exo 2" data-order="12">
+  <button class="card__face" type="button" aria-label="Preview Exo 2" data-open="exo-2">
+    <img src="assets/faces/exo-2-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/exo-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="24"><img src="assets/faces/exo-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/exo-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="113"><img src="assets/faces/exo-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Exo 2</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Analog</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.exo2.activedesign" target="_blank" rel="noopener" aria-label="Get Exo 2 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="essentials-analog" data-type="analog" data-price="0" data-name="essentials analog" data-order="13">
+  <button class="card__face" type="button" aria-label="Preview Essentials Analog" data-open="essentials-analog">
+    <img src="assets/faces/essentials-analog-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/essentials-analog-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/essentials-analog-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/essentials-analog-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/essentials-analog-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Essentials Analog</h2>
+    <span class="card__price">Free</span>
+    <span class="card__type">Analog</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.essentialsvi" target="_blank" rel="noopener" aria-label="Get Essentials Analog on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="essentials-classic" data-type="analog" data-price="0" data-name="essentials classic" data-order="14">
+  <button class="card__face" type="button" aria-label="Preview Essentials Classic" data-open="essentials-classic">
+    <img src="assets/faces/essentials-classic-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/essentials-classic-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/essentials-classic-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/essentials-classic-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/essentials-classic-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Essentials Classic</h2>
+    <span class="card__price">Free</span>
+    <span class="card__type">Analog</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.essentialsvii" target="_blank" rel="noopener" aria-label="Get Essentials Classic on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="discovery" data-type="digital" data-price="1.99" data-name="discovery" data-order="15">
+  <button class="card__face" type="button" aria-label="Preview Discovery" data-open="discovery">
+    <img src="assets/faces/discovery-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="113" class="is-on"><img src="assets/faces/discovery-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="280"><img src="assets/faces/discovery-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="24"><img src="assets/faces/discovery-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353"><img src="assets/faces/discovery-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="4">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Discovery</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.discovery.activedesign" target="_blank" rel="noopener" aria-label="Get Discovery on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="celestrix" data-type="digital" data-price="1.99" data-name="celestrix" data-order="16">
+  <button class="card__face" type="button" aria-label="Preview Celestrix" data-open="celestrix">
+    <img src="assets/faces/celestrix-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/celestrix-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="291"><img src="assets/faces/celestrix-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/celestrix-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/celestrix-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="101">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Celestrix</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.celestrix.activedesign" target="_blank" rel="noopener" aria-label="Get Celestrix on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="perpetual-2" data-type="hybrid" data-price="1.99" data-name="perpetual 2" data-order="17">
+  <button class="card__face" type="button" aria-label="Preview Perpetual 2" data-open="perpetual-2">
+    <img src="assets/faces/perpetual-2-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14" class="is-on"><img src="assets/faces/perpetual-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14"><img src="assets/faces/perpetual-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/perpetual-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353"><img src="assets/faces/perpetual-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Perpetual 2</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.perpetual2hybrid.activedesign" target="_blank" rel="noopener" aria-label="Get Perpetual 2 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="apex-2" data-type="analog" data-price="1.99" data-name="apex 2" data-order="18">
+  <button class="card__face" type="button" aria-label="Preview Apex 2" data-open="apex-2">
+    <img src="assets/faces/apex-2-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/apex-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/apex-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/apex-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/apex-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Apex 2</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Analog</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.apex2" target="_blank" rel="noopener" aria-label="Get Apex 2 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="spectre-2" data-type="digital" data-price="1.99" data-name="spectre 2" data-order="19">
+  <button class="card__face" type="button" aria-label="Preview Spectre 2" data-open="spectre-2">
+    <img src="assets/faces/spectre-2-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14" class="is-on"><img src="assets/faces/spectre-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="164"><img src="assets/faces/spectre-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="269"><img src="assets/faces/spectre-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/spectre-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Spectre 2</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.spectreii" target="_blank" rel="noopener" aria-label="Get Spectre 2 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="hyperion" data-type="hybrid" data-price="1.99" data-name="hyperion" data-order="20">
+  <button class="card__face" type="button" aria-label="Preview Hyperion" data-open="hyperion">
+    <img src="assets/faces/hyperion-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="113" class="is-on"><img src="assets/faces/hyperion-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14"><img src="assets/faces/hyperion-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/hyperion-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353"><img src="assets/faces/hyperion-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="269">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Hyperion</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.hyperionhybrid.activedesign" target="_blank" rel="noopener" aria-label="Get Hyperion on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="essentials-digital" data-type="digital" data-price="0" data-name="essentials digital" data-order="21">
+  <button class="card__face" type="button" aria-label="Preview Essentials Digital" data-open="essentials-digital">
+    <img src="assets/faces/essentials-digital-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/essentials-digital-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="101"><img src="assets/faces/essentials-digital-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="123"><img src="assets/faces/essentials-digital-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="312"><img src="assets/faces/essentials-digital-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="301">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Essentials Digital</h2>
+    <span class="card__price">Free</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.essentials4" target="_blank" rel="noopener" aria-label="Get Essentials Digital on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="rogue" data-type="digital" data-price="1.99" data-name="rogue" data-order="22">
+  <button class="card__face" type="button" aria-label="Preview Rogue" data-open="rogue">
+    <img src="assets/faces/rogue-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/rogue-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/rogue-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/rogue-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/rogue-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Rogue</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.rogue" target="_blank" rel="noopener" aria-label="Get Rogue on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="rogue-black" data-type="digital" data-price="1.99" data-name="rogue black" data-order="23">
+  <button class="card__face" type="button" aria-label="Preview Rogue Black" data-open="rogue-black">
+    <img src="assets/faces/rogue-black-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="101" class="is-on"><img src="assets/faces/rogue-black-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="182"><img src="assets/faces/rogue-black-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="118"><img src="assets/faces/rogue-black-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="201"><img src="assets/faces/rogue-black-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="134">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Rogue Black</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.rogueinblack" target="_blank" rel="noopener" aria-label="Get Rogue Black on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="rush-3" data-type="digital" data-price="1.99" data-name="rush 3" data-order="24">
+  <button class="card__face" type="button" aria-label="Preview Rush 3" data-open="rush-3">
+    <img src="assets/faces/rush-3-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/rush-3-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/rush-3-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/rush-3-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="291"><img src="assets/faces/rush-3-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Rush 3</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.rush3.activedesign" target="_blank" rel="noopener" aria-label="Get Rush 3 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="rush-2" data-type="digital" data-price="1.99" data-name="rush 2" data-order="25">
+  <button class="card__face" type="button" aria-label="Preview Rush 2" data-open="rush-2">
+    <img src="assets/faces/rush-2-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="182" class="is-on"><img src="assets/faces/rush-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="134"><img src="assets/faces/rush-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="82"><img src="assets/faces/rush-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="42"><img src="assets/faces/rush-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Rush 2</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.rush2digital.activedesign" target="_blank" rel="noopener" aria-label="Get Rush 2 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="vulkan" data-type="hybrid" data-price="1.99" data-name="vulkan" data-order="26">
+  <button class="card__face" type="button" aria-label="Preview Vulkan" data-open="vulkan">
+    <img src="assets/faces/vulkan-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/vulkan-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/vulkan-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="343"><img src="assets/faces/vulkan-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="301"><img src="assets/faces/vulkan-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="343">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Vulkan</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.vulkan" target="_blank" rel="noopener" aria-label="Get Vulkan on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="astro" data-type="digital" data-price="1.99" data-name="astro" data-order="27">
+  <button class="card__face" type="button" aria-label="Preview Astro" data-open="astro">
+    <img src="assets/faces/astro-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="101" class="is-on"><img src="assets/faces/astro-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="291"><img src="assets/faces/astro-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191"><img src="assets/faces/astro-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="164"><img src="assets/faces/astro-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="301">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Astro</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.astro.activedesign" target="_blank" rel="noopener" aria-label="Get Astro on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="solaris" data-type="digital" data-price="1.99" data-name="solaris" data-order="28">
+  <button class="card__face" type="button" aria-label="Preview Solaris" data-open="solaris">
+    <img src="assets/faces/solaris-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="24" class="is-on"><img src="assets/faces/solaris-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="4"><img src="assets/faces/solaris-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="280"><img src="assets/faces/solaris-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/solaris-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Solaris</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.solaris.activedesign" target="_blank" rel="noopener" aria-label="Get Solaris on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="omni-2" data-type="hybrid" data-price="1.99" data-name="omni 2" data-order="29">
+  <button class="card__face" type="button" aria-label="Preview Omni 2" data-open="omni-2">
+    <img src="assets/faces/omni-2-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/omni-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/omni-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="291"><img src="assets/faces/omni-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191"><img src="assets/faces/omni-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="164">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Omni 2</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.omni2hybrid.activedesign" target="_blank" rel="noopener" aria-label="Get Omni 2 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="crimson" data-type="analog" data-price="1.99" data-name="crimson" data-order="30">
+  <button class="card__face" type="button" aria-label="Preview Crimson" data-open="crimson">
+    <img src="assets/faces/crimson-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/crimson-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/crimson-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="291"><img src="assets/faces/crimson-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/crimson-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Crimson</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Analog</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.crimson.activedesign" target="_blank" rel="noopener" aria-label="Get Crimson on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="destiny" data-type="digital" data-price="1.99" data-name="destiny" data-order="31">
+  <button class="card__face" type="button" aria-label="Preview Destiny" data-open="destiny">
+    <img src="assets/faces/destiny-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="4" class="is-on"><img src="assets/faces/destiny-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="4"><img src="assets/faces/destiny-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Destiny</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.destiny.activedesign" target="_blank" rel="noopener" aria-label="Get Destiny on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="titanium" data-type="hybrid" data-price="1.99" data-name="titanium" data-order="32">
+  <button class="card__face" type="button" aria-label="Preview Titanium" data-open="titanium">
+    <img src="assets/faces/titanium-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="269" class="is-on"><img src="assets/faces/titanium-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14"><img src="assets/faces/titanium-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="291"><img src="assets/faces/titanium-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="113"><img src="assets/faces/titanium-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Titanium</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.titan.activedesign" target="_blank" rel="noopener" aria-label="Get Titanium on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="spring-time" data-type="digital" data-price="1.99" data-name="spring time" data-order="33">
+  <button class="card__face" type="button" aria-label="Preview Spring Time" data-open="spring-time">
+    <img src="assets/faces/spring-time-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="113" class="is-on"><img src="assets/faces/spring-time-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="129"><img src="assets/faces/spring-time-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/spring-time-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="51"><img src="assets/faces/spring-time-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="82">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Spring Time</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.springtime.activedesign" target="_blank" rel="noopener" aria-label="Get Spring Time on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="warp" data-type="analog" data-price="1.99" data-name="warp" data-order="34">
+  <button class="card__face" type="button" aria-label="Preview Warp" data-open="warp">
+    <img src="assets/faces/warp-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/warp-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/warp-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/warp-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/warp-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Warp</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Analog</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.activewatchdesign.warp" target="_blank" rel="noopener" aria-label="Get Warp on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="rediscovery" data-type="digital" data-price="1.99" data-name="rediscovery" data-order="35">
+  <button class="card__face" type="button" aria-label="Preview Rediscovery" data-open="rediscovery">
+    <img src="assets/faces/rediscovery-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="269" class="is-on"><img src="assets/faces/rediscovery-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191"><img src="assets/faces/rediscovery-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353"><img src="assets/faces/rediscovery-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="164"><img src="assets/faces/rediscovery-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Rediscovery</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.rediscovery.activedesign" target="_blank" rel="noopener" aria-label="Get Rediscovery on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="solace" data-type="analog" data-price="1.99" data-name="solace" data-order="36">
+  <button class="card__face" type="button" aria-label="Preview Solace" data-open="solace">
+    <img src="assets/faces/solace-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/solace-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/solace-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/solace-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/solace-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Solace</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Analog</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.solace.activedesign" target="_blank" rel="noopener" aria-label="Get Solace on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="abyss" data-type="hybrid" data-price="1.49" data-name="abyss" data-order="37">
+  <button class="card__face" type="button" aria-label="Preview Abyss" data-open="abyss">
+    <img src="assets/faces/abyss-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="113" class="is-on"><img src="assets/faces/abyss-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/abyss-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="269"><img src="assets/faces/abyss-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191"><img src="assets/faces/abyss-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Abyss</h2>
+    <span class="card__price">$1.49</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.abyss.activedesign" target="_blank" rel="noopener" aria-label="Get Abyss on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="halo" data-type="hybrid" data-price="1.99" data-name="halo" data-order="38">
+  <button class="card__face" type="button" aria-label="Preview Halo" data-open="halo">
+    <img src="assets/faces/halo-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191" class="is-on"><img src="assets/faces/halo-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="164"><img src="assets/faces/halo-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353"><img src="assets/faces/halo-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191"><img src="assets/faces/halo-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Halo</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Hybrid</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.halo.activedesign" target="_blank" rel="noopener" aria-label="Get Halo on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="shadow-runner" data-type="digital" data-price="1.99" data-name="shadow runner" data-order="39">
+  <button class="card__face" type="button" aria-label="Preview Shadow Runner" data-open="shadow-runner">
+    <img src="assets/faces/shadow-runner-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="101" class="is-on"><img src="assets/faces/shadow-runner-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="24"><img src="assets/faces/shadow-runner-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/shadow-runner-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="182"><img src="assets/faces/shadow-runner-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="64">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Shadow Runner</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.ghostrunner.activedesign" target="_blank" rel="noopener" aria-label="Get Shadow Runner on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="stratosfera" data-type="analog" data-price="1.99" data-name="stratosfera" data-order="40">
+  <button class="card__face" type="button" aria-label="Preview Stratosfera" data-open="stratosfera">
+    <img src="assets/faces/stratosfera-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/stratosfera-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="212"><img src="assets/faces/stratosfera-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/stratosfera-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/stratosfera-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="33">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Stratosfera</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Analog</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.stratosfera.activedesign" target="_blank" rel="noopener" aria-label="Get Stratosfera on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="polaris" data-type="digital" data-price="1.99" data-name="polaris" data-order="41">
+  <button class="card__face" type="button" aria-label="Preview Polaris" data-open="polaris">
+    <img src="assets/faces/polaris-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on"><img src="assets/faces/polaris-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="123"><img src="assets/faces/polaris-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue=""><img src="assets/faces/polaris-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="291"><img src="assets/faces/polaris-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Polaris</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.polaris.activedesign" target="_blank" rel="noopener" aria-label="Get Polaris on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="vision-3" data-type="digital" data-price="1.99" data-name="vision 3" data-order="42">
+  <button class="card__face" type="button" aria-label="Preview Vision 3" data-open="vision-3">
+    <img src="assets/faces/vision-3-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="164" class="is-on"><img src="assets/faces/vision-3-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353"><img src="assets/faces/vision-3-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="280"><img src="assets/faces/vision-3-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="164"><img src="assets/faces/vision-3-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Vision 3</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.vision3.activedesign" target="_blank" rel="noopener" aria-label="Get Vision 3 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="destiny-2" data-type="digital" data-price="1.99" data-name="destiny 2" data-order="43">
+  <button class="card__face" type="button" aria-label="Preview Destiny 2" data-open="destiny-2">
+    <img src="assets/faces/destiny-2-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14" class="is-on"><img src="assets/faces/destiny-2-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="291"><img src="assets/faces/destiny-2-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="164"><img src="assets/faces/destiny-2-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="191"><img src="assets/faces/destiny-2-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="353">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Destiny 2</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.destiny2.activedesign" target="_blank" rel="noopener" aria-label="Get Destiny 2 on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="lucid" data-type="digital" data-price="1.99" data-name="lucid" data-order="44">
+  <button class="card__face" type="button" aria-label="Preview Lucid" data-open="lucid">
+    <img src="assets/faces/lucid-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="14" class="is-on"><img src="assets/faces/lucid-2.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="113"><img src="assets/faces/lucid-3.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="164"><img src="assets/faces/lucid-4.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="113"><img src="assets/faces/lucid-5.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="164">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Lucid</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.lucid.activedesign" target="_blank" rel="noopener" aria-label="Get Lucid on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li>
+<li class="card" data-slug="omnia" data-type="digital" data-price="1.99" data-name="omnia" data-order="45">
+  <button class="card__face" type="button" aria-label="Preview Omnia" data-open="omnia">
+    <img src="assets/faces/omnia-1.webp" alt="" width="450" height="450" loading="lazy" decoding="async" data-hue="" class="is-on">
+  </button>
+  <div class="card__meta">
+    <h2 class="card__name">Omnia</h2>
+    <span class="card__price">$1.99</span>
+    <span class="card__type">Digital</span>
+  </div>
+  <a class="btn btn--ghost btn--sm" href="https://play.google.com/store/apps/details?id=com.watchfacestudio.omnia.activedesign" target="_blank" rel="noopener" aria-label="Get Omnia on Google Play"><svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l14-8.5z" fill="currentColor"/></svg>Google Play</a>
+</li><!-- /build --></ul>
+
+    <div class="empty" data-empty hidden>
+      <p class="empty__title">No face by that name yet.</p>
+      <p>Try another name, or clear the filters to see all of them.</p>
+      <button class="btn btn--ghost" type="button" data-reset>Clear filters</button>
+    </div>
+  </main>
+
+  <dialog class="detail" aria-labelledby="detail-name" data-detail>
+    <button class="detail__close" type="button" aria-label="Close" data-close>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <div class="detail__inner">
+      <div class="detail__stage" data-detail-stage></div>
+      <div class="detail__copy">
+        <h2 class="detail__name" id="detail-name" data-detail-name>Face</h2>
+        <dl class="detail__facts">
+          <dt>Style</dt><dd data-detail-type></dd>
+          <dt>Price</dt><dd data-detail-price></dd>
+          <dt>Runs on</dt><dd>Wear OS 5 and later</dd>
+        </dl>
+        <div class="segmented" role="group" aria-label="Watch model" data-models>
+          <button type="button" aria-pressed="true" data-model="ultra">Galaxy Watch Ultra</button>
+          <button type="button" aria-pressed="false" data-model="watch8">Galaxy Watch8</button>
+          <button type="button" aria-pressed="false" data-model="pixel">Pixel Watch</button>
+        </div>
+        <a class="btn btn--primary" href="#" target="_blank" rel="noopener" data-detail-buy>Get on Google Play</a>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="site-footer__row">
+        <a class="wordmark" href="index.html">
+          <svg class="wordmark__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 8.5 7 12l3.5 3.5ZM13.5 8.5 17 12l-3.5 3.5Z" fill="currentColor"/></svg>
+          <span>Active Design Studio</span>
+        </a>
+        <ul class="site-footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="https://play.google.com/store/apps/dev?id=6754954524679457149" target="_blank" rel="noopener">Google Play developer page</a></li>
+        </ul>
+      </div>
+      <p class="site-footer__note">Watch faces for Wear OS 5 and later. Prices are Google Play US list prices and may differ in your region. Galaxy Watch is a trademark of Samsung; Pixel Watch is a trademark of Google.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/Flip.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+  <script src="data/faces.js" defer></script>
+  <script src="js/core.js" defer></script>
+  <script src="js/catalog.js" defer></script>
+</body>
+</html>
