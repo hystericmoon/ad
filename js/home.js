@@ -117,11 +117,11 @@
     const st = ScrollTrigger.create({ trigger: viewport, start: 'top bottom', end: 'bottom top', scrub: 0.8,
       onUpdate: (s) => { spin.scroll = s.progress * 140; render(); } });
     const proxy = document.createElement('div');
-    const drag = Draggable.create(proxy, { type: 'x', trigger: viewport, inertia: true, allowContextMenu: true,
-      onPress() { gsap.set(proxy, { x: -spin.drag * 6 }); },
-      onDrag() { spin.drag = -this.x / 6; render(); },
+    let moved = false;
+    const drag = Draggable.create(proxy, { type: 'x', trigger: viewport, inertia: true, allowContextMenu: true, dragClickables: true, minimumMovement: 6,
+      onPress() { moved = false; gsap.set(proxy, { x: -spin.drag * 6 }); },
+      onDrag() { moved = true; spin.drag = -this.x / 6; render(); },
       onThrowUpdate() { spin.drag = -this.x / 6; render(); },
-      onClick(e) { const a = e.target.closest('a'); if (a) window.open(a.href, '_blank', 'noopener'); },
     })[0];
     // Keyboard: bring a focused face round to the front
     const onFocus = (e) => {
@@ -135,7 +135,8 @@
     const label = (e) => { const a = e.target.closest('a[data-label]'); if (!a) return; if (now) now.textContent = a.dataset.label; AD.setHue(a.dataset.hue); };
     track.addEventListener('pointerover', label);
     track.addEventListener('focusin', label);
-    track.addEventListener('click', (e) => { if (e.detail > 0 && e.target.closest('a')) e.preventDefault(); });
+    // A drag ends with a click on whatever face was under the pointer: swallow that one, let real taps open Google Play
+    track.addEventListener('click', (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
     return () => { viewport.classList.remove('is-3d'); [track, ...items].forEach((e) => { e.style.transform = ''; }); st.kill(); drag.kill(); track.removeEventListener('focusin', onFocus); };
   });
 
