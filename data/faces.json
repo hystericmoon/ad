@@ -1767,5 +1767,63 @@
     "hue": null
    }
   ]
+ },
+ {
+  "slug": "nocturnal",
+  "name": "Nocturnal",
+  "type": "Hybrid",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.activewatchdesign.nocturnallights",
+  "shots": [
+   {
+    "src": "assets/faces/nocturnal-1.webp",
+    "hue": 24
+   },
+   {
+    "src": "assets/faces/nocturnal-2.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/nocturnal-3.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/nocturnal-4.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/nocturnal-5.webp",
+    "hue": 280
+   }
+  ]
+ },
+ {
+  "slug": "magnum",
+  "name": "Magnum",
+  "type": "Hybrid",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.activewatchdesign.magnumopus",
+  "shots": [
+   {
+    "src": "assets/faces/magnum-1.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/magnum-2.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/magnum-3.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/magnum-4.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/magnum-5.webp",
+    "hue": null
+   }
+  ]
  }
 ]
