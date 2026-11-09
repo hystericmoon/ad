@@ -27,7 +27,6 @@ Where the work stands, for the next session.
 - `css/site.css`, `css/watch.css`, `js/site.js`.
 - `catalog.html` is a redirect to the matching tab.
 
-## Left over
+## Removed
 
-- The taste-skill kit is no longer used by the page: `assets/system.*`, `assets/ui`, `assets/motion`, `assets/backgrounds`, `assets/layout`, `assets/moments`, `assets/icons`, and `.taste-skill/` state. Remove once the owner confirms.
-- The taste-skill gate was not run on the new layout (it targets the kit's deal system).
+- The taste-skill kit (`assets/system.*`, `ui`, `motion`, `backgrounds`, `layout`, `moments`, `icons`) and `.taste-skill/` gate state, at the owner's request. The skill itself stays in `.claude/skills/design-taste-frontend` and the old files are in git history.
