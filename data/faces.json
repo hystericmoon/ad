@@ -916,6 +916,14 @@
    {
     "src": "assets/faces/destiny-3.webp",
     "hue": 353
+   },
+   {
+    "src": "assets/faces/destiny-4.webp",
+    "hue": 258
+   },
+   {
+    "src": "assets/faces/destiny-5.webp",
+    "hue": 123
    }
   ]
  },
@@ -1305,6 +1313,109 @@
   "shots": [
    {
     "src": "assets/faces/omnia-1.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/omnia-2.webp",
+    "hue": 42
+   },
+   {
+    "src": "assets/faces/omnia-3.webp",
+    "hue": 113
+   },
+   {
+    "src": "assets/faces/omnia-4.webp",
+    "hue": 173
+   },
+   {
+    "src": "assets/faces/omnia-5.webp",
+    "hue": 182
+   }
+  ]
+ },
+ {
+  "slug": "elysium",
+  "name": "Elysium",
+  "type": "Digital",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.watchfacestudio.elysium.activedesign",
+  "shots": [
+   {
+    "src": "assets/faces/elysium-1.webp",
+    "hue": 269
+   },
+   {
+    "src": "assets/faces/elysium-2.webp",
+    "hue": 14
+   },
+   {
+    "src": "assets/faces/elysium-3.webp",
+    "hue": 353
+   },
+   {
+    "src": "assets/faces/elysium-4.webp",
+    "hue": 113
+   },
+   {
+    "src": "assets/faces/elysium-5.webp",
+    "hue": 123
+   }
+  ]
+ },
+ {
+  "slug": "illusive-dark",
+  "name": "Illusive Dark",
+  "type": "Hybrid",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.watchfacestudio.illusivedark.activedesign",
+  "shots": [
+   {
+    "src": "assets/faces/illusive-dark-1.webp",
+    "hue": 118
+   },
+   {
+    "src": "assets/faces/illusive-dark-2.webp",
+    "hue": 4
+   },
+   {
+    "src": "assets/faces/illusive-dark-3.webp",
+    "hue": 182
+   },
+   {
+    "src": "assets/faces/illusive-dark-4.webp",
+    "hue": 64
+   },
+   {
+    "src": "assets/faces/illusive-dark-5.webp",
+    "hue": null
+   }
+  ]
+ },
+ {
+  "slug": "lumos",
+  "name": "Lumos",
+  "type": "Analog",
+  "price": "$1.99",
+  "url": "https://play.google.com/store/apps/details?id=com.watchfacestudio.lumos.activedesign",
+  "shots": [
+   {
+    "src": "assets/faces/lumos-1.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/lumos-2.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/lumos-3.webp",
+    "hue": null
+   },
+   {
+    "src": "assets/faces/lumos-4.webp",
+    "hue": 24
+   },
+   {
+    "src": "assets/faces/lumos-5.webp",
     "hue": null
    }
   ]
