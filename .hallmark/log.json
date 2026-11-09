@@ -1,0 +1,33 @@
+[
+ {
+  "shape": "flight deck",
+  "theme": "custom",
+  "axes": "dark/geometric-sans/chromatic-cyan",
+  "hero": "custom: Galaxy Watch Ultra wearing Rush beside the head, colourway swatches",
+  "nav": "floating capsule",
+  "footer": "one ruled band",
+  "imagery": "product: 46 real face renders in CSS watch cases",
+  "photos": [],
+  "entry": "rise",
+  "fingerprint": "watch-hero/models-switch/kinds-rows/anatomy-pin/ring-3d/free-trio",
+  "sections": [
+   "hero",
+   "models",
+   "kinds",
+   "anatomy",
+   "ring",
+   "free",
+   "footer"
+  ],
+  "signature": "tap the watch and the face and the whole site change colourway together",
+  "waived": [
+   "80",
+   "47c",
+   "47b",
+   "83"
+  ],
+  "prompt": "Active Design watch face studio site: landing and catalog",
+  "date": "2026-11-09",
+  "mode": "build"
+ }
+]

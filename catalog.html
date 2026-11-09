@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Active Design: all watch faces</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="index.html#faces">
+<!-- The catalog now lives on the one page. Old links (catalog.html?type=hybrid) land on the matching chapter. -->
+<script>
+  (function () {
+    var t = new URLSearchParams(location.search).get('type');
+    var hash = { digital: '#digital', hybrid: '#hybrid', analog: '#analog', free: '#prices' }[t] || '#faces';
+    location.replace('index.html' + hash);
+  })();
+</script>
+<meta http-equiv="refresh" content="0; url=index.html#faces">
+<style>body{margin:0;background:#08090a;color:#f7f8f8;font:16px/1.5 system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}a{color:inherit}</style>
+</head>
+<body>
+<p>The catalog has moved. <a href="index.html#faces">See every face</a>.</p>
+</body>
+</html>
