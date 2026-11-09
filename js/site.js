@@ -5,39 +5,82 @@
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* Halftone (after Cosmos, drawn here): dot size follows a brightness map.
-     planet: the limb of a planet rising from below the stage. field: a soft interference field. */
-  const drawHalftone = (c) => {
+     planet: the limb of a planet rising from below. Canvases marked data-animate move: the surface drifts
+     as if the planet turns and the limb glow breathes. field: a still interference field.
+     Animation runs at ~30 fps only while the canvas is on screen and the tab is visible; reduced motion
+     gets one still frame. */
+  const ht = new Map(); // canvas -> { dots, W, H, step, field, on }
+  const setupHalftone = (c) => {
     const r = c.getBoundingClientRect();
-    if (!r.width || !r.height) return;
+    if (!r.width || !r.height) return null;
     const dpr = Math.min(2, window.devicePixelRatio || 1);
     c.width = Math.round(r.width * dpr); c.height = Math.round(r.height * dpr);
-    const x = c.getContext('2d');
-    x.setTransform(dpr, 0, 0, dpr, 0, 0);
-    x.clearRect(0, 0, r.width, r.height);
     const W = r.width, H = r.height, field = c.dataset.ht === 'field';
     const step = field ? 7 : 6;
     const R = Math.max(W * 0.62, H), cx = W * 0.58, cy = H * 0.42 + R * 0.92;
+    const dots = [];
     for (let j = 0, row = 0; j < H + step; j += step, row++) {
       for (let i = row % 2 ? step / 2 : 0; i < W + step; i += step) {
-        let v;
         if (field) {
-          v = 0.32 + 0.3 * Math.sin(i * 0.016 + j * 0.01) * Math.cos(j * 0.021 - i * 0.006) + 0.16 * Math.sin((i + j) * 0.045);
+          let v = 0.32 + 0.3 * Math.sin(i * 0.016 + j * 0.01) * Math.cos(j * 0.021 - i * 0.006) + 0.16 * Math.sin((i + j) * 0.045);
           v *= 0.55 + 0.45 * (1 - Math.abs(i / W - 0.5) * 2) ** 0.6; // calmer at the edges
+          if (v > 0.05) dots.push(i, j, Math.min(1, v));
         } else {
           const d = Math.hypot(i - cx, j - cy) / R;
           if (d >= 1) continue;
-          v = (1 - Math.abs(d - 0.92) / 0.92) ** 3.4 + 0.1 * Math.sin(i * 0.045) * Math.cos(j * 0.06);
+          const limb = (1 - Math.abs(d - 0.92) / 0.92) ** 3.4;
+          if (limb > 0.02) dots.push(i, j, limb);
         }
-        if (v <= 0.05) continue;
-        v = Math.min(1, v);
-        x.fillStyle = `rgba(196, 202, 212, ${0.22 + 0.5 * v})`;
-        x.beginPath(); x.arc(i, j, v * step * 0.5, 0, Math.PI * 2); x.fill();
       }
     }
+    const prev = ht.get(c);
+    const st = { c, x: c.getContext('2d'), dpr, dots, W, H, step, field, on: prev ? prev.on : true };
+    ht.set(c, st);
+    return st;
   };
+  const BUCKETS = 7;
+  const renderHalftone = (st, t) => {
+    const { x, dpr, dots, W, H, step, field } = st;
+    x.setTransform(dpr, 0, 0, dpr, 0, 0);
+    x.clearRect(0, 0, W, H);
+    const paths = Array.from({ length: BUCKETS }, () => new Path2D());
+    const breathe = 0.92 + 0.08 * Math.sin(t * 0.55);
+    for (let k = 0; k < dots.length; k += 3) {
+      const i = dots[k], j = dots[k + 1], base = dots[k + 2];
+      let v;
+      if (field) v = base;
+      else {
+        // two drifting octaves of surface texture over the limb glow
+        const n = 0.1 * Math.sin(i * 0.045 - t * 0.45) * Math.cos(j * 0.06 + t * 0.12) + 0.07 * Math.sin(i * 0.013 + j * 0.02 - t * 0.28);
+        v = base * breathe + n;
+      }
+      if (v <= 0.05) continue;
+      v = Math.min(1, v);
+      const p = paths[Math.min(BUCKETS - 1, (v * BUCKETS) | 0)];
+      const rad = v * step * 0.5;
+      p.moveTo(i + rad, j); p.arc(i, j, rad, 0, Math.PI * 2);
+    }
+    paths.forEach((p, b) => { x.fillStyle = `rgba(196, 202, 212, ${0.22 + 0.5 * ((b + 0.5) / BUCKETS)})`; x.fill(p); });
+  };
+  const drawHalftone = (c) => { const st = setupHalftone(c); if (st) renderHalftone(st, performance.now() / 1000); };
   const canvases = [...document.querySelectorAll('canvas.ht')];
   const redraw = () => canvases.forEach(drawHalftone);
   redraw();
+  if (!still) {
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => { const st = ht.get(en.target); if (st) st.on = en.isIntersecting; }));
+    canvases.filter((c) => c.hasAttribute('data-animate')).forEach((c) => io.observe(c));
+    let last = 0;
+    const loop = (now) => {
+      requestAnimationFrame(loop);
+      if (document.hidden || now - last < 33) return;
+      last = now;
+      ht.forEach((st) => {
+        if (!st.on || !st.c.hasAttribute('data-animate') || !st.c.getClientRects().length) return;
+        renderHalftone(st, now / 1000);
+      });
+    };
+    requestAnimationFrame(loop);
+  }
   let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(redraw, 150); });
 
   /* Hero: swatches and tapping the watch change the colourway */
